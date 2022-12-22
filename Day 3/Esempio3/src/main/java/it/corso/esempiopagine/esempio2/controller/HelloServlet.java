@@ -1,4 +1,4 @@
-package it.corso.example.jdbcexample;
+package it.corso.esempiopagine.esempio2.controller;
 
 import java.io.*;
 

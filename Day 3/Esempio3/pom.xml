@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>it.corso.example</groupId>
-    <artifactId>JDBCExample</artifactId>
+    <groupId>it.corso.esempioPagine</groupId>
+    <artifactId>Esempio2</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>JDBCExample</name>
+    <name>Esempio2</name>
     <packaging>war</packaging>
 
     <properties>
@@ -18,6 +18,16 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.31</version>
+        </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
