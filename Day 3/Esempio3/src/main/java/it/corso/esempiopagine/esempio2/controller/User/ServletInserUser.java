@@ -1,4 +1,4 @@
-package it.corso.esempiopagine.esempio2.controller;
+package it.corso.esempiopagine.esempio2.controller.User;
 
 import it.corso.esempiopagine.esempio2.dao.UserDAO;
 import it.corso.esempiopagine.esempio2.model.User;

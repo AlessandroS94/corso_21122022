@@ -12,8 +12,7 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String country) {
-        super();
+    public User(String name, String email, String country,int age) {
         this.name = name;
         this.email = email;
         this.country = country;
@@ -21,7 +20,6 @@ public class User {
     }
 
     public User(int id, String name, String email, String country,int age) {
-        super();
         this.id = id;
         this.name = name;
         this.email = email;

@@ -3,9 +3,11 @@
 <html>
 <title>JSP - Hello World</title>
 <jsp:include page="style.jsp"></jsp:include>
-<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="navbar.jsp">
+    <jsp:param name="home" value="active"/>
+</jsp:include>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Benvenuto!" %>
 </h1>
 <br/>
 </body>
