@@ -35,6 +35,7 @@ public class ServletDelUser extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher(page);
             dispatcher.forward(request, response);
         }
+
         response.sendRedirect("/ServletShowUsers");
 
     }
