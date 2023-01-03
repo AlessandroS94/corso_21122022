@@ -16,7 +16,7 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
-   @GetMapping("/student")
+    @GetMapping("/student")
     public ResponseEntity<List<Student>> getStudents (){
         List<Student> studentArrayList = new ArrayList<Student>();
         studentRepository.findAll().forEach(studentArrayList::add);
@@ -35,6 +35,12 @@ public class StudentController {
 
     @DeleteMapping("/student/{id}")
     public ResponseEntity<HttpStatus> deleteStudent(@PathVariable("id") long id) {
+        studentRepository.deleteById(id);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @PutMapping("/student/{id}")
+    public ResponseEntity<HttpStatus> updateStudent(@PathVariable("id") long id) {
         studentRepository.deleteById(id);
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

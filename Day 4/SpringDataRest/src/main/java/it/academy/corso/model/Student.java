@@ -1,6 +1,7 @@
 package it.academy.corso.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ public class Student {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+
 
   @Column(name = "name")
   private String name;
