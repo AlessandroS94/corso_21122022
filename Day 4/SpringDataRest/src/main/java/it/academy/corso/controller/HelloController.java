@@ -13,22 +13,6 @@ import java.util.Map;
 public class HelloController {
 
 
-   @GetMapping("/hi")
-    public ResponseEntity<String> hi (){
-        String message = "ciao ";
-        return new ResponseEntity<>(message, HttpStatus.OK);
-    }
-
-
-
-
-
-
-
-
-
-
-
     @GetMapping("/hi2")
     public ResponseEntity<Map<String,String>> hi2 (){
         Map <String,String> value = new HashMap();

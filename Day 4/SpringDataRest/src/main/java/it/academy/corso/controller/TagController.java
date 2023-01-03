@@ -115,18 +115,4 @@ public class TagController {
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
-  @GetMapping("ciao")
-  public  ResponseEntity<Map<String,String>> ciao (){
-    Map<String,String> b= new HashMap<>();
-    b.put("Nome","Alessandro");
-    return new ResponseEntity<>(b, HttpStatus.OK);
-  }
-
-  @GetMapping("ciao/{nome}")
-  public  ResponseEntity<HashMap<String,String>> ciao (@PathVariable("nome") String nome ){
-    HashMap <String,String> b= new HashMap<>();
-    b.put("Nome",nome);
-    return new ResponseEntity<>(b, HttpStatus.OK);
-  }
-
 }
