@@ -1,6 +1,7 @@
 package it.ntt.academy.domain;
 
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -60,8 +61,7 @@ public class Department extends BaseEntity {
             return false;
         }
         final Department other = (Department) obj;
-        if ((this.name == null) ? (other.name != null) : 
-                !this.name.equals(other.name)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         return true;

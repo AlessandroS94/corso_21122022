@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version> 2.6.2</version>
+        <version>2.6.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.ntt.academy</groupId>
@@ -19,9 +19,11 @@
     <properties>
         <java.version>17</java.version>
     </properties>
-    // SP Standard Tag Library
+    <!-- SP Standard Tag Library
     // Per creare cicli all'interno delle jsp
     // un foreach
+    -->
+
     <dependencies>
         <dependency>
             <groupId>jstl</groupId>
@@ -40,8 +42,7 @@
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
         </dependency>
-
-        // Creazione di un pool di connessioni sempre aperte
+        <!--Creazione di un pool di connessioni sempre aperte -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
