@@ -6,8 +6,10 @@ import it.course.rest.examplecourse.model.User;
 import it.course.rest.examplecourse.repository.CourseRepository;
 import it.course.rest.examplecourse.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Role;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -24,11 +26,13 @@ public class CourseController {
     UserRepository userRepository;
 
 
+
     @PostMapping("/course")
     public ResponseEntity<Course> CreateCourse(@RequestBody Course course) {
         Course _course = courseRepository.save(course);
         return new ResponseEntity<Course>(_course, HttpStatus.CREATED);
     }
+
 
     @GetMapping("/course/{id}")
     public ResponseEntity<Optional> getCourse(@PathVariable("id") Long id) {
