@@ -6,4 +6,6 @@ import org.springframework.dao.DataAccessException;
 public interface WebSiteInfoBO {
 
     public WebSiteInfo getWebSiteInfo() throws DataAccessException;
+
+    void insertWebSiteInfo(WebSiteInfo webSiteInfo) throws DataAccessException;
 }

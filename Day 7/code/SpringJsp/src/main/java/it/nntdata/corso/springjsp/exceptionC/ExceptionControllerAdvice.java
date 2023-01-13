@@ -10,6 +10,7 @@ public class ExceptionControllerAdvice {
     public ModelAndView exception(Exception e){
         ModelAndView modelAndView = new ModelAndView("/jsp/error.jsp");
         modelAndView.addObject("Error", e.getClass().getName());
+        modelAndView.addObject("Error_info", e.getMessage());
         return modelAndView;
     }
 }

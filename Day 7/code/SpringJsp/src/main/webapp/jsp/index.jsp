@@ -3,8 +3,15 @@
 <jsp:include page="head.jsp"></jsp:include>
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
-<h1>Hello, world!</h1>
-<h7>${Info.getName()}</h7>
-<h7>${Info.getDescription()}</h7>
+
+<div class="container">
+    <code class="small">${Info.getName()}</code>
+    <p class="lead">${Info.getDescription()}</p>
+</div>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Prova</span>
+    </div>
+</footer>
 </body>
 <jsp:include page="scriptJS.jsp"></jsp:include>
