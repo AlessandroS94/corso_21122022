@@ -14,7 +14,7 @@ public class WebSiteInfoBOImpl implements WebSiteInfoBO {
     @Autowired
 
     public WebSiteInfo getWebSiteInfo() throws DataAccessException{
-        return webSiteInfoRepository.findByIdByOrderByIdDesc();
+        return webSiteInfoRepository.findFirstByOrderByIdDesc();
     }
 
 
