@@ -5,10 +5,7 @@ ${Error}
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
 <div class="container">
-    <br>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">${Error}</h5>
+        <h3>${Error}</h3>
         </div>
         <p>
             ${Error_info}

@@ -24,11 +24,25 @@ public class WebSiteInfoController {
         return new ModelAndView("/jsp/createInfo.jsp");
     }
     @PostMapping("createInfo")
-    public ModelAndView insertInfo(@RequestParam String description, @RequestParam String name){
+    public ModelAndView createInfo(@RequestParam String description, @RequestParam String name){
         WebSiteInfo webSiteInfo = new WebSiteInfo();
         webSiteInfo.setName(name);
         webSiteInfo.setDescription(description);
         webSiteInfoBO.insertWebSiteInfo(webSiteInfo);
         return new ModelAndView("/jsp/createInfo.jsp","operation",true);
+    }
+
+    @GetMapping("deleteViewInfo")
+    public ModelAndView deleteInfo(){
+        return new ModelAndView("/jsp/deleteInfo.jsp");
+    }
+
+    @GetMapping("deleteInfo")
+    public ModelAndView deleteInfo(@RequestParam String id){
+        if(!id.isEmpty()) {
+            webSiteInfoBO.deleteWebSiteInfo(Long.parseLong(id));
+            return new ModelAndView("/jsp/deleteInfo.jsp","operation",true);
+        }
+        return new ModelAndView("/jsp/deleteInfo.jsp","id_not_found",true);
     }
 }

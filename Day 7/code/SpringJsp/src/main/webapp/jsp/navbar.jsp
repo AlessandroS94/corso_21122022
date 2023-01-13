@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/createInfo">Crea Info</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/deleteViewInfo">Cancella Info</a>
+                </li>
             </ul>
         </div>
     </div>

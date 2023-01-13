@@ -8,4 +8,6 @@ public interface WebSiteInfoBO {
     public WebSiteInfo getWebSiteInfo() throws DataAccessException;
 
     void insertWebSiteInfo(WebSiteInfo webSiteInfo) throws DataAccessException;
+
+    void deleteWebSiteInfo(long id) throws DataAccessException;
 }

@@ -22,6 +22,11 @@ public class WebSiteInfoBOImpl implements WebSiteInfoBO {
         webSiteInfoRepository.save(webSiteInfo);
     }
 
+    @Override
+    public void deleteWebSiteInfo(long id) throws DataAccessException{
+        webSiteInfoRepository.deleteById(id);
+    }
+
 
 
 }
