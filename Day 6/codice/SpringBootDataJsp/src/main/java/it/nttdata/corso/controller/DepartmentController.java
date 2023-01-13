@@ -56,7 +56,6 @@ public class DepartmentController {
     public String deleteDepartment(@RequestParam(value = "id", required = true) int uid,
            Model model) {
         logger.debug("delete registration() invoked");
-
         List<Department> list;
         try {
             departmentBO.delete(uid);
@@ -69,7 +68,6 @@ public class DepartmentController {
             model.addAttribute("response", new ClientResponse(false, e.getMessage()));
             //return "redirect:/department/home";
         }
-
         return "departments";
     }
 }
