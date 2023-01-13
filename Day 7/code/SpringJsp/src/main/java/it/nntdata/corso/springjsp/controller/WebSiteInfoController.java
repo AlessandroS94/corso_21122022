@@ -15,7 +15,6 @@ public class WebSiteInfoController {
     @GetMapping(path = {"/","/index"})
     public ModelAndView home(){
         WebSiteInfo webSiteInfo = webSiteInfoBO.getWebSiteInfo();
-
         return new ModelAndView("/jsp/index.jsp","Info",webSiteInfo);
     }
 }
