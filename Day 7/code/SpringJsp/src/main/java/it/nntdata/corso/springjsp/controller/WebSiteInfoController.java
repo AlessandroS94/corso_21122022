@@ -19,11 +19,11 @@ public class WebSiteInfoController {
         WebSiteInfo webSiteInfo = webSiteInfoBO.getWebSiteInfo();
         return new ModelAndView("/jsp/index.jsp","Info",webSiteInfo);
     }
-    @GetMapping("createInfo")
+    @GetMapping("/createInfo")
     public ModelAndView createInfo(){
-        return new ModelAndView("/jsp/createInfo.jsp");
+        return new ModelAndView("jsp/createInfo.jsp");
     }
-    @PostMapping("createInfo")
+    @PostMapping("/createInfo")
     public ModelAndView createInfo(@RequestParam String description, @RequestParam String name){
         WebSiteInfo webSiteInfo = new WebSiteInfo();
         webSiteInfo.setName(name);

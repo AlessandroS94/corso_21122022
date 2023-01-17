@@ -17,6 +17,10 @@
             <label for="exampleInputEmail1" class="form-label">Name</label>
             <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Comments</label>
+        </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Descrizione</label>
             <input type="text" name="description" class="form-control" id="exampleInputPassword1">
