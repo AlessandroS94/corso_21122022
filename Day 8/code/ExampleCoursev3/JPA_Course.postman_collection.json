@@ -34,6 +34,73 @@
 			"response": []
 		},
 		{
+			"name": "Insert File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/alessandrosallese/corso_21122022/Day 5/ExampleCourse/HELP.md"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/api/upload/202",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"upload",
+						"202"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Course File",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"JPA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/api/files/202",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"files",
+						"202"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Course for User",
 			"request": {
 				"method": "POST",
@@ -62,7 +129,7 @@
 			"response": []
 		},
 		{
-			"name": "update",
+			"name": "Update Name Course",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -91,7 +158,7 @@
 			"response": []
 		},
 		{
-			"name": "update Copy",
+			"name": "Update nome Corso 2",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -105,15 +172,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/course/2",
+					"raw": "localhost:8087/api/course/3",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8087",
 					"path": [
 						"api",
 						"course",
-						"2"
+						"3"
 					]
 				}
 			},
@@ -149,7 +216,7 @@
 			"response": []
 		},
 		{
-			"name": "Course Copy",
+			"name": "Course List",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -166,11 +233,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/course",
+					"raw": "localhost:8087/api/course",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8087",
 					"path": [
 						"api",
 						"course"
@@ -186,7 +253,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"user\",\n    \"email\":\"user@ntt.it\",\n    \"password\":\"user\",\n    \"role\":[\"user\",\"\"]\n}",
+					"raw": "{\n    \"username\":\"alessandroS\",\n    \"email\":\"alessandroS@ntt.it\",\n    \"password\":\"user\",\n    \"role\":[\"user\",\"\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -194,11 +261,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/auth/signup",
+					"raw": "localhost:8087/api/auth/signup",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8087",
 					"path": [
 						"api",
 						"auth",
@@ -209,13 +276,13 @@
 			"response": []
 		},
 		{
-			"name": "signup Copy",
+			"name": "signup Admin",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"user\",\n    \"email\":\"user@ntt.it\",\n    \"password\":\"user\",\n    \"role\":[\"user\",\"\"]\n}",
+					"raw": "{\n    \"username\":\"user3\",\n    \"email\":\"user3@ntt.it\",\n    \"password\":\"user\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -223,7 +290,37 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/auth/signup",
+					"raw": "localhost:8087/api/auth/signup/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"auth",
+						"signup",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signin moderator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"user4\",\n    \"email\":\"user4@ntt.it\",\n    \"password\":\"user\",\n    \"role\":[\"user\",\"mod\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup/mod",
 					"host": [
 						"localhost"
 					],
@@ -231,7 +328,8 @@
 					"path": [
 						"api",
 						"auth",
-						"signup"
+						"signup",
+						"mod"
 					]
 				}
 			},
@@ -240,11 +338,14 @@
 		{
 			"name": "signin",
 			"request": {
+				"auth": {
+					"type": "bearer"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"user\",\n    \"email\":\"user@ntt.it\",\n    \"password\":\"user\",\n    \"role\":[\"user\",\"\"]\n}",
+					"raw": "{\n    \"username\":\"user2\",\n    \"password\":\"user\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -252,15 +353,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/auth/signup",
+					"raw": "localhost:8087/api/auth/signin",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8087",
 					"path": [
 						"api",
 						"auth",
-						"signup"
+						"signin"
 					]
 				}
 			},
@@ -272,11 +373,11 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/auth/signout",
+					"raw": "localhost:8087/api/auth/signout",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8087",
 					"path": [
 						"api",
 						"auth",
