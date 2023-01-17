@@ -12,12 +12,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/">Home</a>
                 </li>
-                <sec:authorize access="isAuthenticated()">
+                <sec:authorize access="hasRole('ADMIN')">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/admin/createInfo">Crea Info</a>
                     </li>
                 </sec:authorize>
-                <sec:authorize access="isAuthenticated()">
+                <sec:authorize access="hasRole('ADMIN')">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/admin/deleteViewInfo">Cancella Info</a>
                 </li>
