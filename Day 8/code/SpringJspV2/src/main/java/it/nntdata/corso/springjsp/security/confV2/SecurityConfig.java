@@ -33,6 +33,7 @@ class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .formLogin()
                 .and()
                 .logout()
@@ -43,10 +44,8 @@ class SecurityConfig {
                 .invalidateHttpSession(true)
                 .and()
                 .authorizeRequests()
-                .requestMatchers("/admin/**")
-                .authenticated()
-                .requestMatchers("/")
-                .permitAll()
+                .requestMatchers("/admin/**").authenticated()
+                .requestMatchers("/").permitAll()
                 .and()
                 .httpBasic();
         return http.build();
