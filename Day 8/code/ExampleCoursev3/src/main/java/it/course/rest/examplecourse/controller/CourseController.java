@@ -69,6 +69,7 @@ public class CourseController {
     @PostMapping("/upload/{id}")
     public ResponseEntity<Map<String,String>> uploadFile(@PathVariable Long id ,@RequestParam("file") MultipartFile data) {
         try {
+            courseBo.uploadFile(id,data);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception e) {
             Map<String,String> map = new HashMap<>();
