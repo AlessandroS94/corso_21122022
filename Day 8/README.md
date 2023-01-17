@@ -8,4 +8,4 @@
 3. Multipart Image - Save on DB
 4. Cookies auth
 5. User With Role
-6. Facede and Decorator pattern 
+6. Facede and Decorator pattern

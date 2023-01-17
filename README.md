@@ -1,11 +1,15 @@
-## Corso JAVA Spring
-Corso introduttivo Servlet, Sprinboot Rest e Servlet - 5 giorni
+## Corso JAVA JEE / Spring
+### Day 1 - 2 - 3 --> JEE
+Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni
 
 ![java](./img/java.jpg)
 
 ![mysql](./img/mysql.jpg)
 
 ![maven](./img/maven.jpg)
+
+![springboot](./img/springboot.png)
+
 ## Primi passi
 Scaricare la repo per seguire le prime fasi del corso 
 ```
@@ -15,9 +19,9 @@ $ cd corso_21122022
 
 ## Technologies
 Project is created with:
-* Java 17 LTS: 12.3
+* Java 17 LTS 
 * Mysql 
-* Intellij IDE :IDE
+* Intellij IDE : IDE
 * MAMP :application
 
 ## Setup
@@ -92,3 +96,8 @@ $ apt install openjdk-17-jdk openjdk-17-jre
 ```
 $ sudo apt install install maven
 ```
+
+## Springboot 
+ I requisiti precedenti sono più che sufficienti
+
+

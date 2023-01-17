@@ -6,6 +6,9 @@ import it.nntdata.corso.springjsp.repository.WebSiteInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Service
 public class WebSiteInfoBOImpl implements WebSiteInfoBO {
@@ -27,6 +30,18 @@ public class WebSiteInfoBOImpl implements WebSiteInfoBO {
         webSiteInfoRepository.deleteById(id);
     }
 
+    @Override
+    public WebSiteInfo findByIdFile(Long id) throws DataAccessException {
+        return webSiteInfoRepository.findById(id).get();
+    }
 
+
+    @Override
+    public void uploadFile(Long id, MultipartFile data) throws IOException {
+        WebSiteInfo _webSiteInfo = webSiteInfoRepository.getReferenceById(id);
+        _webSiteInfo.setData(data.getBytes());
+        _webSiteInfo.setType(data.getContentType());
+        webSiteInfoRepository.save(_webSiteInfo);
+    }
 
 }
