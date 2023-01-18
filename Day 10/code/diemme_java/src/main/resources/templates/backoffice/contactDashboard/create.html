@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Aggiungi un nuovo contatto</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Aggiungi contatto</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- Main content -->
+		<section class="content">
+			<form method="POST" action="" th:action="@{/contattiCrea}"
+				th:object="${contact_showcase}" id="myForm"
+				enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-success alert-dismissible"
+							th:if="${successMessage}">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-hidden="true">×</button>
+							<h4>
+								<i class="icon fa fa-check"></i> Avviso!
+							</h4>
+							Caricamento avvenuto con successo.
+						</div>
+
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">Contatti</h3>
+								<div class="card-tools">
+									<button type="button" class="btn btn-tool"
+										data-card-widget="collapse" data-toggle="tooltip"
+										title="Collapse">
+										<i class="fas fa-minus"></i>
+									</button>
+								</div>
+							</div>
+							<div class="card-body">
+
+								<div class="form-group  @error('title') has-error @enderror">
+									<label for="inputName">Info</label> <input required
+										th:field="*{info}" type="text" id="inputName"
+										class="form-control">
+								</div>
+
+								<div class="form-group  @error('title') has-error @enderror">
+									<label for="inputName">Latitudine</label> <input required
+										th:field="*{lat}" type="text" id="inputName"
+										class="form-control">
+								</div>
+								
+								<div class="form-group  @error('title') has-error @enderror">
+									<label for="inputName">Longitudine</label> <input required
+										th:field="*{lon}" type="text" id="inputName"
+										class="form-control">
+								</div>
+								
+								<div class="input-group mb-3  @error('title') has-error @enderror">
+									<label for="inputName">Attivato</label> <input 
+										th:field="*{active}" type="checkbox" id="inputName"
+										class="form-check-input">
+								</div>
+							</div>
+							<!-- /.card-body -->
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<a href="javascript:document.getElementById('myForm').reset();"
+							class="btn btn-secondary">Annulla</a> <input type="submit"
+							value="Salva" class="btn btn-success float-right">
+					</div>
+				</div>
+			</form>
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{frontoffice/layout/layout}">
+<div layout:fragment="contatti">
+	<div style="background-image: url('img/consegnati/6.jpg')"
+		th:style="'background:url(' + @{/dist/img/consegnati/6.jpg} + ');'"
+		class="breadcam_area overlay2">
+		<div class="bradcam_text">
+			<h3>Contatti</h3>
+		</div>
+	</div>
+	<!-- breadcam_area_end -->
+	<!-- dream_service_start -->
+	<div class="container">
+		<div class="d-none d-sm-block mb-5 pb-4">
+			<br>
+			<iframe
+				th:src="@{'https://www.google.com/maps/embed/v1/place?q=' + ${contacts.lat} + ',' + ${contacts.lon} + '&amp;key=AIzaSyC-q0iUkwz8yDkkoSNhx2rtWWqh8FfnkHA'}"
+				width="100%" height="400" frameborder="0" style="border: 0;"
+				allowfullscreen=""></iframe>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h2 class="contact-title">Contattaci</h2>
+			</div>
+			<div class="col-lg-8">
+
+				<div class="alert alert-success" role="alert" th:if="${message}"
+					th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+
+
+				<form class="form-contact contact_form" action="#"
+					th:action="@{/sendEmail}" th:object="${contact}" method="POST"
+					id="contactForm" novalidate="novalidate">
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<textarea class="form-control w-100" name="text" id="message"
+									cols="30" rows="9" th:field="*{text}"
+									placeholder=" Inserisci il messaggio"></textarea>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<input class="form-control valid" name="name" id="name"
+									type="text" th:field="*{name}" placeholder="Inserisci il nome">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<input class="form-control valid" name="email" id="email"
+									type="email" th:field="*{email}" placeholder="Inserisci email">
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="form-group">
+								<input class="form-control" name="object" id="subject"
+									type="text" th:field="*{object}"
+									placeholder="Inserisci oggetto">
+							</div>
+						</div>
+					</div>
+					<div class="form-group mt-3">
+						<button type="submit" value="Submit"
+							class="button button-contactForm boxed-btn">Invia</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>

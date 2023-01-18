@@ -1,0 +1,153 @@
+.footer_bg{
+    background-image: url(../img/banner/footer.png);
+}
+.footer{
+    .footer_top{
+        padding: 150px 150px;
+        @media #{$mobile_device} {
+            padding: 60px 20px;
+        }
+        @media #{$tablet_device} {
+            padding: 100px 20px;
+        }
+        @media #{$mid_device} {
+            padding: 100px 50px;
+        }
+        .footer_widget{
+            .footer_logo{
+
+            }
+            .social_links{
+                margin-top: 45px;
+                @media #{$mobile_device}{
+                    margin-top: 20px;
+                }
+                @media #{$tablet_device}{
+                    margin-top: 20px;
+                }
+                li{
+                    display: inline-block;
+
+                    a{
+                        width: 50px;
+                        height: 50px;
+                        background: rgba(255,255,255,0.1);
+                        font-size: 15px;
+                        color: #fff;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 50px;
+                        border-radius: 50%;
+                        margin-right: 9px;
+                        @media #{$mobile_device}{
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            font-display: 11px;
+                        }
+                        &:hover{
+                            background: rgba(255,255,255,0.3);
+                        }
+                    }
+                }
+            }
+            .footer_heading{
+                font-size: 16px;
+                color: #fff;
+                font-weight: 400;
+                font-family: $font1;
+                margin-bottom: 29px;
+                @media #{$mobile_device} {
+                    margin-bottom: 15px;
+                    margin-top: 25px;
+                }
+            }
+            .quick_links{
+                li{
+                    a{
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: #9e9e9e;
+                        line-height: 42px;
+                        font-family: $font1;
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .footer_header{
+            border-bottom: 1px solid #494a4b;
+            padding-bottom: 60px;
+            margin-bottom: 100px;
+            @media #{$mobile_device} {
+                display: block !important;
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+            }
+            @media #{$tablet_device} {
+                display: block !important;
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+            }
+            @media #{$mid_device} {
+                margin-bottom: 50px;
+                padding-bottom: 50px;
+            }
+            .footer_header_left{
+                @media #{$mobile_device} {
+                    margin-bottom: 15px;
+                    margin-top: 15px;
+                }
+                @media #{$tablet_device} {
+                    margin-bottom: 15px;
+                    margin-top: -7px;
+                }
+            }
+            h3{
+                font-size: 36px;
+                font-weight: 500;
+                color: #ffffff;
+                margin-bottom: 21px;
+                @media #{$mobile_device} {
+                    font-size: 20px;
+                }
+                @media #{$large_device} {
+                    font-size: 30px;
+                }
+                @media #{$tablet_device} {
+                    font-size: 25px;
+                }
+            }
+            p{
+                font-size: 16px;
+                color: #a3a3a3;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .footer_copy_right{
+        text-align: center;
+        padding-bottom: 60px;
+        p{
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #9e9e9e;
+            font-weight: 400;
+            font-family: $font1;
+            a{
+                color: #9e9e9e;
+                &:hover{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .boxed-btn2 {
+        width: 220px;
+        text-align: center;
+    }
+}
+
+  

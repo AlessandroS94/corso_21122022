@@ -1,0 +1,15 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<div class="content-wrapper">
+		<section class="content-header" id="chatHTML5"></section>
+	</div>
+</div>
+<div layout:fragment="script">
+	<script th:src="@{backoffice/dist/js/ChatHTML5.js}"> </script>
+	<script>
+    $('#chatHTML5').ready(new ChatHTML5( [[${auth}]] , "[[@{'/chat/{id}'(id=${idChat})}]]" ,"[[@{'/chatUpdate/{id}'(id=${idChat})}]]","[[@{'/fileVisione/{id}'(id=${idChat})}]]")); 
+	</script>
+</div>
+</html>

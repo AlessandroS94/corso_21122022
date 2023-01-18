@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{frontoffice/layout/layout}">
+<body>
+	<!-- breadcam_area_start -->
+	<div layout:fragment="tecnologie">
+		<div style="background: url('../../dist/img/consegnati/4.jpg')"
+			th:style="'background:url(' + @{/dist/img/consegnati/4.jpg} + ');'"
+			class="breadcam_area overlay2">
+			<div class="bradcam_text">
+				<h3>Tecnologie</h3>
+			</div>
+		</div>
+		<!-- breadcam_area_end -->
+
+		<!-- dream_service_start -->
+		<div class="lastest_project">
+			<div class="container">
+				<div th:each="tech : ${techno}">
+					<div class="row align-items-center mb-80">
+						<div class="col-xl-6 col-md-6">
+							<div class="section_title">
+								<h3 th:utext="${tech.name}">name</h3>
+								<p th:utext="${tech.description}">description</p>
+							</div>
+						</div>
+						<div class="col-xl-5 offset-xl-1 col-md-6">
+							<div class="single_project_thumb">
+								<img th:src="@{/tecnologie/image/{id}(id=${tech.id})}">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

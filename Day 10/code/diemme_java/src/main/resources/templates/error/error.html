@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>Diemme | Dashboard</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+	href="../../plugins/fontawesome-free/css/all.min.css"
+	th:href="@{backoffice/plugins/fontawesome-free/css/all.min.css}">
+<!-- overlayScrollbars -->
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}"
+	th:href="@{backoffice/plugins/overlayScrollbars/css/OverlayScrollbars.min.css}">
+<!-- Theme style -->
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/dist/css/adminlte.min.css') }}"
+	th:href="@{backoffice/dist/css/adminlte.min.css}">
+<!-- summernote -->
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/plugins/summernote/summernote-bs4.css') }}"
+	th:href="@{backoffice/plugins/summernote/summernote-bs4.css}">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}"
+	th:href="@{backoffice/plugins/icheck-bootstrap/icheck-bootstrap.min.css}">
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/plugins/ekko-lightbox/ekko-lightbox.css') }}"
+	th:href="@{backoffice/plugins/ekko-lightbox/ekko-lightbox.css}">
+<!-- Select2 -->
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/plugins/select2/css/select2.min.css') }}"
+	th:href="@{backoffice/plugins/select2/css/select2.min.css}">
+<link rel="stylesheet"
+	href="{{ URL::asset('backoffice/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}"
+	th:href="@{backoffice/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css}">
+<!-- Google Font: Source Sans Pro -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
+	rel="stylesheet">
+
+<link
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+	rel="stylesheet">
+</head>
+
+<body
+	class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+	<div class="wrapper">
+		<div class="content-wrapper" style="min-height: 1592.4px;">
+
+			<section class="content">
+				<div class="error-page">
+					<h1 class="handler text-danger">Errore</h1>
+
+
+				</div>
+				<!-- /.error-page -->
+
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+    	<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+			<div class="p-3 control-sidebar-content">
+				<h5>Customize AdminLTE</h5>
+				<hr class="mb-2">
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>No
+						Navbar border</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Body
+						small text</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Navbar
+						small text</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Sidebar
+						nav small text</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Footer
+						small text</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Sidebar
+						nav flat style</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Sidebar
+						nav legacy style</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Sidebar
+						nav compact</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Sidebar
+						nav child indent</span>
+				</div>
+				<div class="mb-1">
+					<input type="checkbox" value="1" class="mr-1"><span>Main
+						Sidebar disable hover/focus auto expand</span>
+				</div>
+				<div class="mb-4">
+					<input type="checkbox" value="1" class="mr-1"><span>Brand
+						small text</span>
+				</div>
+				<h6>Navbar Variants</h6>
+				<div class="d-flex">
+					<div class="d-flex flex-wrap mb-3">
+						<div class="bg-primary elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-secondary elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-info elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-success elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-danger elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-indigo elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-purple elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-pink elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-navy elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-lightblue elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-teal elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-cyan elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-dark elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-gray-dark elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-gray elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-light elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-warning elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-white elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+						<div class="bg-orange elevation-2"
+							style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					</div>
+				</div>
+				<h6>Accent Color Variants</h6>
+				<div class="d-flex"></div>
+				<div class="d-flex flex-wrap mb-3">
+					<div class="bg-primary elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-warning elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-info elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-danger elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-success elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-indigo elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lightblue elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-navy elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-purple elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-fuchsia elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-pink elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-maroon elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-orange elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lime elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-teal elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-olive elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+				</div>
+				<h6>Dark Sidebar Variants</h6>
+				<div class="d-flex"></div>
+				<div class="d-flex flex-wrap mb-3">
+					<div class="bg-primary elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-warning elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-info elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-danger elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-success elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-indigo elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lightblue elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-navy elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-purple elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-fuchsia elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-pink elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-maroon elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-orange elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lime elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-teal elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-olive elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+				</div>
+				<h6>Light Sidebar Variants</h6>
+				<div class="d-flex"></div>
+				<div class="d-flex flex-wrap mb-3">
+					<div class="bg-primary elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-warning elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-info elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-danger elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-success elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-indigo elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lightblue elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-navy elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-purple elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-fuchsia elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-pink elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-maroon elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-orange elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lime elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-teal elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-olive elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+				</div>
+				<h6>Brand Logo Variants</h6>
+				<div class="d-flex"></div>
+				<div class="d-flex flex-wrap mb-3">
+					<div class="bg-primary elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-secondary elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-info elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-success elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-danger elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-indigo elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-purple elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-pink elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-navy elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-lightblue elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-teal elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-cyan elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-dark elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-gray-dark elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-gray elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-light elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-warning elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-white elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<div class="bg-orange elevation-2"
+						style="width: 40px; height: 20px; border-radius: 25px; margin-right: 10px; margin-bottom: 10px; opacity: 0.8; cursor: pointer;"></div>
+					<a href="javascript:void(0)">clear</a>
+				</div>
+			</div>
+		</aside>
+		<!-- /.control-sidebar -->
+		<div id="sidebar-overlay"></div>
+	</div>
+
+	<!-- ./wrapper -->
+	<!-- Main Footer -->
+	<footer class="main-footer">
+		<strong>Copyright &copy; 2014-2020 Diemme</strong>
+	</footer>
+	</div>
+
+	<!-- REQUIRED SCRIPTS -->
+	<!-- jQuery -->
+	<script src="../../plugins/jquery/jquery.min.js"
+		th:src="@{backoffice/plugins/jquery/jquery.min.js}"></script>
+
+	<!-- jQuery UI -->
+	<script
+		src="{{ URL::asset('backoffice/plugins/jquery-ui/jquery-ui.min.js') }}"
+		th:src="@{backoffice/plugins/jquery-ui/jquery-ui.min.js}"></script>
+
+	<!-- Bootstrap -->
+	<script
+		src="{{ URL::asset('backoffice/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"
+		th:src="@{backoffice/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<!-- overlayScrollbars -->
+	<script
+		src="{{ URL::asset('backoffice/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"
+		th:src="@{backoffice/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js}"></script>
+	<!-- AdminLTE App -->
+	<script src="{{ URL::asset('backoffice/dist/js/adminlte.js') }}"
+		th:src="@{backoffice/dist/js/adminlte.js}"></script>
+	<!-- OPTIONAL SCRIPTS -->
+	<script src="{{ URL::asset('backoffice/dist/js/demo.js') }}"
+		th:src="@{backoffice/dist/js/demo.js}"></script>
+	<!-- Ekko Lightbox -->
+	<script
+		src="{{ URL::asset('backoffice/plugins/ekko-lightbox/ekko-lightbox.min.js') }}"
+		th:src="@{backoffice/plugins/ekko-lightbox/ekko-lightbox.min.js}"></script>
+	<!-- Filterizr-->
+	<script
+		src="{{ URL::asset('backoffice/plugins/filterizr/jquery.filterizr.min.js') }}"
+		th:src="@{backoffice/plugins/filterizr/jquery.filterizr.min.js}"></script>
+	<!-- Summernote -->
+	<script
+		src="{{ URL::asset('backoffice/plugins/summernote/summernote-bs4.min.js') }}"
+		th:src="@{backoffice/plugins/summernote/summernote-bs4.min.js}"></script>
+	<script>
+		$(function() {
+			// Summernote
+			$('.textarea').summernote()
+		})
+		function check() {
+			if (document.getElementById('exampleInputFile').files.length)
+				$("#fileC").show()
+		}
+	</script>
+</body>
+
+</html>

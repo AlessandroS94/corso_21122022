@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{frontoffice/layout/layout}">
+<body>
+	<!-- breadcam_area_start -->
+	<div layout:fragment="prodotti">
+		<div style="background: url('../../dist/img/consegnati/4.jpg')"
+			th:style="'background:url(' + @{/dist/img/consegnati/4.jpg} + ');'"
+			class="breadcam_area overlay2">
+			<div class="bradcam_text">
+				<h3>Prodotti</h3>
+			</div>
+		</div>
+		<!-- breadcam_area_end -->
+
+		<!-- dream_service_start -->
+		<div class="lastest_project">
+			<div class="container">
+				<div th:each="prod : ${prods}">
+					<div class="row align-items-center mb-80">
+						<div class="col-xl-6 col-md-6">
+							<div class="section_title">
+								<h3 th:utext="${prod.name}">name</h3>
+								<p th:utext="${prod.description}">description</p>
+							</div>
+						</div>
+						<div class="col-xl-5 offset-xl-1 col-md-6">
+							<div class="single_project_thumb">
+								<img th:src="@{/prodotti/image/{id}(id=${prod.id})}">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

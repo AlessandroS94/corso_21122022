@@ -1,0 +1,128 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Gestione delle chat</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Gestione chat</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Lista chat</h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<table class="table table-bordered">
+									<thead>
+
+										<tr>
+											<th style="width: 10px">#</th>
+											<th>Nome del progetto</th>
+											<th>Data creazione</th>
+											<th>action</th>
+
+										</tr>
+									</thead>
+									<tbody>
+
+										<tr th:each="chat : ${chatsUser}">
+											<td th:utext="${chat.id}"></td>
+											<td th:utext="${chat.nameProject}"></td>
+
+											<td
+												th:text="${#temporals.format(chat.insertDate, 'dd-MMM-yyyy')}"></td>
+
+											<td>
+
+												<form action="#"
+													th:action="@{'/chatDelete/{id}/{idChatMongo}'(id=${chat.id}, idChatMongo=${chat.idChatMongo})}"
+													th:method="delete">
+
+													<input type="hidden" value="delete">
+													<button type="submit" class="btn btn-danger">
+														<i class="fas fa-trash"></i>
+													</button>
+												</form>
+												<hr>
+
+												<form action="#" th:action="@{/chatVisione}" th:method="get">
+
+													<input type="hidden" name='id'
+														th:value="${chat.idChatMongo}">
+													<button type="submit" class="btn btn-info">
+														<i class="fa fa-eye"></i>
+													</button>
+												</form>
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.card-body -->
+							<div class="row">
+								<div class="col">
+									<!-- directors pagination -->
+									<nav aria-label="Pagination"
+										th:if="${chatsUser.totalPages gt 0}">
+										<ul class="pagination justify-content-center font-weight-bold">
+											<li class="page-item"
+												th:classappend="${chatsUser.number eq 0} ? 'disabled'"><a
+												class="page-link"
+												th:href="@{/chatGestione?page={id}(id=${chatsUser.number lt 2 ? 1 : chatsUser.number})}"
+												aria-label="Previous" title="Previous Page"
+												data-toggle="tooltip"> <span aria-hidden="true">&laquo;</span>
+											</a></li>
+											<li class="page-item"
+												th:classappend="${i eq chatsUser.number + 1} ? 'active'"
+												th:each="i : ${#numbers.sequence( 1, chatsUser.totalPages, 1)}">
+												<a class="page-link"
+												th:href="@{/chatGestione?page={id}(id=${i})}" th:text="${i}"
+												th:title="${'Page '+ i}" data-toggle="tooltip"></a>
+											</li>
+											<li class="page-item"
+												th:classappend="${chatsUser.number + 1 eq chatsUser.totalPages} ? 'disabled'">
+												<a class="page-link"
+												th:href="@{/chatGestione?page={id}(id=${chatsUser.number + 2})}"
+												aria-label="Next" title="Next Page" data-toggle="tooltip">
+													<span aria-hidden="true">&raquo;</span>
+											</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+<!-- /.content-wrapper -->

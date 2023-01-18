@@ -1,0 +1,112 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Gestione files layout</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Gestione files</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Lista file</h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th style="width: 10px">#</th>
+											<th>Nome file</th>
+											<th>View</th>
+											<th>Action</th>
+
+										</tr>
+										<tr th:each="file : ${files}">
+											<td th:utext="${file.id}"></td>
+											<td th:utext="${file.name}"></td>
+											<td><img style="width:500px" th:src="@{/layout/image/{id}(id=${file.id})}"></td>
+											<td>
+												<form action="#"
+													th:action="@{'/fileDelete/{id}'(id=${file.id})}"
+													th:method="delete">
+
+													<input type="hidden" value="delete">
+													<button type="submit" class="btn btn-danger">
+														<i class="fas fa-trash"></i>
+													</button>
+												</form>
+
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.card-body -->
+							<div class="row">
+								<div class="col">
+									<!-- directors pagination -->
+									<nav aria-label="Pagination" th:if="${files.totalPages gt 0}">
+										<ul class="pagination justify-content-center font-weight-bold">
+											<li class="page-item"
+												th:classappend="${files.number eq 0} ? 'disabled'"><a
+												class="page-link"
+												th:href="@{/layoutVisione?idLayout={idLayout}&page={id}(id=${files.number lt 2 ? 1 : files.number}, idLayout=${idLayout})}"
+												aria-label="Previous" title="Previous Page"
+												data-toggle="tooltip"> <span aria-hidden="true">&laquo;</span>
+											</a></li>
+											<li class="page-item"
+												th:classappend="${i eq files.number + 1} ? 'active'"
+												th:each="i : ${#numbers.sequence( 1, files.totalPages, 1)}">
+												<a class="page-link"
+												th:href="@{/layoutVisione?idLayout={idLayout}&page={id}(id=${i}, idLayout=${idLayout})}"
+												th:text="${i}" th:title="${'Page '+ i}"
+												data-toggle="tooltip"></a>
+											</li>
+											<li class="page-item"
+												th:classappend="${files.number + 1 eq files.totalPages} ? 'disabled'">
+												<a class="page-link"
+												th:href="@{/layoutVisione?idLayout={idLayout}&page={id}(id=${files.number + 2}, idLayout=${idLayout})}"
+												aria-label="Next" title="Next Page" data-toggle="tooltip">
+													<span aria-hidden="true">&raquo;</span>
+											</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+<!-- /.content-wrapper -->

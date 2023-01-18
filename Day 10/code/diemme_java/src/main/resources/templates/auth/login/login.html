@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{auth/layout/layout}">
+<div layout:fragment="content">
+
+
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="" th:href="@{/home}"><b>Diemme</b></a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="card">
+			<div class="card-body login-card-body">
+				<p class="login-box-msg">Accedi al tuo account</p>
+
+
+
+				<!-- <img th:src="@{/images/login.jpg}"
+					class="img-responsive center-block" width="300" height="300"
+					alt="Logo" /> -->
+				<form th:action="@{/login}" method="POST">
+					<div class="input-group mb-3">
+						<input type="text" id="user_name" name="user_name"
+							placeholder="User Name" class="form-control" />
+							
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-envelope"></span>
+							</div>
+						</div>
+					</div>
+					<div class="input-group mb-3">
+						<input type="password" th:placeholder="Password" id="password"
+							name="password" class="form-control" />
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+							</div>
+						</div>
+
+						<div align="center" th:if="${param.error}">
+							<p style="font-size: 20; color: #FF1C19;">User non trovato o non ancora attivato!</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<button class="btn btn-lg btn-primary btn-block" name="Submit"
+								value="Login" type="Submit" th:text="Login">Accedi</button>
+
+						</div>
+						<!-- /.col -->
+					</div>
+				</form>
+				<!-- /.social-auth-links -->
+
+
+
+				<!-- /.login-card-body -->
+			</div>
+		</div>
+	</div>
+	<a href="/registration.html" th:href="@{/registration}">Registrati!</a>
+</div>

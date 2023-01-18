@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{frontoffice/layout/layout}">
+<div layout:fragment="preventivi">
+	<!-- breadcam_area_start -->
+	<div style="background-image: url('../../dist/img/consegnati/2.jpg')"
+		th:style="'background:url(' + @{/dist/img/consegnati/2.jpg} + ');'"
+		class="breadcam_area overlay2">
+		<div class="bradcam_text">
+			<h3>Preventivi</h3>
+		</div>
+	</div>
+	<!-- breadcam_area_end -->
+	<div class="whole-wrap">
+		<div class="container box_1170">
+			<div class="section-top-border">
+				<h3 class="mb-30">RICHIEDI IL PREVENTIVO PER L'ABBIGLIAMENTO
+					PERSONALIZZATO DELLA TUA SQUADRA</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="single-defination">
+							<div th:each="quot : ${quotation}">
+								<h4 th:utext="${quot.name}">name</h4>
+								<p th:utext="${quot.description}">description</p>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

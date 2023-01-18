@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Aggiungi un nuovo utente</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Aggiungi utente</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- Main content -->
+		<section class="content">
+			<form method="POST" action="" th:action="@{/utenteCrea}"
+				th:object="${user}" id="myForm" enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">Utente</h3>
+								<div class="card-tools">
+									<button type="button" class="btn btn-tool"
+										data-card-widget="collapse" data-toggle="tooltip"
+										title="Collapse">
+										<i class="fas fa-minus"></i>
+									</button>
+								</div>
+							</div>
+							<div class="card-body">
+
+								<div class="input-group mb-3">
+									<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+										class="validation-message"></label>
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fas fa-user-edit"></i></span>
+									</div>
+									<input type="text" th:field="*{name}" placeholder="Name"
+										class="form-control" />
+								</div>
+								<div class="input-group mb-3">
+									<label th:if="${#fields.hasErrors('surname')}"
+										th:errors="*{surname}" class="validation-message"></label>
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fas fa-user-edit"></i></span>
+									</div>
+									<input type="text" th:field="*{surname}"
+										placeholder="Last Name" class="form-control" />
+								</div>
+								<div class="input-group mb-3">
+									<label th:if="${#fields.hasErrors('email')}"
+										th:errors="*{email}" class="validation-message"></label>
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fas fa-user-edit"></i></span>
+									</div>
+									<input type="text" th:field="*{email}" placeholder="Email"
+										class="form-control" />
+								</div>
+								<div class="input-group mb-3">
+									<label th:if="${#fields.hasErrors('userName')}"
+										th:errors="*{userName}" class="validation-message"></label>
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fas fa-address-card"></i></span>
+									</div>
+									<input type="text" th:field="*{userName}"
+										placeholder="User Name" class="form-control" />
+								</div>
+								<div class="input-group mb-3">
+									<label th:if="${#fields.hasErrors('password')}"
+										th:errors="*{password}" class="validation-message"></label>
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fas fa-address-card"></i></span>
+									</div>
+									<input type="password" th:field="*{password}"
+										placeholder="Password" class="form-control" />
+								</div>
+								<div class="input-group mb-3">
+									<label th:if="${#fields.hasErrors('fiscalCode')}"
+										th:errors="*{fiscalCode}" class="validation-message"></label>
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fas fa-address-card"></i></span>
+									</div>
+									<input type="text" th:field="*{fiscalCode}"
+										placeholder="fiscal code" class="form-control" />
+								</div>
+
+								<div class="form-group  @error('title') has-error @enderror">
+									<label>Ruolo</label>
+									
+									<select class="form-control select2"
+										th:field="*{roles}">
+										<option th:each="role : ${roles}" th:value="${role.id}"
+											th:utext="${role.role}" />
+									</select>
+								</div>
+
+								<div class="input-group mb-3">
+									<label
+										th:if="${#fields.hasErrors('addressShipment')}"
+										th:errors="*{addressShipment}" class="validation-message"></label>
+									
+									<input type="text" th:field="*{addressShipment}"
+										placeholder="address shipment" class="form-control" /> 
+								</div>
+
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<div class="input-group-text">
+											<span class="fas fa-address-card"></span>
+										</div>
+									</div>
+									<input type="text" th:field="*{pIva}" placeholder="Partita iva"
+										class="form-control" />
+								</div>
+
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<div class="input-group-text">
+											<span class="fas fa-address-card"></span>
+										</div>
+									</div>
+									<input type="text" th:field="*{companyName}"
+										placeholder="Nome compagnia" class="form-control" />
+								</div>
+
+
+
+							</div>
+							<!-- /.card-body -->
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<a href="javascript:document.getElementById('myForm').reset();"
+							class="btn btn-secondary">Annulla</a> <input type="submit"
+							value="Salva" class="btn btn-success float-right">
+					</div>
+				</div>
+			</form>
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+</html>

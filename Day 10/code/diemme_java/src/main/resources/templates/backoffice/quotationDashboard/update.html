@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Modifica di un preventivo</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Modifica preventivo</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- Main content -->
+		<section class="content">
+			<form method="POST" action="" th:action="@{'/preventiviUpdate/{id}'(id=${quotation_showcase_update.id})}"
+				th:object="${quotation_showcase_update}" id="myForm"
+				>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-success alert-dismissible"
+							th:if="${successMessage}">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-hidden="true">×</button>
+							<h4>
+								<i class="icon fa fa-check"></i> Avviso!
+							</h4>
+							Caricamento avvenuto con successo.
+						</div>
+						
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">Preventivo</h3>
+								<div class="card-tools">
+									<button type="button" class="btn btn-tool"
+										data-card-widget="collapse" data-toggle="tooltip"
+										title="Collapse">
+										<i class="fas fa-minus"></i>
+									</button>
+								</div>
+							</div>
+							<div class="card-body">
+							
+							<div class="form-group  @error('title') has-error @enderror">
+									<label for="inputName">nome preventivo</label> <input required
+										th:field="*{name}" type="text" id="inputName" th:value="${quotation_showcase_update.name}"
+										class="form-control">
+								</div>
+								
+								<div class="form-group  @error('title') has-error @enderror">
+									<label for="inputName">descrizione</label> <input required
+										th:field="*{description}" type="text" id="inputName" th:value="${quotation_showcase_update.description}"
+										class="form-control">
+								</div>								
+						        
+							</div>
+							<!-- /.card-body -->
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<a href="javascript:document.getElementById('myForm').reset();"
+							class="btn btn-secondary">Annulla</a> <input type="submit"
+							value="Salva" class="btn btn-success float-right">
+					</div>
+				</div>
+			</form>
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+</html>

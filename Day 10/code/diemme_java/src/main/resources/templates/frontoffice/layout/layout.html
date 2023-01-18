@@ -1,0 +1,197 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="zxx">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Diemme</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- <link rel="manifest" href="site.webmanifest"> -->
+<link rel="shortcut icon" type="image/x-icon"
+	href="../../../dist/img/favicon.ico" th:src="@{/dist/img/favaico.ico}">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- CSS here -->
+<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css"
+	th:href="@{/dist/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../../../dist/css/owl.carousel.min.css"
+	th:href="@{/dist/css/owl.carousel.min.css}">
+<link rel="stylesheet" href="../../../dist/css/magnific-popup.css"
+	th:href="@{/dist/css/magnific-popup.css}">
+<link rel="stylesheet" href="../../../dist/css/font-awesome.min.css"
+	th:href="@{/dist/css/font-awesome.min.css}">
+<link rel="stylesheet" href="../../../dist/css/themify-icons.css"
+	th:href="@{/dist/css/themify-icons.css}">
+<link rel="stylesheet" href="../../../dist/css/nice-select.css"
+	th:href="@{/dist/css/nice-select.css}">
+<link rel="stylesheet" href="../../../dist/css/flaticon.css"
+	th:href="@{/dist/css/flaticon.css}">
+<link rel="stylesheet" href="../../../dist/css/animate.css"
+	th:href="@{/dist/css/animate.css}">
+<link rel="stylesheet" href="../../../dist/css/slicknav.css"
+	th:href="@{/dist/css/slicknav.css}">
+<link rel="stylesheet" href="../../../dist/css/style.css"
+	th:href="@{/dist/css/style.css}">
+<!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+	<!-- header-start -->
+	<header>
+		<div class="header-area ">
+			<div id="sticky-header" class="main-header-area white-bg">
+				<div class="container-fluid p-0">
+					<div
+						class="row align-items-center justify-content-between no-gutters">
+						<div class="col-xl-2 col-lg-2">
+							<div class="logo-img">
+								<a href="/"> <img src="img/logo.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="col-xl-7 col-lg-7">
+							<div class="main-menu  d-none d-lg-block">
+								<nav>
+									<ul id="navigation">
+										<li><a href="/home.html" th:href="@{/home}">Home</a></li>
+										<li><a href="/prodotti.html" th:href="@{/prodotti}">Prodotti</a></li>
+										<li><a href="/tecnologie.html" th:href="@{/tecnologie}">Tecnologie</a></li>
+										<li><a href="/preventivi.html" th:href="@{/preventivi}">Preventivi</a></li>
+										<li><a href="/contatti.html" th:href="@{/contatti}">Contatti</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+
+						<div class="get_in_tauch" sec:authorize="isAuthenticated()">
+							<a th:href="@{/dashboard}" class="boxed-btn">Dashboard</a>
+						</div>
+
+
+						<div class="get_in_tauch" sec:authorize="isAnonymous()">
+							<a th:href="@{/login}" class="boxed-btn">Accedi</a>
+						</div>
+
+						<div class="col-12">
+							<div class="mobile_menu d-block d-lg-none"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- header-end -->
+
+	<!-- slider_area_start -->
+	<div layout:fragment="slider"></div>
+	<!-- slider_area_end -->
+	<!-- slider_area_start -->
+	<div layout:fragment="prodotti"></div>
+	<!-- slider_area_end -->
+	<!-- slider_area_start -->
+	<div layout:fragment="tecnologie"></div>
+	<!-- slider_area_end -->
+	<!-- preventivi_area_start -->
+	<div layout:fragment="preventivi"></div>
+	<!-- preventivi_area_end -->
+	<div layout:fragment="contatti"></div>
+
+
+	<!-- footer_start -->
+	<footer class="footer"
+		style="background-image: linear-gradient(black, #1F1F1F)">
+		<div class="footer_top">
+			<div class="container-fluid p-0">
+				<div class="row no-gutters ">
+					<div class="col-xl-3 col-12 col-md-4">
+						<div class="footer_widget">
+							<ul class="social_links">
+								<li><a href="https://www.facebook.com/technicalclothing/"><i
+										class="fa fa-facebook"></i></a></li>
+								<li><a
+									href="https://www.instagram.com/diemme_abbigliamento/"><i
+										class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-9 col-12 col-md-8">
+						<div class="footer_header d-flex justify-content-between">
+							<div class="footer_header_left">
+								<h3>Hai domandande?</h3>
+								<p>Contattaci siamo a tua disposizione</p>
+							</div>
+							<div class="footer_btn">
+								<a href="contatti.html" class="boxed-btn2">Contatti</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer_copy_right">
+			<p>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright &copy;
+				<script>
+					document.write(new Date().getFullYear());
+				</script>
+				All rights reserved | This template is made with <i
+					class="fa fa-heart-o" aria-hidden="true"></i> by <a
+					href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
+			<p>Sviluppato e ideato da Alessandro Sallese</p>
+		</div>
+	</footer>
+	<!-- footer_end -->
+
+
+
+	<!-- JS here -->
+	<script src="../../dist/js/vendor/modernizr-3.5.0.min.js"
+		th:src="@{/dist/js/vendor/modernizr-3.5.0.min.js}"></script>
+	<script src="../../dist/js/vendor/jquery-1.12.4.min.js"
+		th:src="@{/dist/js/vendor/jquery-1.12.4.min.js}"></script>
+	<script src="../../dist/js/popper.min.js"
+		th:src="@{/dist/js/popper.min.js}"></script>
+	<script src="../../dist/js/bootstrap.min.js"
+		th:src="@{/dist/js/bootstrap.min.js}"></script>
+	<script src="../../dist/js/owl.carousel.min.js"
+		th:src="@{/dist/js/owl.carousel.min.js}"></script>
+	<script src="../../dist/js/isotope.pkgd.min.js"
+		th:src="@{/dist/js/isotope.pkgd.min.js}"></script>
+	<script src="../../dist/js/ajax-form.js"
+		th:src="@{/dist/js/ajax-form.js}"></script>
+	<script src="../../dist/js/waypoints.min.js"
+		th:src="@{/dist/js/waypoints.min.js}"></script>
+	<script src="../../dist/js/jquery.counterup.min.js"
+		th:src="@{/dist/js/jquery.counterup.min.js}"></script>
+	<script src="../../dist/js/imagesloaded.pkgd.min.js"
+		th:src="@{/dist/js/imagesloaded.pkgd.min.js}"></script>
+	<script src="../../dist/js/scrollIt.js"
+		th:src="@{/dist/js/scrollIt.js}"></script>
+	<script src="../../dist/js/jquery.scrollUp.min.js"
+		th:src="@{/dist/js/jquery.scrollUp.min.js}"></script>
+	<script src="../../dist/js/wow.min.js" th:src="@{/dist/js/wow.min.js}"></script>
+	<script src="../../dist/js/nice-select.min.js"
+		th:src="@{/dist/js/nice-select.min.js}"></script>
+	<script src="../../dist/js/jquery.slicknav.min.js"
+		th:src="@{/dist/js/jquery.slicknav.min.js}"></script>
+	<script src="../../dist/js/jquery.magnific-popup.min.js"
+		th:src="@{/dist/js/jquery.magnific-popup.min.js}"></script>
+	<script src="../../dist/js/plugins.js" th:src="@{/dist/js/plugins.js}"></script>
+
+
+
+	<script src="../../dist/js/main.js" th:src="@{/dist/js/main.js}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Gestione ordini</h1>
+					</div>
+					
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Gestione ordini in arrivo</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Lista ordini</h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th style="width: 10px">#</th>
+											<th>Nome</th>
+											<th>Data spedizione</th>
+											<th>stato ordine</th>
+											<th>completato</th>
+											<th style="width: 40px">Action</th>
+										</tr>
+										<tr th:each="lay : ${layouts}">
+											<td th:utext="${lay.id}"></td>
+											<td th:utext="${lay.name}"></td>
+											
+											<td
+												th:text="${#temporals.format(lay.modifyDate, 'dd-MMM-yyyy')}"></td>
+											
+											<td th:utext="${lay.status}"></td>
+											<td th:switch="${lay.completed}">
+											    <span th:case="true"
+												style="color: green">ordine concluso!</span> 
+												<span
+												th:case="false" style="color: orange">trattativa
+													in corso..</span></td>
+											<td>												
+												<form action="#" th:action="@{/layoutUpdateClient}"
+													th:method="GET">
+													<input type="hidden" name='id' th:value="${lay.id}">
+													<button type="submit" class="btn btn-secondary">
+														<i class="fas fa-edit"></i>
+													</button>
+												</form>										
+												
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.card-body -->
+							<div class="row">
+								<div class="col">
+									<!-- directors pagination -->
+									<nav aria-label="Pagination" th:if="${layouts.totalPages gt 0}">
+										<ul class="pagination justify-content-center font-weight-bold">
+											<li class="page-item"
+												th:classappend="${layouts.number eq 0} ? 'disabled'"><a
+												class="page-link"
+												th:href="@{/layoutClientGestione?page={id}(id=${layouts.number lt 2 ? 1 : layouts.number})}"
+												aria-label="Previous" title="Previous Page"
+												data-toggle="tooltip"> <span aria-hidden="true">&laquo;</span>
+											</a></li>
+											<li class="page-item"
+												th:classappend="${i eq layouts.number + 1} ? 'active'"
+												th:each="i : ${#numbers.sequence( 1, layouts.totalPages, 1)}">
+												<a class="page-link"
+												th:href="@{/layoutClientGestione?page={id}(id=${i})}"
+												th:text="${i}" th:title="${'Page '+ i}"
+												data-toggle="tooltip"></a>
+											</li>
+											<li class="page-item"
+												th:classappend="${layouts.number + 1 eq layouts.totalPages} ? 'disabled'">
+												<a class="page-link"
+												th:href="@{/layoutClientGestione?page={id}(id=${layouts.number + 2})}"
+												aria-label="Next" title="Next Page" data-toggle="tooltip">
+													<span aria-hidden="true">&raquo;</span>
+											</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+<!-- /.content-wrapper -->

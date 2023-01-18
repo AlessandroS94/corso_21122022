@@ -1,0 +1,144 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Gestione degli utenti</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Gestione utenti</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Lista Utenti</h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<table class="table table-bordered">
+									<thead>
+
+										<tr>
+											<th style="width: 10px">#</th>
+											<th>Nome</th>
+											<th>Cognome</th>
+											<th>Data creazione</th>
+											<th>Data modifica</th>
+											<th>user name</th>
+											<th>email</th>
+											<th>attivo</th>
+											<th>partita iva</th>
+											<th>nome compagnia</th>
+
+											<th style="width: 40px">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+
+										<tr th:each="user : ${users}">
+											<td th:utext="${user.id}"></td>
+											<td th:utext="${user.name}"></td>
+											<td th:utext="${user.surname}"></td>
+											<td
+												th:text="${#temporals.format(user.insertDate, 'dd-MMM-yyyy')}"></td>
+											<td
+												th:text="${#temporals.format(user.modifyDate, 'dd-MMM-yyyy')}"></td>
+											<td th:utext="${user.userName}"></td>
+
+											<td th:utext="${user.email}"></td>
+											<td th:text="${user.active ? 'X' : ''}" VALIGN=Middle
+												Align=Center style="color: red"></td>											
+										
+											<td th:utext="${user.pIva != null ? user.pIva : ''}"></td>
+											<td
+												th:utext="${user.companyName != null ? user.companyName : ''}"></td>
+
+
+											<td>
+
+												<form action="#"
+													th:action="@{'/utentiDelete/{id}'(id=${user.id})}"
+													th:method="delete">
+
+													<input type="hidden" value="delete">
+													<button type="submit" class="btn btn-danger">
+														<i class="fas fa-trash"></i>
+													</button>
+												</form>
+												<hr>
+												<form action="#" th:action="@{/utenteUpdate}"
+													th:method="GET">
+													<input type="hidden" name='id' th:value="${user.id}">
+													<button type="submit" class="btn btn-secondary">
+														<i class="fas fa-edit"></i>
+													</button>
+												</form>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.card-body -->
+							<div class="row">
+								<div class="col">
+									<!-- directors pagination -->
+									<nav aria-label="Pagination" th:if="${users.totalPages gt 0}">
+										<ul class="pagination justify-content-center font-weight-bold">
+											<li class="page-item"
+												th:classappend="${users.number eq 0} ? 'disabled'"><a
+												class="page-link"
+												th:href="@{/utentiGestione?page={id}(id=${users.number lt 2 ? 1 : users.number})}"
+												aria-label="Previous" title="Previous Page"
+												data-toggle="tooltip"> <span aria-hidden="true">&laquo;</span>
+											</a></li>
+											<li class="page-item"
+												th:classappend="${i eq users.number + 1} ? 'active'"
+												th:each="i : ${#numbers.sequence( 1, users.totalPages, 1)}">
+												<a class="page-link"
+												th:href="@{/utentiGestione?page={id}(id=${i})}"
+												th:text="${i}" th:title="${'Page '+ i}"
+												data-toggle="tooltip"></a>
+											</li>
+											<li class="page-item"
+												th:classappend="${users.number + 1 eq users.totalPages} ? 'disabled'">
+												<a class="page-link"
+												th:href="@{/utentiGestione?page={id}(id=${users.number + 2})}"
+												aria-label="Next" title="Next Page" data-toggle="tooltip">
+													<span aria-hidden="true">&raquo;</span>
+											</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+<!-- /.content-wrapper -->

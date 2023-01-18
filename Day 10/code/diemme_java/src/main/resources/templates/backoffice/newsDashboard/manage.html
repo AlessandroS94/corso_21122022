@@ -1,0 +1,130 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{backoffice/layout/layout}">
+<div layout:fragment="dashboard">
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Gestione prodotti vetrina</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
+							<li class="breadcrumb-item active">Gestione news</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<h3 class="card-title">Lista news</h3>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body">
+								<table class="table table-bordered">
+									<thead>
+
+										<tr>
+											<th style="width: 10px">#</th>
+											<th>Nome</th>
+											<th>Descrizione</th>
+											<th>Data creazione</th>
+                                            <th>Data modifica</th>											
+											<th>Creatore</th>
+											<th>Anteprima immagine</th>
+											<th style="width: 40px">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+
+										<tr th:each="newShow : ${news_showcase}">
+											<td th:utext="${newShow.id}"></td>
+											<td th:utext="${newShow.name}"></td>
+											<td th:utext="${newShow.description}"></td>
+											<td	th:text="${#temporals.format(newShow.insertDate, 'dd-MMM-yyyy')}"></td>
+											<td	th:text="${#temporals.format(newShow.modifyDate, 'dd-MMM-yyyy')}"></td>											
+											<td th:utext="${newShow.user.name + ' ' + newShow.user.surname}"></td>
+											<td VALIGN = Middle Align = Center> 
+											
+											
+											<img th:src="@{/news/image/{id}(id=${newShow.id})}" width="100" height="80" ></td>
+											
+											<td>
+											
+                                            <form action="#" th:action="@{'/newsDelete/{id}'(id=${newShow.id})}" th:method="delete" >
+                                                
+                                                <input type="hidden" value="delete">
+                                                <button type="submit" class="btn btn-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                            <hr>
+                                            <form action="#" th:action="@{/newsUpdate}" th:method="GET" >
+                                                <input type="hidden" name='id' th:value="${newShow.id}">
+                                                <button type="submit" class="btn btn-secondary">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                            </form> 
+                                        </td> 
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.card-body -->
+							<div class="row">
+								<div class="col">
+									<!-- directors pagination -->
+									<nav aria-label="Pagination" th:if="${news_showcase.totalPages gt 0}">
+										<ul class="pagination justify-content-center font-weight-bold">
+											<li class="page-item"
+												th:classappend="${news_showcase.number eq 0} ? 'disabled'"><a
+												class="page-link"
+												th:href="@{/newsGestione?page={id}(id=${news_showcase.number lt 2 ? 1 : news_showcase.number})}"
+												aria-label="Previous" title="Previous Page"
+												data-toggle="tooltip"> <span aria-hidden="true">&laquo;</span>
+											</a></li>
+											<li class="page-item"
+												th:classappend="${i eq news_showcase.number + 1} ? 'active'"
+												th:each="i : ${#numbers.sequence( 1, news_showcase.totalPages, 1)}">
+												<a class="page-link"
+												th:href="@{/newsGestione?page={id}(id=${i})}"
+												th:text="${i}" th:title="${'Page '+ i}"
+												data-toggle="tooltip"></a>
+											</li>
+											<li class="page-item"
+												th:classappend="${news_showcase.number + 1 eq news_showcase.totalPages} ? 'disabled'">
+												<a class="page-link"
+												th:href="@{/newsGestione?page={id}(id=${news_showcase.number + 2})}"
+												aria-label="Next" title="Next Page" data-toggle="tooltip">
+													<span aria-hidden="true">&raquo;</span>
+											</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+</div>
+<!-- /.content-wrapper -->
