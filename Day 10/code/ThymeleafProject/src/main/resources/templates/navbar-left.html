@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div>
+<nav th:fragment="navbar-left" id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky pt-3 sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">
+          <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+          Reports
+        </a>
+      </li>
+      <li th:each="categories : ${category}">
+      <a th:text="category.name"></a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+</div>
+</html>

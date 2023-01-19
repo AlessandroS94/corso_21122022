@@ -179,7 +179,7 @@ public class LayoutController {
 
 		}
 
-		model.addAttribute("StatusType", StatusType.values());
+		model.addAttribute("statusType", StatusType.values());
 		model.addAttribute("layout", layout);
 		return "/backoffice/layoutDashboard/update.html";
 	}

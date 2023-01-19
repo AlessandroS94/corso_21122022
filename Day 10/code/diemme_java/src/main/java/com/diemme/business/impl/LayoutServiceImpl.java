@@ -191,6 +191,7 @@ public class LayoutServiceImpl implements LayoutService {
 	@Override
 	public Page<Layout> getAllLayoutPageable(Integer page, Integer size) throws BusinessException {
 		return layoutRepository.findAll(PageRequest.of(page, size));
+
 	}
 
 	@Override
