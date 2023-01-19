@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Creato il: Gen 19, 2023 alle 14:06
+-- Creato il: Gen 19, 2023 alle 14:11
 -- Versione del server: 5.7.34
 -- Versione PHP: 7.4.21
 
@@ -20,6 +20,41 @@ SET time_zone = "+00:00";
 --
 -- Database: `ForexWebSite`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `category`
+--
+
+CREATE TABLE `category` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'USDT');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `category_seq`
+--
+
+CREATE TABLE `category_seq` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `category_seq`
+--
+
+INSERT INTO `category_seq` (`next_val`) VALUES
+(1);
 
 -- --------------------------------------------------------
 
@@ -46,9 +81,32 @@ INSERT INTO `crypto` (`id`, `amount`, `description`, `name`, `url`, `category_id
 (3, 1000, 'Currency', 'XRP', 'xrp.org', 1),
 (4, 10000, 'Currency', 'CELO', 'celo.org', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `crypto_seq`
+--
+
+CREATE TABLE `crypto_seq` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `crypto_seq`
+--
+
+INSERT INTO `crypto_seq` (`next_val`) VALUES
+(1);
+
 --
 -- Indici per le tabelle scaricate
 --
+
+--
+-- Indici per le tabelle `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indici per le tabelle `crypto`
