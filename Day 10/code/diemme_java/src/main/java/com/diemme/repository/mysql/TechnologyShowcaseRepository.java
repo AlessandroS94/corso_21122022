@@ -9,7 +9,5 @@ import com.diemme.domain.mysql.TechnologyShowcase;
 
 @Repository("TecnologyShowcaseRepository")
 public interface TechnologyShowcaseRepository extends JpaRepository<TechnologyShowcase, Long> {
-
 	TechnologyService save(TechnologyService technology);
-
 }

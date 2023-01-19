@@ -46,8 +46,7 @@ import com.diemme.repository.mysql.UserRepository;
 			userAdmin.setSurname("abc" +
 					"abc");
 			userAdmin.setRoles(roleListUser1Test);
-			userAdmin.setUserName("abcabc" +
-					"abc91@gmail.com");
+			userAdmin.setUserName("abcabcabc91@gmail.com");
 
 			try {
 
@@ -137,7 +136,7 @@ import com.diemme.repository.mysql.UserRepository;
 			Role roleProductor = new Role();
 			User userProductor = new User();
 
-			roleProductor.setRole("PRODUCTOR");
+				roleProductor.setRole("PRODUCTOR");
 			Set<Role> roleListUser4Test = new HashSet<Role>();
 			roleListUser4Test.add(roleProductor);
 

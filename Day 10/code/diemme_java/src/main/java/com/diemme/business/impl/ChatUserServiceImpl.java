@@ -84,7 +84,6 @@ public class ChatUserServiceImpl implements ChatUserService {
 		}
 
 		return null;
-
 	}
 
 	@Override
