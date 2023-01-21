@@ -3,15 +3,15 @@ package it.corso.example.thymeleafproject.Controller;
 import it.corso.example.thymeleafproject.business.interfaces.AssetBO;
 import it.corso.example.thymeleafproject.business.interfaces.CategoryBO;
 import it.corso.example.thymeleafproject.model.Asset;
-import it.corso.example.thymeleafproject.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -31,9 +31,11 @@ public class HomeController {
         List<Asset> assets = new ArrayList<Asset>();
         Pageable paging = PageRequest.of(page - 1, size);
         Page<Asset> pageAssets;
-
         pageAssets = assetBO.findAll(paging);
         assets = pageAssets.getContent();
+        assets.forEach(
+                f -> f.setConversion(f.getAmount() * (float)assetBO.getCurrentValue(f.getName(),f.getCategory().getName()))
+        );
         model.addAttribute("assets", assets);
         model.addAttribute("currentPage", pageAssets.getNumber() + 1);
         model.addAttribute("totalItems", pageAssets.getTotalElements());
@@ -41,7 +43,26 @@ public class HomeController {
         model.addAttribute("pageSize", size);
         model.addAttribute("BTC_Value",assetBO.getCurrentValue());
         model.addAttribute("categories",categoryBO.getAllCategory());
-        return "index.html";
+        return "main.html";
     }
 
+    @GetMapping("/create/asset")
+    public String creaAsset(Model model){
+        model.addAttribute("asset",new Asset());
+        model.addAttribute("categories",categoryBO.getAllCategory());
+        return "create";
+    }
+
+    @PostMapping("/create/asset")
+    public String createAsset(Model model,@ModelAttribute Asset asset){
+        asset.setCategory(categoryBO.getCategory(asset.getCategory().getId()));
+        assetBO.createAsset(asset);
+        return "redirect:/index";
+    }
+
+    @GetMapping("/delete/asset")
+    public String deleteAsset(Model model,@RequestParam long id){
+        assetBO.deleteAsset(id);
+        return "redirect:/index";
+    }
 }

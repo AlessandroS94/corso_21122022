@@ -1,0 +1,39 @@
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{index}">
+<div layout:fragment="create">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <form th:action="@{/create/asset}" th:method="POST" th:object="${asset}" class="row g-3">
+
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Name</label>
+            <input type="text" placeholder="Example BTC or ETH" th:field="*{name}" class="form-control" id="inputEmail4">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Description</label>
+            <input type="text" class="form-control" th:field="*{description}" id="inputPassword4">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Amount</label>
+            <input type="number" step="0.0000000001" class="form-control" id="inputAddress" th:field="*{amount}">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Url</label>
+            <input type="text" class="form-control" id="inputAddress2" th:field="*{url}"
+                   placeholder="binance.com">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">Category</label>
+            <select id="inputState" th:field="*{category}" class="form-select">
+                <option th:each="category : ${categories}" th:value="${category.id}"
+                        th:utext="${category.name}"/>
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Crea</button>
+        </div>
+    </form>
+    </main>
+</div>
+</html>

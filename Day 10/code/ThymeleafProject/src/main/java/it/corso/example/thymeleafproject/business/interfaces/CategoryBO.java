@@ -7,4 +7,6 @@ import java.util.List;
 public interface CategoryBO {
     Category getCategory(Long id);
     List<Category> getAllCategory();
+
+    Category getCategory(long id);
 }

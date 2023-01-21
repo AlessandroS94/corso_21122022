@@ -4,7 +4,6 @@ import it.corso.example.thymeleafproject.business.interfaces.CategoryBO;
 import it.corso.example.thymeleafproject.model.Category;
 import it.corso.example.thymeleafproject.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,4 +22,7 @@ public class CategoryBOImpl implements CategoryBO {
     public List<Category> getAllCategory(){
         return categoryRepository.findAll();
     }
+
+    @Override
+    public Category getCategory(long id){ return categoryRepository.findById(id).orElseThrow();}
 }

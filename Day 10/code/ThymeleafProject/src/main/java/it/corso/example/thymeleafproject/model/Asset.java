@@ -25,6 +25,9 @@ public class Asset extends BaseEntity {
 
     private String url;
 
-    private long amount;
+    private float amount;
 
+    //per non mappare tale proprietà sul db
+    @Transient
+    private float conversion;
 }
