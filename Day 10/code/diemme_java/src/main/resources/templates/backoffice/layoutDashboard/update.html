@@ -68,7 +68,7 @@
 								<div class="form-group  @error('title') has-error @enderror">
 								    <label for="inputName">Status</label>
 									<select th:field="*{status}">
-										<option th:each="stat : ${statusType}" th:value="${stat}"
+										<option th:each="stat : ${StatusType}" th:value="${stat}"
 											th:utext="${stat}" />
 									</select>
 								</div>

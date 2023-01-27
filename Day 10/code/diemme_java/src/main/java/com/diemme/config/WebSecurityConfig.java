@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeRequests()
 
-		.antMatchers("/home","/","/login","/registration","/backoffice/**","/").permitAll()
+		.antMatchers("/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
         .antMatchers("/dashboard/**").authenticated()
         .antMatchers("/chatGestione").authenticated()
         .antMatchers("/chat/**").authenticated()
@@ -46,7 +46,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/contattiUpdate").authenticated()
         .antMatchers("/layoutVisione").authenticated()
         .antMatchers("/layout/image/**").authenticated()
-        .antMatchers("/showcase/**").authenticated()
         .antMatchers("/layoutGestione").authenticated()
         .antMatchers("/layoutProduzioneGestione").authenticated()
         .antMatchers("/layoutClientGestione").authenticated()

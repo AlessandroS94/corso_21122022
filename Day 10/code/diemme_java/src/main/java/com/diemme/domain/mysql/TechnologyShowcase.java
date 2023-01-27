@@ -25,6 +25,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class TechnologyShowcase extends BaseModel {
+
 	@Column(name = "name", nullable = false)
 	@NotBlank
 	private String name;

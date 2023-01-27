@@ -59,16 +59,11 @@ public class LayoutServiceImpl implements LayoutService {
 		layoutSave.setUsers(layoutOld.getUsers());
 		layoutSave.setStatus(layout.getStatus());
 		layoutSave.setModifyDate(ZonedDateTime.now());
-
 		ZonedDateTime dateCreation = layoutOld.getInsertDate();
-
-		if (contentImg.isEmpty()) {
-
-			Set<FileLayout> oldFiles = layoutOld.getFileLayouts();
-			layoutSave.setFileLayouts(oldFiles);
-
+		if (contentImg.size() == 1 && contentImg.get(0).isEmpty()) {
+				Set<FileLayout> oldFiles = layoutOld.getFileLayouts();
+				layoutSave.setFileLayouts(oldFiles);
 		} else {
-
 			try {
 				for (MultipartFile bytes : contentImg) {
 					Listbytes.add(bytes.getBytes());
@@ -76,13 +71,11 @@ public class LayoutServiceImpl implements LayoutService {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
 			for (byte[] fileContent : Listbytes) {
-
 				FileLayout fileLayoutSave = new FileLayout();
 				fileLayoutSave.setContentImg(fileContent);
 				fileLayoutSave.setName((String) "layout: " + layoutSave.getName() + ", file N° " + i);
-				fileLayoutRepository.save(fileLayoutSave);
+				fileLayoutSave = fileLayoutRepository.save(fileLayoutSave);
 				i++;
 				file.add(fileLayoutSave);
 
@@ -191,7 +184,6 @@ public class LayoutServiceImpl implements LayoutService {
 	@Override
 	public Page<Layout> getAllLayoutPageable(Integer page, Integer size) throws BusinessException {
 		return layoutRepository.findAll(PageRequest.of(page, size));
-
 	}
 
 	@Override
