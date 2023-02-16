@@ -5,10 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- *
- * @author Luigi Brandolini
- */
+
 @Entity
 @Table(name = "department")
 public class Department extends BaseEntity {

@@ -1,9 +1,6 @@
 package it.corso.sbdatajpaJSP.util;
 
-/**
- *
- * @author Luigi Brandolini
- */
+
 public class ClientResponse {
     
     private boolean success;

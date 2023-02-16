@@ -1,9 +1,6 @@
 package it.corso.sbdatajpaJSP.controller;
 
-/**
- *
- * @author Luigi Brandolini
- */
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -7,10 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-/**
- *
- * @author Luigi Brandolini
- */
+
 @MappedSuperclass
 public class BaseEntity implements Serializable {
     @Id

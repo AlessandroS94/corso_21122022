@@ -6,10 +6,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Luigi Brandolini
- */
+
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Integer>,
         EmployeeRepositoryCustom {

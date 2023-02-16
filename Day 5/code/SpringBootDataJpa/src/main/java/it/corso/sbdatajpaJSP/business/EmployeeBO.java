@@ -4,10 +4,7 @@ import it.corso.sbdatajpaJSP.domain.Employee;
 
 import java.util.List;
 
-/**
- *
- * @author Luigi Brandolini
- */
+
 
 public interface EmployeeBO {
   public void delete(Integer uid);
