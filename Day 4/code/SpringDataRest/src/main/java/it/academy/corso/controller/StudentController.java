@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -16,7 +17,7 @@ public class StudentController {
     @Autowired
     StudentRepository studentRepository;
 
-    @GetMapping("/student")
+    @GetMapping("/students")
     public ResponseEntity<List<Student>> getStudents (){
         List<Student> studentArrayList = new ArrayList<Student>();
         studentRepository.findAll().forEach(studentArrayList::add);
@@ -40,13 +41,16 @@ public class StudentController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     @PutMapping("/student/{id}")
-    public ResponseEntity<HttpStatus> updateStudent(@PathVariable("id") long id) {
-        studentRepository.deleteById(id);
-
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<?> updateStudent(@PathVariable("id") long id,@RequestBody Student student) {
+        Student student1 = studentRepository.getById(id);
+        student1.setName(student.getName());
+        studentRepository.save(student1);
+        return new ResponseEntity<>(student1,HttpStatus.OK);
     }
 
-
-
-
+   @GetMapping("/student/{id}")
+   public ResponseEntity<?> getStudent(@PathVariable long id){
+        Optional<Student> student = studentRepository.findById(id);
+        return new ResponseEntity<>(student,HttpStatus.OK);
+   }
 }
