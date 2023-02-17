@@ -1,20 +1,26 @@
 package com.ntt.demo0.controller;
 
+import com.ntt.demo0.domain.Gruppo;
 import com.ntt.demo0.domain.Persona;
+import jakarta.annotation.Nonnull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
-public class HomeController {
+@RequestMapping("/persona")
+public class PersonaController {
     @GetMapping("/ciao")
     public ResponseEntity<String> returnCiao(){
         return new ResponseEntity<>("ciao", HttpStatus.OK);
     }
-    @GetMapping("/persona")
+    @GetMapping("")
     public ResponseEntity<Persona> returnPersona(){
         Persona persona = new Persona();
         persona.setName("Ale");
@@ -30,20 +36,28 @@ public class HomeController {
         return  responseEntity;
     }
 
-    @PostMapping("/persona")
+    @PostMapping("")
     public ResponseEntity<?> createPersona(@RequestBody Persona persona){
         Persona persona1 = persona;
         return new ResponseEntity<>(persona1,HttpStatus.CREATED);
 
     }
-    @PutMapping("/persona/{id}")
-    public ResponseEntity<?> updatePersona(@PathVariable long id,@RequestBody Persona persona){
+    @PutMapping("{id}")
+    public ResponseEntity<?> updatePersona(@PathVariable("id") long id_persona, @RequestBody Persona persona){
         Persona persona2 = new Persona(1,"Ale","Sall");
-        if (persona2.getId() == id)
+        if (persona2.getId() == id_persona)
             return new ResponseEntity<>(persona2,HttpStatus.OK);
         return new ResponseEntity<>(persona,HttpStatus.NO_CONTENT);
     }
 
-
+    @DeleteMapping("{id}")
+    public ResponseEntity<?> deletePersona(@PathVariable long id){
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        /*
+        Map<String,String> mappa = new HashMap<>();
+        mappa.put("Persona",""+id);
+        return new ResponseEntity<>(mappa, HttpStatus.OK);
+        */
+    }
 
 }
