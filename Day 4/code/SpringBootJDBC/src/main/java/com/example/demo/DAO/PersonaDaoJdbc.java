@@ -1,6 +1,7 @@
 package com.example.demo.DAO;
 
 import com.example.demo.Domain.Persona;
+import com.example.demo.Mapper.PersonaRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -40,14 +41,5 @@ public class PersonaDaoJdbc {
         jdbcTemplate.update("DELETE FROM persone WHERE id = ?", id);
     }
 
-    private static class PersonaRowMapper implements RowMapper<Persona> {
-        @Override
-        public Persona mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Long id = rs.getLong("id");
-            String nome = rs.getString("nome");
-            String cognome = rs.getString("cognome");
-            return new Persona(id, nome, cognome);
-        }
-    }
 }
 
