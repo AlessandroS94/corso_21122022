@@ -1,7 +1,7 @@
 package com.diemme.component;
 
 import org.springframework.stereotype.Component;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 @Component
 public class PageModel {
     private static int PAGE = 0;

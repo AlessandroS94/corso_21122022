@@ -2,8 +2,8 @@ package com.diemme.domain.mongo;
 
 import java.util.Set;
 
-import javax.persistence.Enumerated;
-import javax.persistence.Version;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Version;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;

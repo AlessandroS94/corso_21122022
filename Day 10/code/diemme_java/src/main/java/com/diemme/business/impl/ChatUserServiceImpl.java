@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.diemme.repository.mongo.ChatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +26,7 @@ import com.diemme.domain.mongo.Message;
 import com.diemme.domain.mysql.ChatUser;
 import com.diemme.domain.mysql.Role;
 import com.diemme.domain.mysql.User;
-import com.diemme.repository.mongo.ChatRepository;
+
 import com.diemme.repository.mongo.MessageRepository;
 import com.diemme.repository.mysql.ChatUserRepository;
 import com.diemme.wrapperForm.FormWrapperChat;
@@ -55,15 +56,14 @@ public class ChatUserServiceImpl implements ChatUserService {
 		chat = chatRepository.findById(idChatMongo)
 				.orElseThrow(() -> new ResourceNotFoundException("FileLayout", "id", idChatMongo));
 
-		if (!chat.getMessages().isEmpty() && chat.getMessages() != null) {
-			Message[] messages = chat.getMessages().toArray(new Message[chat.getMessages().size()]);
+		if (!chat.getMessages().isEmpty()) {
+			Message[] messages = chat.getMessages().toArray(new Message[0]);
 
 			for (int i = 0; i < messages.length; i++) {
 
 				if (i == index) {
 					message = messages[i];
-					byte[] contentImg = message.getFile();
-					return contentImg;
+					return message.getFile();
 				}
 			}
 		}

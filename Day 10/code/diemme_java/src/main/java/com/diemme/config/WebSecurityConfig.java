@@ -4,23 +4,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.diemme.business.impl.UserDetailsServiceImpl;
 
 @Configuration
-@EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+//@EnableWebSecurity
+public class WebSecurityConfig {
 
-	@Autowired
+	//@Autowired
 	private UserDetailsServiceImpl userDetailsService;
 
-	@Autowired
+	//@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-	@Override
+	//@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
 			.userDetailsService(userDetailsService)
@@ -30,47 +29,46 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 	
-	@Override
+	//@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeRequests()
-
-		.antMatchers("/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
-        .antMatchers("/dashboard/**").authenticated()
-        .antMatchers("/chatGestione").authenticated()
-        .antMatchers("/chat/**").authenticated()
-        .antMatchers("/chatVisione").authenticated()
-        .antMatchers("/fileVisione/**").authenticated()
-        .antMatchers("/chatFile/**").authenticated()
-        .antMatchers("/chatCrea").authenticated()
-        .antMatchers("/contattiCrea").authenticated()
-        .antMatchers("/contattiUpdate").authenticated()
-        .antMatchers("/layoutVisione").authenticated()
-        .antMatchers("/layout/image/**").authenticated()
-        .antMatchers("/layoutGestione").authenticated()
-        .antMatchers("/layoutProduzioneGestione").authenticated()
-        .antMatchers("/layoutClientGestione").authenticated()
-        .antMatchers("/layoutCrea").authenticated()
-        .antMatchers("/layoutUpdate").authenticated()
-        .antMatchers("/layoutUpdateProductor").authenticated()
-        .antMatchers("/layoutUpdateProductor/**").authenticated()
-        .antMatchers("/layoutUpdateClient").authenticated()
-        .antMatchers("/tecnologieCrea").authenticated()
-        .antMatchers("/newsGestione").authenticated()
-        .antMatchers("/newsCrea").authenticated()
-        .antMatchers("/newsUpdate").authenticated()
-        .antMatchers("/prodottiGestione").authenticated()
-        .antMatchers("/prodottiCrea").authenticated()
-        .antMatchers("/prodottiUpdate").authenticated()
-        .antMatchers("/preventiviGestione").authenticated()
-        .antMatchers("/preventiviCrea").authenticated()
-        .antMatchers("/preventiviUpdate").authenticated()
-        .antMatchers("/tecnologieGestione").authenticated()
-        .antMatchers("/tecnologie/image/**").authenticated()
-        .antMatchers("/tecnologieCrea").authenticated()
-        .antMatchers("/tecnologieUpdate").authenticated()
-        .antMatchers("/utenteCrea").authenticated()
-        .antMatchers("/utentiGestione").authenticated()
-        .antMatchers("/utenteUpdate").authenticated()
+				.requestMatchers("/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
+        .requestMatchers("/dashboard/**").authenticated()
+        .requestMatchers("/chatGestione").authenticated()
+        .requestMatchers("/chat/**").authenticated()
+        .requestMatchers("/chatVisione").authenticated()
+        .requestMatchers("/fileVisione/**").authenticated()
+        .requestMatchers("/chatFile/**").authenticated()
+        .requestMatchers("/chatCrea").authenticated()
+        .requestMatchers("/contattiCrea").authenticated()
+        .requestMatchers("/contattiUpdate").authenticated()
+        .requestMatchers("/layoutVisione").authenticated()
+        .requestMatchers("/layout/image/**").authenticated()
+        .requestMatchers("/layoutGestione").authenticated()
+        .requestMatchers("/layoutProduzioneGestione").authenticated()
+        .requestMatchers("/layoutClientGestione").authenticated()
+        .requestMatchers("/layoutCrea").authenticated()
+        .requestMatchers("/layoutUpdate").authenticated()
+        .requestMatchers("/layoutUpdateProductor").authenticated()
+        .requestMatchers("/layoutUpdateProductor/**").authenticated()
+        .requestMatchers("/layoutUpdateClient").authenticated()
+        .requestMatchers("/tecnologieCrea").authenticated()
+        .requestMatchers("/newsGestione").authenticated()
+        .requestMatchers("/newsCrea").authenticated()
+        .requestMatchers("/newsUpdate").authenticated()
+        .requestMatchers("/prodottiGestione").authenticated()
+        .requestMatchers("/prodottiCrea").authenticated()
+        .requestMatchers("/prodottiUpdate").authenticated()
+        .requestMatchers("/preventiviGestione").authenticated()
+        .requestMatchers("/preventiviCrea").authenticated()
+        .requestMatchers("/preventiviUpdate").authenticated()
+        .requestMatchers("/tecnologieGestione").authenticated()
+        .requestMatchers("/tecnologie/image/**").authenticated()
+        .requestMatchers("/tecnologieCrea").authenticated()
+        .requestMatchers("/tecnologieUpdate").authenticated()
+        .requestMatchers("/utenteCrea").authenticated()
+        .requestMatchers("/utentiGestione").authenticated()
+        .requestMatchers("/utenteUpdate").authenticated()
 			        .and()
 			        .csrf().disable()
 				     .formLogin()

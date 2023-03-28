@@ -3,7 +3,7 @@ package com.diemme.business.impl;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
