@@ -150,16 +150,13 @@ public class NewsController {
 
 		User userAuth = new User();
 		String username = auth.getName();
-
 		try {
 			userAuth = serviceUser.findUserByUserName(username);
 			serviceNews.updateNews(id, news, contentImg, userAuth);
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			return "/error/error.html";
-
 		}
-
 		return "redirect:/newsGestione";
 	}
 
