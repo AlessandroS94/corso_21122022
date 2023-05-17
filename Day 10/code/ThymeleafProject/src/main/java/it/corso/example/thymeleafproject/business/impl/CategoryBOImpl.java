@@ -13,7 +13,6 @@ public class CategoryBOImpl implements CategoryBO {
     @Autowired
     CategoryRepository categoryRepository;
 
-
     @Override
     public Category getCategory(Long id) {
         return categoryRepository.findById(id).orElseThrow();
@@ -25,4 +24,10 @@ public class CategoryBOImpl implements CategoryBO {
 
     @Override
     public Category getCategory(long id){ return categoryRepository.findById(id).orElseThrow();}
+
+    @Override
+    public Category saveCategory(Category category){return categoryRepository.save(category);}
+
+    @Override
+    public void deleteCategory(long id){ categoryRepository.deleteById(id);}
 }

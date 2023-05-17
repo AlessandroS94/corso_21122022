@@ -9,4 +9,8 @@ public interface CategoryBO {
     List<Category> getAllCategory();
 
     Category getCategory(long id);
+
+    Category saveCategory(Category category);
+
+    void deleteCategory(long id);
 }

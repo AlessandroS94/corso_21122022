@@ -34,7 +34,7 @@
                     <td th:text="${asset.name}">Name</td>
                     <td th:text="${asset.description}">Description</td>
                     <td th:text="${asset.amount}">Amount</td>
-                    <td th:text="${asset.conversion}">Conversion</td>
+                    <td th:text="${asset.conversion} + ' ' + ${asset.category.name}">Conversion</td>
                     <td th:text="${asset.url}"><a class="nav-link"
                             th:href="@{${asset.url}}"
                             th:if="${not #assets.isEmpty(asset.url)}"></a>
