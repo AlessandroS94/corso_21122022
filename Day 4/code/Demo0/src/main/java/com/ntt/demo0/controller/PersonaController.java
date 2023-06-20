@@ -37,7 +37,7 @@ public class PersonaController {
         return new ResponseEntity<>(persona1,HttpStatus.CREATED);
 
     }
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<?> updatePersona(@PathVariable("id") long id_persona, @RequestBody Persona persona){
         Persona persona2 = new Persona(1,"Ale","Sall");
         if (persona2.getId() == id_persona)
@@ -48,11 +48,6 @@ public class PersonaController {
     @DeleteMapping("{id}")
     public ResponseEntity<?> deletePersona(@PathVariable long id){
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        /*
-        Map<String,String> mappa = new HashMap<>();
-        mappa.put("Persona",""+id);
-        return new ResponseEntity<>(mappa, HttpStatus.OK);
-        */
     }
 
 }
