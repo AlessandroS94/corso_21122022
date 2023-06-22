@@ -64,10 +64,9 @@ public class TagController {
 
   @PostMapping("/tutorials/{tutorialId}/tags")
   public ResponseEntity<Tag> addTag(@PathVariable(value = "tutorialId") Long tutorialId, @RequestBody Tag tagRequest) {
-    System.out.println(tutorialId.longValue() + " "+ tutorialRepository.findById(tutorialId).toString() );
     Tag tag = tutorialRepository.findById(tutorialId).map(tutorial -> {
       long tagId = tagRequest.getId();
-      System.out.println(" TaG " + tagRequest.getId());
+
       if (tagId != 0L) {
         Tag _tag = tagRepository.findById(tagId)
             .orElseThrow(() -> new ResourceNotFoundException("Not found Tag with id = " + tagId));
@@ -78,7 +77,6 @@ public class TagController {
       tagRepository.save(tagRequest);
       // add and create new Tag
       tutorial.addTag(tagRequest);
-      System.out.println(tutorial.toString());
       return tagRepository.save(tagRequest);
     }).orElseThrow(() -> new ResourceNotFoundException("Not found Tutorial with id = " + tutorialId));
     return new ResponseEntity<>(tag, HttpStatus.CREATED);
