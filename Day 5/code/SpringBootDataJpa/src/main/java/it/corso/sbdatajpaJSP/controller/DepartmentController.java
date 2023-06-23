@@ -28,7 +28,6 @@ public class DepartmentController {
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String departmentHome(Model model) {
         logger.debug("department home() invoked");
-
         List<Department> list = departmentBO.findAllDepartments();
         model.addAttribute("list", list);
         return "departments";

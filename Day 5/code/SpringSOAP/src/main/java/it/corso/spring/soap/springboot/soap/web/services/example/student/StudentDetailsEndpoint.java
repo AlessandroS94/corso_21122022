@@ -19,11 +19,9 @@ public class StudentDetailsEndpoint {
 		
 		StudentDetails studentDetails = new StudentDetails();
 		studentDetails.setId(request.getId());
-		studentDetails.setName("Alessandro");
-		studentDetails.setPassportNumber("ETRR567");
-		
+		studentDetails.setName("Pluto");
+		studentDetails.setPassportNumber("ETRR5");
 		response.setStudentDetails(studentDetails);
-		
 		return response;
 	}
 

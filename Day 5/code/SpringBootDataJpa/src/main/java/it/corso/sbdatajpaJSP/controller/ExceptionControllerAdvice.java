@@ -14,7 +14,6 @@ public class ExceptionControllerAdvice {
         ModelAndView mav = new ModelAndView("exception");
         mav.addObject("name", e.getClass().getSimpleName());
         mav.addObject("message", e.getMessage());
-
         return mav;
     }
     

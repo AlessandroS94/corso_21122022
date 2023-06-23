@@ -2,6 +2,7 @@ package it.nntdata.corso.springjsp.controller;
 
 import it.nntdata.corso.springjsp.business.interfaces.WebSiteInfoBO;
 import it.nntdata.corso.springjsp.model.WebSiteInfo;
+import it.nntdata.corso.springjsp.repository.WebSiteInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +42,7 @@ public class WebSiteInfoController {
     public ModelAndView deleteInfo(@RequestParam String id){
         if(!id.isEmpty()) {
             webSiteInfoBO.deleteWebSiteInfo(Long.parseLong(id));
+            //webSiteInfoRepository.deleteById(id);
             return new ModelAndView("/jsp/deleteInfo.jsp","operation",true);
         }
         return new ModelAndView("/jsp/deleteInfo.jsp","id_not_found",true);
