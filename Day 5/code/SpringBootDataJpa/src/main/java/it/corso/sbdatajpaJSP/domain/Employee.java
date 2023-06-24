@@ -1,15 +1,15 @@
 package it.corso.sbdatajpaJSP.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "employee")
 public class Employee extends BaseEntity {
-    
     private static final long serialVersionUID = 1L;
     
     private String fullname;
