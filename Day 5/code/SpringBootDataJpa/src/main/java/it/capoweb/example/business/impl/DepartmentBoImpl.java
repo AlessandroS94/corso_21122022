@@ -1,8 +1,8 @@
-package it.corso.sbdatajpaJSP.business.impl;
+package it.capoweb.example.business.impl;
 
-import it.corso.sbdatajpaJSP.business.DepartmentBO;
-import it.corso.sbdatajpaJSP.domain.Department;
-import it.corso.sbdatajpaJSP.repository.DepartmentRepository;
+import it.capoweb.example.business.DepartmentBO;
+import it.capoweb.example.domain.Department;
+import it.capoweb.example.repository.DepartmentRepository;
 
 import java.util.List;
 import java.util.Optional;

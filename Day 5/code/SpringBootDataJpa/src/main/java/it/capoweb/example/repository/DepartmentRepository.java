@@ -1,6 +1,6 @@
-package it.corso.sbdatajpaJSP.repository;
+package it.capoweb.example.repository;
 
-import it.corso.sbdatajpaJSP.domain.Department;
+import it.capoweb.example.domain.Department;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

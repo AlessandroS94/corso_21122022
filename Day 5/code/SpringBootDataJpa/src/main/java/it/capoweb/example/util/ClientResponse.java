@@ -1,4 +1,4 @@
-package it.corso.sbdatajpaJSP.util;
+package it.capoweb.example.util;
 
 
 public class ClientResponse {

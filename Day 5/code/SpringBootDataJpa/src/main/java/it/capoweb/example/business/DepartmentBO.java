@@ -1,6 +1,6 @@
-package it.corso.sbdatajpaJSP.business;
+package it.capoweb.example.business;
 
-import it.corso.sbdatajpaJSP.domain.Department;
+import it.capoweb.example.domain.Department;
 
 import java.util.List;
 import java.util.Optional;

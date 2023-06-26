@@ -1,12 +1,12 @@
-package it.corso.sbdatajpaJSP.controller;
+package it.capoweb.example.controller;
 
-import it.corso.sbdatajpaJSP.business.DepartmentBO;
-import it.corso.sbdatajpaJSP.domain.Department;
-import it.corso.sbdatajpaJSP.domain.Employee;
-import it.corso.sbdatajpaJSP.util.ClientResponse;
+import it.capoweb.example.business.DepartmentBO;
+import it.capoweb.example.domain.Department;
+import it.capoweb.example.domain.Employee;
+import it.capoweb.example.util.ClientResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import it.corso.sbdatajpaJSP.business.EmployeeBO;
+import it.capoweb.example.business.EmployeeBO;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

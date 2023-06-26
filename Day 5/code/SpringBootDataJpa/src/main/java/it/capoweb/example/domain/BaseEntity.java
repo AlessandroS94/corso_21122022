@@ -1,4 +1,4 @@
-package it.corso.sbdatajpaJSP.domain;
+package it.capoweb.example.domain;
 
 import jakarta.persistence.*;
 

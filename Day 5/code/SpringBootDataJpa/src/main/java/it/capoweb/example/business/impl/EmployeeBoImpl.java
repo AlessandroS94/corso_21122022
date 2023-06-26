@@ -1,8 +1,8 @@
-package it.corso.sbdatajpaJSP.business.impl;
+package it.capoweb.example.business.impl;
 
-import it.corso.sbdatajpaJSP.business.EmployeeBO;
-import it.corso.sbdatajpaJSP.domain.Employee;
-import it.corso.sbdatajpaJSP.repository.EmployeeRepository;
+import it.capoweb.example.business.EmployeeBO;
+import it.capoweb.example.domain.Employee;
+import it.capoweb.example.repository.EmployeeRepository;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

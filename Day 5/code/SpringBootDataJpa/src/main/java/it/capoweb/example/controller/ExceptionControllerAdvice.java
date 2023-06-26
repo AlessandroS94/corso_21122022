@@ -1,4 +1,4 @@
-package it.corso.sbdatajpaJSP.controller;
+package it.capoweb.example.controller;
 
 
 import org.springframework.dao.DataAccessException;

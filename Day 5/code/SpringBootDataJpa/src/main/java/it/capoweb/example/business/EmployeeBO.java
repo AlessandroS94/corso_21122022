@@ -1,6 +1,6 @@
-package it.corso.sbdatajpaJSP.business;
+package it.capoweb.example.business;
 
-import it.corso.sbdatajpaJSP.domain.Employee;
+import it.capoweb.example.domain.Employee;
 
 import java.util.List;
 
