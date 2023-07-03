@@ -29,7 +29,17 @@ Eseguire i seguenti setup:
 #### Windows
 * Installare JDK 17 LTS [https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
   ![Installer](./img/installer.png)
+  *.* Verifica che la JDK sia stata installata correttamente: vai alla cartella in cui hai installato la JDK (ad esempio, "C:\Program Files\Java\jdk1...") e controlla che la cartella esista e che contenga le sottocartelle "bin", "jre", "lib", ecc.
 
+  Imposta la variabile d'ambiente JAVA_HOME:
+  Apri il Pannello di controllo di Windows e vai su Sistema > Impostazioni avanzate di sistema > Variabili d'ambiente.
+  Nella sezione "Variabili sistema", cerca la variabile "JAVA_HOME" e selezionala.
+  Clicca sul pulsante "Modifica" e inserisci il percorso della cartella di installazione della JDK (ad esempio, "C:\Program Files\Java\jdk1....") come valore della variabile.
+  Clicca su OK per salvare le modifiche.
+
+  Aggiorna la variabile PATH: per aggiungere il percorso della cartella "bin" della JDK alla variabile PATH, cerca la variabile PATH nella sezione "Variabili sistema" delle impostazioni delle variabili d'ambiente e selezionala. Clicca sul pulsante "Modifica" e aggiungi il percorso della cartella "bin" della JDK (ad esempio, "%JAVA_HOME%\bin") alla fine del valore esistente della variabile. Clicca su OK per salvare le modifiche.
+
+  Riavvia il prompt dei comandi: dopo aver apportato modifiche alle variabili d'ambiente, è necessario riavviare il prompt dei comandi per rendere effettive le modifiche.
 
 * Installare Tomcat [https://tomcat.apache.org/download-10.cgi](https://tomcat.apache.org/download-10.cgi)
   ![Tomcat](./img/Tomcat.png)

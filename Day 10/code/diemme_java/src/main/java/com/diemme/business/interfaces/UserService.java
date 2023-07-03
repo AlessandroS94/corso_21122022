@@ -1,7 +1,8 @@
-package com.diemme.business;
+package com.diemme.business.interfaces;
 
 import java.util.Set;
 
+import com.diemme.exception.BusinessException;
 import org.springframework.data.domain.Page;
 
 import com.diemme.domain.mysql.User;

@@ -1,7 +1,8 @@
-package com.diemme.business;
+package com.diemme.business.interfaces;
 
 import java.util.List;
 
+import com.diemme.exception.BusinessException;
 import org.springframework.data.domain.Page;
 
 import com.diemme.domain.mysql.ContactShowcase;
@@ -9,7 +10,7 @@ import com.diemme.domain.mysql.User;
 
 public interface ContactService {
 	
-	List<ContactShowcase> findAllContactShowcases() throws BusinessException;	
+	List<ContactShowcase> findAllContactShowcases() throws BusinessException;
 
 	void deleteContactShowcase(Long id) throws BusinessException;
 

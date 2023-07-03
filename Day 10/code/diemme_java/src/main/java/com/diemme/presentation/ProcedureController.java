@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.diemme.domain.mysql.ProcedureShowcase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
@@ -18,31 +19,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.diemme.business.BusinessException;
-import com.diemme.business.QuotationService;
-import com.diemme.business.UserService;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.ProcedureService;
+import com.diemme.business.interfaces.UserService;
 import com.diemme.component.PageModel;
-import com.diemme.domain.mysql.QuotationShowcase;
 import com.diemme.domain.mysql.User;
 
 @Controller
-public class QuotationController {
+public class ProcedureController {
 
 	@Autowired
-	private QuotationService serviceQuotation;
+	private ProcedureService procedureService;
 	@Autowired
 	private UserService serviceUser;
 	@Autowired
 	private PageModel pageModel;
 
 	@GetMapping("/preventivi")
-	public String listQuotation(Model model) throws BusinessException {
+	public String listProcedure(Model model) throws BusinessException {
 
-		List<QuotationShowcase> quotation = new ArrayList<QuotationShowcase>();
+		List<ProcedureShowcase> quotation = new ArrayList<ProcedureShowcase>();
 
 		try {
 
-			quotation = serviceQuotation.findAllQuotationShowcases();
+			quotation = procedureService.findAllQuotationShowcases();
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -59,7 +59,7 @@ public class QuotationController {
 	public String manageQuotation(Model model) throws BusinessException {
 		pageModel.setSIZE(5);
 		pageModel.initPageAndSize();
-		Page<QuotationShowcase> quotations = serviceQuotation.getAllQuotationPageable(pageModel.getPAGE(),
+		Page<ProcedureShowcase> quotations = procedureService.getAllQuotationPageable(pageModel.getPAGE(),
 				pageModel.getSIZE());
 		pageModel.resetPAGE();
 		model.addAttribute("quot", quotations);
@@ -69,13 +69,13 @@ public class QuotationController {
 
 	@GetMapping("/preventiviCrea")
 	public String createQuotation(Model model) throws BusinessException {
-		QuotationShowcase quotationShowcase = new QuotationShowcase();
-		model.addAttribute("quotation_showcase", quotationShowcase);
+		ProcedureShowcase procedureShowcase = new ProcedureShowcase();
+		model.addAttribute("quotation_showcase", procedureShowcase);
 		return "/backoffice/quotationDashboard/create.html";
 	}
 
 	@PostMapping("/preventiviCrea")
-	public ModelAndView createQuotation(@Valid @ModelAttribute("quotation_showcase") QuotationShowcase quotation,
+	public ModelAndView createQuotation(@Valid @ModelAttribute("quotation_showcase") ProcedureShowcase quotation,
 			Errors errors, Authentication auth) throws BusinessException {
 
 		User userAuth = new User();
@@ -85,7 +85,7 @@ public class QuotationController {
 		try {
 
 			userAuth = serviceUser.findUserByUserName(username);
-			serviceQuotation.createQuotation(quotation, userAuth);
+			procedureService.createQuotation(quotation, userAuth);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -100,11 +100,11 @@ public class QuotationController {
 
 	@GetMapping("/preventiviUpdate")
 	public String updateQuotation(Long id, Model model) throws BusinessException {
-		QuotationShowcase quotationShowcase = new QuotationShowcase();
+		ProcedureShowcase procedureShowcase = new ProcedureShowcase();
 
 		try {
 
-			quotationShowcase = serviceQuotation.getQuotation(id);
+			procedureShowcase = procedureService.getQuotation(id);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -112,14 +112,14 @@ public class QuotationController {
 
 		}
 
-		model.addAttribute("quotation_showcase_update", quotationShowcase);
+		model.addAttribute("quotation_showcase_update", procedureShowcase);
 		return "/backoffice/quotationDashboard/update.html";
 	}
 
 	@PostMapping("/preventiviUpdate/{id}")
 	public String updateQuotation(@PathVariable("id") Long id,
-			@Valid @ModelAttribute("quotation_showcase_update") QuotationShowcase quotation, Errors errors,
-			Authentication auth) throws BusinessException {
+								  @Valid @ModelAttribute("quotation_showcase_update") ProcedureShowcase quotation, Errors errors,
+								  Authentication auth) throws BusinessException {
 
 		User userAuth = new User();
 		String username = auth.getName();
@@ -127,7 +127,7 @@ public class QuotationController {
 		try {
 
 			userAuth = serviceUser.findUserByUserName(username);
-			serviceQuotation.updateQuotation(id, quotation, userAuth);
+			procedureService.updateQuotation(id, quotation, userAuth);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -143,7 +143,7 @@ public class QuotationController {
 
 		try {
 
-			serviceQuotation.deleteQuotation(id);
+			procedureService.deleteQuotation(id);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();

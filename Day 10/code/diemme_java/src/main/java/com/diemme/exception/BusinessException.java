@@ -1,4 +1,4 @@
-package com.diemme.business;
+package com.diemme.exception;
 
 public class BusinessException extends Exception {
 

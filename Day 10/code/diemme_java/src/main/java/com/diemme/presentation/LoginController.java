@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.diemme.business.BusinessException;
-import com.diemme.business.EmailService;
-import com.diemme.business.IndexService;
-import com.diemme.business.RoleService;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.EmailService;
+import com.diemme.business.interfaces.IndexService;
+import com.diemme.business.interfaces.RoleService;
 import com.diemme.business.impl.UserServiceImpl;
 import com.diemme.domain.mysql.NewsShowcase;
 import com.diemme.domain.mysql.Role;

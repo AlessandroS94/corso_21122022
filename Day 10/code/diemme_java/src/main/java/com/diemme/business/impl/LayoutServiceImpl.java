@@ -15,9 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.diemme.ResourceNotFoundException;
-import com.diemme.business.BusinessException;
-import com.diemme.business.LayoutService;
+import com.diemme.exception.ResourceNotFoundException;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.LayoutService;
 import com.diemme.domain.mysql.FileLayout;
 import com.diemme.domain.mysql.Layout;
 import com.diemme.domain.mysql.StatusType;

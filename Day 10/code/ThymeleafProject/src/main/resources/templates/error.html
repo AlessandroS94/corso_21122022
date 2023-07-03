@@ -1,14 +1,11 @@
-<html
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        xmlns:th="http://www.thymeleaf.org">
-Errore
-<head>
-    <meta charset="UTF-8">
-    <title>Error Page</title>
-</head>
-<body>
-<h1>Error</h1>
-<p th:text="${errorMessage}"></p>
-<p th:text="${exceptionMessage}"></p>
-</body>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{index}">
+<div layout:fragment="main" >
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <h1>Error</h1>
+        <p th:text="${errorMessage}"></p>
+        <p th:text="${exceptionMessage}"></p>
+    </main>
+</div>
 </html>

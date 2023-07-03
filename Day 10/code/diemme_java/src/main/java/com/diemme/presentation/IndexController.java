@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.diemme.business.BusinessException;
-import com.diemme.business.IndexService;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.IndexService;
 import com.diemme.domain.mysql.NewsShowcase;
 
 @Controller

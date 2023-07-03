@@ -12,9 +12,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.diemme.ResourceNotFoundException;
-import com.diemme.business.BusinessException;
-import com.diemme.business.UserService;
+import com.diemme.exception.ResourceNotFoundException;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.UserService;
 import com.diemme.domain.mysql.Role;
 import com.diemme.domain.mysql.User;
 import com.diemme.repository.mysql.UserRepository;

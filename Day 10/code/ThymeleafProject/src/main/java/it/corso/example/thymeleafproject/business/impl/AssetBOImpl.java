@@ -39,7 +39,7 @@ public class AssetBOImpl implements AssetBO {
     @Override
     public float getCurrentValue(String from,String to)  {
         final String uri = "https://cex.io/api/ticker/"+ from.toUpperCase() + "/" + to.toUpperCase();
-        System.out.println(uri);
+        //System.out.println(uri);
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(uri, String.class);
         ObjectMapper mapper = new ObjectMapper();

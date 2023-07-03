@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.diemme.ResourceNotFoundException;
-import com.diemme.business.BusinessException;
-import com.diemme.business.ChatUserService;
+import com.diemme.exception.ResourceNotFoundException;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.ChatUserService;
 import com.diemme.domain.mongo.Chat;
 import com.diemme.domain.mongo.ChatType;
 import com.diemme.domain.mongo.Message;
@@ -137,7 +137,7 @@ public class ChatUserServiceImpl implements ChatUserService {
 				chatUser2.setUser(formWrapperChat.getUser());
 				chatUser2.setNameProject(formWrapperChat.getNameProject());
 				chatSave.setChatType(ChatType.CLIENT_DESIGNER);
-			} else if (role.getRole().equals("DESIGNER")) {
+			} else if (role.getRole().equals("DESIGNER") || role.getRole().equals("PRODUCTOR") ) {
 				chatUser1.setUser(userAuth);
 				chatUser1.setNameProject(formWrapperChat.getNameProject());
 				chatUser2.setUser(formWrapperChat.getUser());

@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.diemme.business.BusinessException;
-import com.diemme.business.IndexService;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.IndexService;
 import com.diemme.domain.mysql.NewsShowcase;
 import com.diemme.repository.mysql.NewsShowcaseRepository;
 

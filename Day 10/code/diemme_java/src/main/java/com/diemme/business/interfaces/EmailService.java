@@ -1,4 +1,4 @@
-package com.diemme.business;
+package com.diemme.business.interfaces;
 
 
 public interface EmailService {

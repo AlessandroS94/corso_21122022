@@ -22,7 +22,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class QuotationShowcase extends BaseModel {
+public class ProcedureShowcase extends BaseModel {
 
 	@Column(name = "name", nullable = false)
 	private String name;
