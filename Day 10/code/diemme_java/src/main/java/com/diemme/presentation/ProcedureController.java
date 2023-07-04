@@ -38,18 +38,18 @@ public class ProcedureController {
 	@GetMapping("/preventivi")
 	public String listProcedure(Model model) throws BusinessException {
 
-		List<ProcedureShowcase> quotation = new ArrayList<ProcedureShowcase>();
+		List<ProcedureShowcase> procedure = new ArrayList<ProcedureShowcase>();
 
 		try {
 
-			quotation = procedureService.findAllQuotationShowcases();
+			procedure = procedureService.findAllProcedureShowcases();
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			return "/error/error.html";
 
 		}
-		model.addAttribute("quotation", quotation);
+		model.addAttribute("quotation", procedure);
 		return "/frontoffice/preventivi/preventivi";
 
 	}
@@ -59,7 +59,7 @@ public class ProcedureController {
 	public String manageQuotation(Model model) throws BusinessException {
 		pageModel.setSIZE(5);
 		pageModel.initPageAndSize();
-		Page<ProcedureShowcase> quotations = procedureService.getAllQuotationPageable(pageModel.getPAGE(),
+		Page<ProcedureShowcase> quotations = procedureService.getAllProcedurePageable(pageModel.getPAGE(),
 				pageModel.getSIZE());
 		pageModel.resetPAGE();
 		model.addAttribute("quot", quotations);
@@ -85,7 +85,7 @@ public class ProcedureController {
 		try {
 
 			userAuth = serviceUser.findUserByUserName(username);
-			procedureService.createQuotation(quotation, userAuth);
+			procedureService.createProcedure(quotation, userAuth);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -104,7 +104,7 @@ public class ProcedureController {
 
 		try {
 
-			procedureShowcase = procedureService.getQuotation(id);
+			procedureShowcase = procedureService.getProcedure(id);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -127,7 +127,7 @@ public class ProcedureController {
 		try {
 
 			userAuth = serviceUser.findUserByUserName(username);
-			procedureService.updateQuotation(id, quotation, userAuth);
+			procedureService.updateProcedure(id, quotation, userAuth);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
@@ -143,7 +143,7 @@ public class ProcedureController {
 
 		try {
 
-			procedureService.deleteQuotation(id);
+			procedureService.deleteProcedure(id);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();

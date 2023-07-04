@@ -24,40 +24,38 @@ public class ProcedureServiceImpl implements ProcedureService {
 	private ProcedureShowcaseRepository procedureShowcaseRepository;
 
 	@Override
-	public List<ProcedureShowcase> findAllQuotationShowcases() throws BusinessException {
+	public List<ProcedureShowcase> findAllProcedureShowcases() throws BusinessException {
 
 		return procedureShowcaseRepository.findAll();
 	}
 
 	@Override
-	public Page<ProcedureShowcase> getAllQuotationPageable(Integer page, Integer size) throws BusinessException {
+	public Page<ProcedureShowcase> getAllProcedurePageable(Integer page, Integer size) throws BusinessException {
 
 		return procedureShowcaseRepository.findAll(PageRequest.of(page, size));
 	}
 
 	@Override
-	public ProcedureShowcase getQuotation(Long id) throws BusinessException {
+	public ProcedureShowcase getProcedure(Long id) throws BusinessException {
 
 		return procedureShowcaseRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("ProcedureShowcase", "id", id));
 	}
 
 	@Override
-	public ProcedureShowcase saveQuotation(ProcedureShowcase quotation) throws BusinessException {
-
+	public ProcedureShowcase saveProcedure(ProcedureShowcase quotation) throws BusinessException {
 		return procedureShowcaseRepository.save(quotation);
 	}
 
 	@Override
-	public void createQuotation(ProcedureShowcase quotation, User userAuth) throws BusinessException {
-
-		quotation.setUser(userAuth);
-		procedureShowcaseRepository.save(quotation);
+	public void createProcedure(ProcedureShowcase procedure, User userAuth) throws BusinessException {
+		procedure.setUser(userAuth);
+		procedureShowcaseRepository.save(procedure);
 
 	}
 
 	@Override
-	public void updateQuotation(Long id, ProcedureShowcase quotation, User userAuth) throws BusinessException {
+	public void updateProcedure(Long id, ProcedureShowcase quotation, User userAuth) throws BusinessException {
 		ProcedureShowcase quotationOld = new ProcedureShowcase();
 
 		quotationOld = procedureShowcaseRepository.findById(id)
@@ -71,7 +69,7 @@ public class ProcedureServiceImpl implements ProcedureService {
 	}
 
 	@Override
-	public void deleteQuotation(Long id) throws BusinessException {
+	public void deleteProcedure(Long id) throws BusinessException {
 
 		procedureShowcaseRepository.deleteById(id);
 	}

@@ -10,17 +10,17 @@ import com.diemme.domain.mysql.User;
 
 public interface ProcedureService {
 
-	List<ProcedureShowcase> findAllQuotationShowcases() throws BusinessException;
+	List<ProcedureShowcase> findAllProcedureShowcases() throws BusinessException;
 
-	Page<ProcedureShowcase> getAllQuotationPageable(Integer page, Integer size) throws BusinessException;
+	Page<ProcedureShowcase> getAllProcedurePageable(Integer page, Integer size) throws BusinessException;
 
-	ProcedureShowcase getQuotation(Long id) throws BusinessException;
+	ProcedureShowcase getProcedure(Long id) throws BusinessException;
 
-	ProcedureShowcase saveQuotation(ProcedureShowcase quotation) throws BusinessException;
+	ProcedureShowcase saveProcedure(ProcedureShowcase quotation) throws BusinessException;
 
-	void deleteQuotation(Long id) throws BusinessException;
+	void deleteProcedure(Long id) throws BusinessException;
 
-	void createQuotation(ProcedureShowcase quotation, User userAuth) throws BusinessException;
+	void createProcedure(ProcedureShowcase procedure, User userAuth) throws BusinessException;
 
-	void updateQuotation(Long id, ProcedureShowcase quotation, User userAuth) throws BusinessException;
+	void updateProcedure(Long id, ProcedureShowcase quotation, User userAuth) throws BusinessException;
 }
