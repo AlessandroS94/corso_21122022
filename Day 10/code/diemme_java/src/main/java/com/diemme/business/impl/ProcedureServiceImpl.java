@@ -43,14 +43,14 @@ public class ProcedureServiceImpl implements ProcedureService {
 	}
 
 	@Override
-	public ProcedureShowcase saveProcedure(ProcedureShowcase quotation) throws BusinessException {
-		return procedureShowcaseRepository.save(quotation);
+	public ProcedureShowcase saveProcedure(ProcedureShowcase procedureShowcase) throws BusinessException {
+		return procedureShowcaseRepository.save(procedureShowcase);
 	}
 
 	@Override
-	public void createProcedure(ProcedureShowcase procedure, User userAuth) throws BusinessException {
-		procedure.setUser(userAuth);
-		procedureShowcaseRepository.save(procedure);
+	public void createProcedure(ProcedureShowcase procedureShowcase, User userAuth) throws BusinessException {
+		procedureShowcase.setUser(userAuth);
+		procedureShowcaseRepository.save(procedureShowcase);
 
 	}
 

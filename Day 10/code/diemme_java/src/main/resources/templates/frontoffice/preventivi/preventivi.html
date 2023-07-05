@@ -20,9 +20,9 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="single-defination">
-							<div th:each="quot : ${quotation}">
-								<h4 th:utext="${quot.name}">name</h4>
-								<p th:utext="${quot.description}">description</p>
+							<div th:each="pro : ${procedures}">
+								<h4 th:utext="${pro.name}">name</h4>
+								<p th:utext="${pro.description}">description</p>
 
 							</div>
 						</div>

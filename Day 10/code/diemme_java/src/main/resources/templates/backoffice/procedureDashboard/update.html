@@ -10,12 +10,12 @@
 			<div class="container-fluid">
 				<div class="row mb-2">
 					<div class="col-sm-6">
-						<h1>Aggiungi un nuovo preventivo</h1>
+						<h1>Modifica di un preventivo</h1>
 					</div>
 					<div class="col-sm-6">
 						<ol class="breadcrumb float-sm-right">
 							<li class="breadcrumb-item"><a th:href="@{/dashboard}">Dashboard</a></li>
-							<li class="breadcrumb-item active">Aggiungi preventivo</li>
+							<li class="breadcrumb-item active">Modifica preventivo</li>
 						</ol>
 					</div>
 				</div>
@@ -24,9 +24,9 @@
 		</section>
 		<!-- Main content -->
 		<section class="content">
-			<form method="POST" action="" th:action="@{/preventiviCrea}"
-				th:object="${quotation_showcase}" id="myForm"
-				enctype="multipart/form-data">
+			<form method="POST" action="" th:action="@{'/preventiviUpdate/{id}'(id=${procedure_showcase_update.id})}"
+				th:object="${procedure_showcase_update}" id="myForm"
+				>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="alert alert-success alert-dismissible"
@@ -38,10 +38,10 @@
 							</h4>
 							Caricamento avvenuto con successo.
 						</div>
-
+						
 						<div class="card card-primary">
 							<div class="card-header">
-								<h3 class="card-title">Preventivi</h3>
+								<h3 class="card-title">Preventivo</h3>
 								<div class="card-tools">
 									<button type="button" class="btn btn-tool"
 										data-card-widget="collapse" data-toggle="tooltip"
@@ -51,18 +51,19 @@
 								</div>
 							</div>
 							<div class="card-body">
-
-								<div class="form-group  @error('title') has-error @enderror">
+							
+							<div class="form-group  @error('title') has-error @enderror">
 									<label for="inputName">nome preventivo</label> <input required
-										th:field="*{name}" type="text" id="inputName"
+										th:field="*{name}" type="text" id="inputName" th:value="${procedure_showcase_update.name}"
 										class="form-control">
 								</div>
 								
 								<div class="form-group  @error('title') has-error @enderror">
 									<label for="inputName">descrizione</label> <input required
-										th:field="*{description}" type="text" id="inputName"
+										th:field="*{description}" type="text" id="inputName" th:value="${procedure_showcase_update.description}"
 										class="form-control">
-								</div>		
+								</div>								
+						        
 							</div>
 							<!-- /.card-body -->
 						</div>

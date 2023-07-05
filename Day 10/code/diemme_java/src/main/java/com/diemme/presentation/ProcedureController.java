@@ -1,10 +1,7 @@
 package com.diemme.presentation;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.validation.Valid;
-
 import com.diemme.domain.mysql.ProcedureShowcase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -18,7 +15,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.diemme.exception.BusinessException;
 import com.diemme.business.interfaces.ProcedureService;
 import com.diemme.business.interfaces.UserService;
@@ -37,96 +33,79 @@ public class ProcedureController {
 
 	@GetMapping("/preventivi")
 	public String listProcedure(Model model) throws BusinessException {
-
-		List<ProcedureShowcase> procedure = new ArrayList<ProcedureShowcase>();
-
+		List<ProcedureShowcase> procedure;
 		try {
-
 			procedure = procedureService.findAllProcedureShowcases();
-
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			return "/error/error.html";
-
 		}
-		model.addAttribute("quotation", procedure);
+		model.addAttribute("procedures", procedure);
 		return "/frontoffice/preventivi/preventivi";
 
 	}
 
 	@SuppressWarnings("static-access")
 	@GetMapping("/preventiviGestione")
-	public String manageQuotation(Model model) throws BusinessException {
+	public String manageProcedure(Model model) throws BusinessException {
 		pageModel.setSIZE(5);
 		pageModel.initPageAndSize();
-		Page<ProcedureShowcase> quotations = procedureService.getAllProcedurePageable(pageModel.getPAGE(),
+		Page<ProcedureShowcase> procedureServiceAllProcedurePageable = procedureService.getAllProcedurePageable(pageModel.getPAGE(),
 				pageModel.getSIZE());
 		pageModel.resetPAGE();
-		model.addAttribute("quot", quotations);
-		return "/backoffice/quotationDashboard/manage.html";
+		model.addAttribute("proce", procedureServiceAllProcedurePageable);
+		return "/backoffice/procedureDashboard/manage.html";
 
 	}
 
 	@GetMapping("/preventiviCrea")
-	public String createQuotation(Model model) throws BusinessException {
+	public String createProcedure(Model model) throws BusinessException {
 		ProcedureShowcase procedureShowcase = new ProcedureShowcase();
-		model.addAttribute("quotation_showcase", procedureShowcase);
-		return "/backoffice/quotationDashboard/create.html";
+		model.addAttribute("procedure_showcase", procedureShowcase);
+		return "/backoffice/procedureDashboard/create.html";
 	}
 
 	@PostMapping("/preventiviCrea")
-	public ModelAndView createQuotation(@Valid @ModelAttribute("quotation_showcase") ProcedureShowcase quotation,
+	public ModelAndView createProcedure(@Valid @ModelAttribute("procedure_showcase") ProcedureShowcase procedureShowcase,
 			Errors errors, Authentication auth) throws BusinessException {
 
-		User userAuth = new User();
+		User userAuth;
 		ModelAndView modelAndView = new ModelAndView();
 		String username = auth.getName();
-
 		try {
-
 			userAuth = serviceUser.findUserByUserName(username);
-			procedureService.createProcedure(quotation, userAuth);
-
+			procedureService.createProcedure(procedureShowcase, userAuth);
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			return new ModelAndView("/error/error.html");
-
 		}
-
 		modelAndView.addObject("successMessage", "l'oggetto è stato creato!");
-		modelAndView.setViewName("/backoffice/quotationDashboard/create.html");
+		modelAndView.setViewName("/backoffice/procedureDashboard/create.html");
 		return modelAndView;
 	}
 
 	@GetMapping("/preventiviUpdate")
-	public String updateQuotation(Long id, Model model) throws BusinessException {
-		ProcedureShowcase procedureShowcase = new ProcedureShowcase();
-
+	public String updateProcedure(Long id, Model model) throws BusinessException {
+		ProcedureShowcase procedureShowcase;
 		try {
-
 			procedureShowcase = procedureService.getProcedure(id);
-
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			return "/error/error.html";
-
 		}
-
-		model.addAttribute("quotation_showcase_update", procedureShowcase);
-		return "/backoffice/quotationDashboard/update.html";
+		model.addAttribute("procedure_showcase_update", procedureShowcase);
+		return "/backoffice/procedureDashboard/update.html";
 	}
 
 	@PostMapping("/preventiviUpdate/{id}")
-	public String updateQuotation(@PathVariable("id") Long id,
-								  @Valid @ModelAttribute("quotation_showcase_update") ProcedureShowcase quotation, Errors errors,
+	public String updateProcedure(@PathVariable("id") Long id,
+								  @Valid @ModelAttribute("procedure_showcase_update") ProcedureShowcase quotation, Errors errors,
 								  Authentication auth) throws BusinessException {
 
-		User userAuth = new User();
 		String username = auth.getName();
-
 		try {
 
-			userAuth = serviceUser.findUserByUserName(username);
+			User userAuth = serviceUser.findUserByUserName(username);
 			procedureService.updateProcedure(id, quotation, userAuth);
 
 		} catch (DataAccessException e) {
@@ -139,16 +118,12 @@ public class ProcedureController {
 	}
 
 	@PostMapping("/preventiviDelete/{id}")
-	public String deleteQuotationShocases(@PathVariable(value = "id") Long id) throws BusinessException {
-
+	public String deleteProcedureShocases(@PathVariable(value = "id") Long id) throws BusinessException {
 		try {
-
 			procedureService.deleteProcedure(id);
-
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			return "/error/error.html";
-
 		}
 		return "redirect:/preventiviGestione";
 
