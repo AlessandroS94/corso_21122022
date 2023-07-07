@@ -56,9 +56,16 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
   }
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-    httpSecurity.cors().and().csrf().disable()
-        .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+    httpSecurity
+            .cors()
+            .and()
+            .csrf()
+            .disable()
+        .exceptionHandling()
+            .authenticationEntryPoint(unauthorizedHandler)
+            .and()
+        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
         .authorizeRequests().requestMatchers("/api/auth/**").permitAll()
             .requestMatchers("api/user/**").permitAll()
         .requestMatchers("/api/course/**").hasRole("MODERATOR")
