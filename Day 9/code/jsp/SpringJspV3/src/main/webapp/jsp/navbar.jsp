@@ -20,14 +20,6 @@
                     <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/admin/deleteViewInfo">Cancella Info</a>
                     </li>
                 </sec:authorize>
-                <sec:authorize access="hasRole('USER')">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}admin/crypto/createInfo">Crea Info</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/admin/deleteViewInfo">Cancella Info</a>
-                    </li>
-                </sec:authorize>
                 <sec:authorize access="isAuthenticated()">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/logout"> Esci da <sec:authentication property="name"/></a>
