@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import it.academy.corso.exception.ResourceNotFoundException;
 import it.academy.corso.model.Tutorial;
 
-@CrossOrigin(origins = "http://localhost:8081")
+
 @RestController
 @RequestMapping("/api")
 public class TutorialController {

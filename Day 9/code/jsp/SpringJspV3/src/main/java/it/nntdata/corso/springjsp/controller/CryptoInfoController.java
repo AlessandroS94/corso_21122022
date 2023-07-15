@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("admin/crypto")
+@RequestMapping("admin/")
 public class CryptoInfoController {
     @Autowired
     CryptoInfoBO cryptoInfoBO;

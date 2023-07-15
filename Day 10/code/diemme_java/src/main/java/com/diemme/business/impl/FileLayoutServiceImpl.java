@@ -8,9 +8,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.diemme.ResourceNotFoundException;
-import com.diemme.business.BusinessException;
-import com.diemme.business.FileLayoutService;
+import com.diemme.exception.ResourceNotFoundException;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.FileLayoutService;
 import com.diemme.domain.mysql.FileLayout;
 import com.diemme.repository.mysql.FileLayoutRepository;
 

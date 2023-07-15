@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="csrf-token" content="{{ csrf_token() }}">
+
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 <title>Diemme | Dashboard</title>
@@ -85,7 +85,7 @@
 			<!-- Brand Logo -->
 			<a href="{{route('index')}}" th:href="@{/home}" class="brand-link">
 				<img
-				src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.0-9/73078926_105557677537493_396295404041273344_n.png?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=3utcV_2ISXsAX97YJBs&_nc_ht=scontent-mxp1-1.xx&oh=7a55f2aa10d9de34e70ba66ed6c48543&oe=5FC00FB4"
+				src="https://scontent.fpsr2-2.fna.fbcdn.net/v/t39.30808-1/308368545_781335286638959_2465341276572655745_n.jpg?stp=dst-jpg_s480x480&_nc_cat=105&ccb=1-7&_nc_sid=c6021c&_nc_ohc=kTZpNA-F1C8AX_8rBd5&_nc_ht=scontent.fpsr2-2.fna&oh=00_AfDZ7entCXvISf0VVzdNIrw9PcOTASCmVpHagRxrHDFA5g&oe=64A5AB75"
 				alt="Diemmelogo" class="brand-image img-circle elevation-3"
 				style="opacity: .8"> <span
 				class="brand-text font-weight-light">Dashboard Diemme</span>
@@ -261,9 +261,8 @@
 										<p>Ordini da realizzare</p>
 								</a></li>
 							</ul></li>
-						<sec:authorize
-							access="hasAnyRole('CLIENT','DESIGNER','PRODUCTOR')">
-							<li class="nav-item has-treeview"><a href="#"
+
+						<li sec:authorize="hasAnyAuthority('CLIENT','DESIGNER','PRODUCTOR')" class="nav-item has-treeview"><a href="#"
 								class="nav-link"> <i class="nav-icon fas fa-mail-bulk"></i>
 									<p>
 										Gestione Chat <i class="fas fa-angle-left right"></i>
@@ -274,12 +273,9 @@
 										class="nav-link"> <i class="far fa-circle nav-icon"></i>
 											<p>Visualizza</p>
 									</a></li>
-								</ul></li>
-
-						</sec:authorize>
-						<sec:authorize
-							access="hasAnyRole('CLIENT','DESIGNER','PRODUCTOR')">
-							<li class="nav-item has-treeview"><a href="#"
+								</ul>
+						</li>
+						<li  sec:authorize="hasAnyAuthority('CLIENT','DESIGNER','PRODUCTOR')"  class="nav-item has-treeview"><a href="#"
 								class="nav-link"> <i class="nav-icon fas fa-envelope"></i>
 									<p>
 										Inizia chat <i class="fas fa-angle-left right"></i>
@@ -297,7 +293,14 @@
 											<p>Inizia chat Produttore</p>
 									</a>
 									</li>
-								</ul></li>
+									<li sec:authorize="hasAuthority('PRODUCTOR')" class="nav-item">
+										<a th:href="@{/chatCrea}" class="nav-link"> <i
+												class="far fa-circle nav-icon"></i>
+											<p>Inizia chat Produttore</p>
+										</a>
+									</li>
+								</ul>
+						</li>
 					</ul>
 					</sec:authorize>
 
@@ -314,7 +317,7 @@
 		<!-- ./wrapper -->
 		<!-- Main Footer -->
 		<footer class="main-footer">
-			<strong>Copyright &copy; 2014-2020 Diemme</strong>
+			<strong>Copyright &copy; 2014-2023 Diemme</strong>
 		</footer>
 	</div>
 

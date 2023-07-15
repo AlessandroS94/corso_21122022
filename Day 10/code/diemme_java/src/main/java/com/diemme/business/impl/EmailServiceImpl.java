@@ -10,16 +10,28 @@ import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.diemme.business.EmailService;
+import com.diemme.business.interfaces.EmailService;
 
 @Service
 @Transactional
 public class EmailServiceImpl implements EmailService {
 
-	private final static String systemMail = "alexraimondi91@gmail.com";
+	@Value("${email.systemMail}")
+	private String systemMail;
+	@Value("${email.username}")
+	private String username;
+	@Value("${email.password}")
+	private String password;
+	@Value("${email.host}")
+	private String host;
+	@Value("${email.port}")
+	private String port;
+    @Value("${email.tls}")
+	private String tls;
 
 	@Override
 	public void sendContact(String from, String object, String body, String sender) {
@@ -55,8 +67,6 @@ public class EmailServiceImpl implements EmailService {
 
 			Transport.send(message);
 
-			System.out.println("email send");
-
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);
 		}
@@ -68,7 +78,7 @@ public class EmailServiceImpl implements EmailService {
 		try {
 
 			Message message = new MimeMessage(connect());
-			message.setFrom(new InternetAddress("alexraimondi91@gmail.com"));
+			message.setFrom(new InternetAddress(this.systemMail));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(systemMail));
 			message.setSubject("Gentile cliente: sei stato approvato dall'admin!");
 			message.setText(
@@ -213,14 +223,13 @@ public class EmailServiceImpl implements EmailService {
 
 	private Session connect() {
 
-		final String username = "ff7a3c6cdf3464";
-		final String password = "0088c1ba3e0a62";
+
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.starttls.enable", "true");// it’s optional in Mailtrap
-		props.put("mail.smtp.host", "smtp.mailtrap.io");
-		props.put("mail.smtp.port", "2525");// use one of the options in the SMTP settings tab in your Mailtrap Inbox
+		props.put("mail.smtp.starttls.enable", this.tls);// it’s optional in Mailtrap
+		props.put("mail.smtp.host", this.host);
+		props.put("mail.smtp.port", this.port);//
 
 		Session session = Session.getInstance(props, new jakarta.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {

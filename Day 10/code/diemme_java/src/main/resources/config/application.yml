@@ -11,9 +11,9 @@ spring:
   application:
     name: diemme
   datasource:
-    url: jdbc:mysql://localhost:8889/diemme?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:8889/diemme?serverTimezone=Europe/Rome
     username: diemme
-    password: 
+    password: password
     driver-class-name: com.mysql.cj.jdbc.Driver    
   jpa:
     hibernate:
@@ -24,7 +24,19 @@ spring:
     basename: i18n/common, i18n/diemme
     encoding: UTF-8
     use-code-as-default-message: true
-    
+  logging:
+    file:
+      name: ./file.log
+    level:
+      root: INFO
+email:
+  host: xxx
+  port: 2525
+  username: xxx
+  password: xxxx
+  systemMail: xx@mailtrap.io
+  tls: true
+
         
 
     

@@ -1,12 +1,23 @@
 package it.academy.corso.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.persistence.*;
-
 @Entity
 @Table(name = "tutorials")
+@Getter
+@Setter
+@AllArgsConstructor
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Tutorial {
 
     @Id
@@ -30,6 +41,7 @@ public class Tutorial {
     @JoinTable(name = "tutorial_tags",
             joinColumns = {@JoinColumn(name = "tutorial_id")},
             inverseJoinColumns = {@JoinColumn(name = "tag_id")})
+    @JsonIgnore
     private Set<Tag> tags = new HashSet<>();
 
     public Tutorial() {
@@ -42,32 +54,8 @@ public class Tutorial {
         this.published = published;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public boolean isPublished() {
         return published;
-    }
-
-    public void setPublished(boolean isPublished) {
-        this.published = isPublished;
     }
 
     public Set<Tag> getTags() {
@@ -89,11 +77,6 @@ public class Tutorial {
             this.tags.remove(tag);
             tag.getTutorials().remove(this);
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
     }
 
 }

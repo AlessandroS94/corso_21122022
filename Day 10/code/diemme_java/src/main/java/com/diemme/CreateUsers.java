@@ -26,8 +26,7 @@ import com.diemme.repository.mysql.UserRepository;
 	@Override
 	public void run(String... args) throws Exception {
 
-		if (userRepository.findByEmail("abcabc" +
-				"abc91@gmail.com") == null) {
+		if (userRepository.findByEmail("alex_994@ymail.com") == null) {
 
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -39,15 +38,12 @@ import com.diemme.repository.mysql.UserRepository;
 			roleListUser1Test.add(roleAdmin);
 
 			userAdmin.setActive(true);
-			userAdmin.setEmail("abcabc" +
-					"abc91@gmail.com");
-			userAdmin.setName("abc");
+			userAdmin.setEmail("alex_994@ymail.com");
+			userAdmin.setName("Alessandro");
 			userAdmin.setPassword(passwordEncoder.encode("abc"));
-			userAdmin.setSurname("abc" +
-					"abc");
+			userAdmin.setSurname("Sallese");
 			userAdmin.setRoles(roleListUser1Test);
-			userAdmin.setUserName("abcabc" +
-					"abc91@gmail.com");
+			userAdmin.setUserName("alex_994@ymail.com");
 
 			try {
 
@@ -56,13 +52,13 @@ import com.diemme.repository.mysql.UserRepository;
 
 			} catch (DataAccessException e) {
 				e.printStackTrace();
-				System.out.println("\n\n l'utente abcabc" +
+				System.out.println("\n\n l'utente alex_994@ymail.com" +
 						"abc91@gmail.com non è stato creato!");
 			}
 
 		}
 
-		if (userRepository.findByEmail("ale_1994@gmail.com") == null) {
+		if (userRepository.findByEmail("alessandrosallese@yahoo.com") == null) {
 
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -74,14 +70,14 @@ import com.diemme.repository.mysql.UserRepository;
 			roleListUser2Test.add(roleClient);
 
 			userClient.setActive(true);
-			userClient.setEmail("ale_1994@gmail.com");
+			userClient.setEmail("alessandrosallese@yahoo.com");
 			userClient.setFiscalCode("RMNLXA91A14E058I");
-			userClient.setName("alessandro");
+			userClient.setName("Marco");
 			userClient.setPassword(passwordEncoder.encode("abc"));
-			userClient.setSurname("sallese");
+			userClient.setSurname("Sallese");
 			userClient.setAddressShipment("via ciao ciao");
 			userClient.setRoles(roleListUser2Test);
-			userClient.setUserName("ale_1994@gmail.com");
+			userClient.setUserName("alessandrosallese@yahoo.com");
 			
 			try {
 
@@ -90,12 +86,12 @@ import com.diemme.repository.mysql.UserRepository;
 			
 			} catch (DataAccessException e) {
 				e.printStackTrace();
-				System.out.println("\n\n l'utente ale_1994@gmail.com non è stato creato!");
+				System.out.println("\n\n l'utente alessandrosallese@yahoo.com non è stato creato!");
 			}
 
 		}
 
-		if (userRepository.findByEmail("a@gg.eu") == null) {
+		if (userRepository.findByEmail("alessandro_sallese@yahoo.com") == null) {
 
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -107,12 +103,12 @@ import com.diemme.repository.mysql.UserRepository;
 			roleListUser3Test.add(roleDesigner);
 
 			userDesigner.setActive(true);
-			userDesigner.setEmail("a@gg.eu");
-			userDesigner.setName("abc");
+			userDesigner.setEmail("alessandro_sallese@yahoo.com");
+			userDesigner.setName("Paolo");
 			userDesigner.setPassword(passwordEncoder.encode("abc"));
-			userDesigner.setSurname("e");
+			userDesigner.setSurname("Sallese");
 			userDesigner.setRoles(roleListUser3Test);
-			userDesigner.setUserName("a.@gg.eu");
+			userDesigner.setUserName("alessandro_sallese@yahoo.com");
 			userDesigner.setFiscalCode("RMNLXA91A14E058I");
 			userDesigner.setPIva("12345678");
 			userDesigner.setCompanyName("Diemme S.R.L.");
@@ -124,13 +120,13 @@ import com.diemme.repository.mysql.UserRepository;
 			
 			} catch (DataAccessException e) {
 				e.printStackTrace();
-				System.out.println("\n\n l'utente a.abc" +
+				System.out.println("\n\n l'utente alessandro_sallese@yahoo.com" +
 						"abc@der.eu non è stato creato!");
 			}
 
 		}
 
-		if (userRepository.findByEmail("abc@abc.it") == null) {
+		if (userRepository.findByEmail("publisher_ciclismogare@yahoo.com") == null) {
 
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -142,13 +138,12 @@ import com.diemme.repository.mysql.UserRepository;
 			roleListUser4Test.add(roleProductor);
 
 			userProductor.setActive(true);
-			userProductor.setEmail("abc@abc.it");
-			userProductor.setName("abc");
+			userProductor.setEmail("publisher_ciclismogare@yahoo.com");
+			userProductor.setName("publisher_ciclismogare");
 			userProductor.setPassword(passwordEncoder.encode("abc"));
-			userProductor.setSurname("abc" +
-					"abc");
+			userProductor.setSurname("Gare");
 			userProductor.setRoles(roleListUser4Test);
-			userProductor.setUserName("abc@abc.it");
+			userProductor.setUserName("publisher_ciclismogare@yahoo.com");
 			userProductor.setFiscalCode("RMNLXA91A14E058I");
 			userProductor.setPIva("12345678");
 			userProductor.setCompanyName("Maglietta Factory S.R.C.");
@@ -160,7 +155,7 @@ import com.diemme.repository.mysql.UserRepository;
 			
 			} catch (DataAccessException e) {
 				e.printStackTrace();
-				System.out.println("\n\n l'utente abc@abc.it non è stato creato!");
+				System.out.println("\n\n l'utente publisher_ciclismogare non è stato creato!");
 			}
 
 		}

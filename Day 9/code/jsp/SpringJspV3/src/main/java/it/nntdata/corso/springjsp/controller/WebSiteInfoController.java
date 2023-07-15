@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class WebSiteInfoController {
     @Autowired
     WebSiteInfoBO webSiteInfoBO;
-
     @GetMapping("/admin/createInfo")
     public ModelAndView createInfo(){
         return new ModelAndView("/jsp/createInfo.jsp");

@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
-import com.example.demo.DAO.PersonaDaoJdbc;
 import com.example.demo.Domain.Persona;
+import com.example.demo.business.interfaces.PersonaBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,34 +14,34 @@ import java.util.List;
 public class PersonaController {
 
     @Autowired
-    PersonaDaoJdbc personaDao;
+    PersonaBO personaBO;
 
     @GetMapping
     public ResponseEntity<List<Persona>> list() {
-        return new ResponseEntity<>(personaDao.findAll(),HttpStatus.OK);
+        return new ResponseEntity<>(personaBO.findAllPersona(),HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Persona> get(@PathVariable Long id) {
-        return new ResponseEntity<>(personaDao.findById(id),HttpStatus.OK);
+        return new ResponseEntity<>(personaBO.findById(id),HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Persona persona) {
-        personaDao.save(persona);
+        personaBO.create(persona);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Persona persona) {
         persona.setId(id);
-        personaDao.update(persona);
+        personaBO.update(persona);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
-        personaDao.delete(id);
+        personaBO.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

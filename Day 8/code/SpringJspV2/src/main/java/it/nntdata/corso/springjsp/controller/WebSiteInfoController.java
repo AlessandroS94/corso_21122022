@@ -39,12 +39,4 @@ public class WebSiteInfoController {
         return new ModelAndView("/jsp/deleteInfo.jsp","id_not_found",true);
     }
 
-    @GetMapping("/admin/deleteInfo")
-    public ModelAndView deleteInfo(@RequestParam String id){
-        if(!id.isEmpty()) {
-            webSiteInfoBO.deleteWebSiteInfo(Long.parseLong(id));
-            return new ModelAndView("/jsp/deleteInfo.jsp","operation",true);
-        }
-        return new ModelAndView("/jsp/deleteInfo.jsp","id_not_found",true);
-    }
 }

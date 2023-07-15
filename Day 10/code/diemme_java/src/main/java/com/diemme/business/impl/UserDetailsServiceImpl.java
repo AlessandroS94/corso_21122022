@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.diemme.business.BusinessException;
+import com.diemme.exception.BusinessException;
 import com.diemme.domain.mysql.Role;
 import com.diemme.domain.mysql.User;
 

@@ -23,10 +23,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.diemme.business.BusinessException;
-import com.diemme.business.ChatUserService;
-import com.diemme.business.EmailService;
-import com.diemme.business.UserService;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.ChatUserService;
+import com.diemme.business.interfaces.EmailService;
+import com.diemme.business.interfaces.UserService;
 import com.diemme.component.PageModel;
 import com.diemme.domain.mongo.Chat;
 import com.diemme.domain.mysql.ChatUser;
@@ -196,6 +196,12 @@ public class ChatController {
 				typeChat = "un Produttore!";
 
 			}
+			else if (role.getRole().equals("PRODUCTOR")) {
+
+				userRole = serviceUser.getUsersByRole("DESIGNER");
+				typeChat = "un Designer!";
+
+			}
 
 		}
 		model.addAttribute("typeChat", typeChat);
@@ -210,7 +216,7 @@ public class ChatController {
 			@RequestParam(value = "contentImg") MultipartFile contentImg) throws BusinessException {
 
 		User userAuth = new User();
-		ModelAndView modelAndView = new ModelAndView();
+		ModelAndView modelAndView = new ModelAndView("redirect:/chatGestione");
 		String username = auth.getName();
 
 		try {
@@ -223,13 +229,15 @@ public class ChatController {
 		}
 
 		modelAndView.addObject("successMessage", "l'oggetto è stato creato!");
-		modelAndView.setViewName("/backoffice/chatDashboard/create.html");
+		//modelAndView.setViewName("/backoffice/chatDashboard/create.html");
 
 		for (Role role : userAuth.getRoles()) {
 
 			if (role.getRole().equals("CLIENT")) {
 				emailService.sendNotifyClientMessage(userAuth.getEmail(), userAuth.getName());
 			} else if (role.getRole().equals("DESIGNER")) {
+				emailService.sendNotifyDesignerMessage(userAuth.getEmail(), userAuth.getName());
+			} else if (role.getRole().equals("PRODUCTOR")) {
 				emailService.sendNotifyDesignerMessage(userAuth.getEmail(), userAuth.getName());
 			}
 
@@ -263,7 +271,6 @@ public class ChatController {
 			} else if (role.getRole().equals("DESIGNER")) {
 				emailService.sendNotifyDesignerMessage(userAuth.getEmail(), userAuth.getName());
 			}
-
 			else if (role.getRole().equals("PRODUCTOR")) {
 				emailService.sendNotifyProductorMessage(userAuth.getEmail(), userAuth.getName());
 			}

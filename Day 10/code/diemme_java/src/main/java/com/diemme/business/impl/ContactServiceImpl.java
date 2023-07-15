@@ -9,9 +9,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.diemme.ResourceNotFoundException;
-import com.diemme.business.BusinessException;
-import com.diemme.business.ContactService;
+import com.diemme.exception.ResourceNotFoundException;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.ContactService;
 import com.diemme.domain.mysql.ContactShowcase;
 import com.diemme.domain.mysql.User;
 import com.diemme.repository.mysql.ContactShowcaseRepository;

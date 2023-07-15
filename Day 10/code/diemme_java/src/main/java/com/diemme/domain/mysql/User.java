@@ -2,6 +2,7 @@ package com.diemme.domain.mysql;
 
 import java.util.Set;
 
+<<<<<<< HEAD
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,11 +17,26 @@ import jakarta.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
+=======
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+>>>>>>> main
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 
 @Entity
 @EqualsAndHashCode(callSuper = true)
@@ -35,7 +51,7 @@ public class User extends BaseModel {
 	@NotEmpty(message = "*Please provide your name")
 	private String name;
 	@Column(name = "user_name", nullable = false, unique = true)
-	@Length(min = 5, message = "*Your user name must have at least 5 characters")
+	@Size(min = 5, message = "*Your user name must have at least 5 characters")
 	@NotEmpty(message = "*Please provide a user name")
 	private String userName;
 	@Column(name = "surname", nullable = false)
@@ -47,7 +63,7 @@ public class User extends BaseModel {
 	@NotEmpty(message = "*Please provide an email")
 	private String email;
 	@Column(name = "password", nullable = false)
-	@Length(min = 5, message = "*Your password must have at least 5 characters")
+	@Size(min = 5, message = "*Your password must have at least 5 characters")
 	@NotEmpty(message = "*Please provide your password")
 	private String password;
 
@@ -76,7 +92,7 @@ public class User extends BaseModel {
 	private Set<TechnologyShowcase> technologyShowcases;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
-	private Set<QuotationShowcase> quotationShowcases;
+	private Set<ProcedureShowcase> procedureShowcases;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user")
 	private Set<NewsShowcase> newsShowcases;

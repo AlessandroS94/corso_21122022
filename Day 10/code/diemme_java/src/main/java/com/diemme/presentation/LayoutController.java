@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.diemme.business.BusinessException;
-import com.diemme.business.EmailService;
-import com.diemme.business.LayoutService;
-import com.diemme.business.UserService;
+import com.diemme.exception.BusinessException;
+import com.diemme.business.interfaces.EmailService;
+import com.diemme.business.interfaces.LayoutService;
+import com.diemme.business.interfaces.UserService;
 import com.diemme.component.PageModel;
 import com.diemme.domain.mysql.Layout;
 import com.diemme.domain.mysql.Role;
