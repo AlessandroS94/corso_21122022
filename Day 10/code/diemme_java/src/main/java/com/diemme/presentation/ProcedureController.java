@@ -99,14 +99,14 @@ public class ProcedureController {
 
 	@PostMapping("/preventiviUpdate/{id}")
 	public String updateProcedure(@PathVariable("id") Long id,
-								  @Valid @ModelAttribute("procedure_showcase_update") ProcedureShowcase quotation, Errors errors,
+								  @Valid @ModelAttribute("procedure_showcase_update") ProcedureShowcase procedureShowcase, Errors errors,
 								  Authentication auth) throws BusinessException {
 
 		String username = auth.getName();
 		try {
 
 			User userAuth = serviceUser.findUserByUserName(username);
-			procedureService.updateProcedure(id, quotation, userAuth);
+			procedureService.updateProcedure(id, procedureShowcase, userAuth);
 
 		} catch (DataAccessException e) {
 			e.printStackTrace();
