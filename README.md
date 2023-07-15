@@ -108,6 +108,7 @@ $ sudo apt install install maven
 ```
 
 ## Springboot 
- I requisiti precedenti sono più che sufficienti
+ I requisiti precedenti sono più che sufficienti l'installazione di Tomcat per questa parte di corso non è necessaria sono sufficienti Java 17 (openjdk) e Mamp/Lamp/mysql workbench per l'esecuzione del server mysql.
+Inoltre i progetti sono settatti con le credenziali diemme come username, password come password e come porta la 8888; in caso di problemi sostituirla con la <b> 3306 </b>  se state utilizzando altri server alternativi a Mamp.
 
 
