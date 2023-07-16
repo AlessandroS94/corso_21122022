@@ -5,8 +5,8 @@ server:
 spring:
   data:
       mongodb:
-        user: diemme
-        password: diemme
+        user:
+        password: 
         uri: mongodb://127.0.0.1:27017/diemme
   application:
     name: diemme

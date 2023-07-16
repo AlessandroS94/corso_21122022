@@ -1,14 +1,9 @@
 package com.diemme.presentation;
 
-import java.util.List;
-<<<<<<< HEAD:Day 10/code/diemme_java/src/main/java/com/diemme/presentation/QuotationController.java
 
+import com.diemme.domain.mysql.ProcedureShowcase;
 import jakarta.validation.Valid;
 
-=======
-import javax.validation.Valid;
-import com.diemme.domain.mysql.ProcedureShowcase;
->>>>>>> main:Day 10/code/diemme_java/src/main/java/com/diemme/presentation/ProcedureController.java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
@@ -26,6 +21,8 @@ import com.diemme.business.interfaces.ProcedureService;
 import com.diemme.business.interfaces.UserService;
 import com.diemme.component.PageModel;
 import com.diemme.domain.mysql.User;
+
+import java.util.List;
 
 @Controller
 public class ProcedureController {
