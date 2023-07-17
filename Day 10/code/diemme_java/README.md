@@ -29,6 +29,8 @@ Add VM option
 
 con il seguente risultato 
 
+
+
 ![Screenshot 2023-07-17 alle 20.05.11.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fbl%2Fc45fyd3n15d7_xs9dg8q37g40000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_1FMQpP%2FScreenshot%202023-07-17%20alle%2020.05.11.png)
 
 
