@@ -1,12 +1,9 @@
-server:
-  servlet:
-    context-path: /diemme
-
 spring:
   data:
       mongodb:
         user:
         password: 
+        #uri: mongodb://localhost:27017/diemme
         uri: mongodb://127.0.0.1:27017/diemme
   application:
     name: diemme

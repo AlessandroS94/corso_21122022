@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 
 @SpringBootApplication
+@EnableMongoRepositories({"com.diemme.repository.mongo"})
 public class DiemmeApplication {
 
 	public static void main(String[] args) {

@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.diemme.business.impl.UserDetailsServiceImpl;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 //@EnableWebSecurity
@@ -30,9 +31,9 @@ public class WebSecurityConfig {
 
 	
 	//@Override
-	protected void configure(HttpSecurity httpSecurity) throws Exception {
+	protected SecurityFilterChain configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeRequests()
-				.requestMatchers("/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
+		.requestMatchers("/","","/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
         .requestMatchers("/dashboard/**").authenticated()
         .requestMatchers("/chatGestione").authenticated()
         .requestMatchers("/chat/**").authenticated()
@@ -84,6 +85,7 @@ public class WebSecurityConfig {
 		            .and()
 		            .exceptionHandling()
 			        .accessDeniedPage("/access-denied");
+		return httpSecurity.build();
 	}
 
 }
