@@ -174,15 +174,15 @@ public class ChatUserServiceImpl implements ChatUserService {
 
 		Message messageSave = new Message();
 		Set<Message> messageList = new HashSet<Message>();
-		String nameuser = new String();
+		String nameUser;
 
-		nameuser = userAuth.getName() + " " + userAuth.getSurname();
+		nameUser = userAuth.getName() + " " + userAuth.getSurname();
 
 		chatOld = chatRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("chat", "id", id));
 
 		messageSave.setDate(LocalDateTime.now());
 		messageSave.setIdUser(userAuth.getId());
-		messageSave.setName(nameuser);
+		messageSave.setName(nameUser);
 		messageSave.setMessage(message);
 
 		if (attachment != null) {
