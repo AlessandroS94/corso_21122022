@@ -1,26 +1,29 @@
 package com.diemme.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.diemme.business.impl.UserDetailsServiceImpl;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-//@EnableWebSecurity
+@EnableWebSecurity
 public class WebSecurityConfig {
 
-	//@Autowired
-	private UserDetailsServiceImpl userDetailsService;
+	private final UserDetailsServiceImpl userDetailsService;
 
-	//@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-	//@Override
+	public WebSecurityConfig(BCryptPasswordEncoder bCryptPasswordEncoder, UserDetailsServiceImpl userDetailsService) {
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+		this.userDetailsService = userDetailsService;
+	}
+
+
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
 			.userDetailsService(userDetailsService)
@@ -30,9 +33,9 @@ public class WebSecurityConfig {
 
 
 	
-	//@Override
-	protected SecurityFilterChain configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeRequests()
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
 		.requestMatchers("/","","/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
         .requestMatchers("/dashboard/**").authenticated()
         .requestMatchers("/chatGestione").authenticated()
@@ -85,7 +88,7 @@ public class WebSecurityConfig {
 		            .and()
 		            .exceptionHandling()
 			        .accessDeniedPage("/access-denied");
-		return httpSecurity.build();
+		return http.build();
 	}
 
 }
