@@ -4,7 +4,9 @@
 <html lang="en">
 <jsp:include page="head.jsp"></jsp:include>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="navbar.jsp">
+    <jsp:param name="delete" value="active"/>
+</jsp:include>
 <c:if test="${operation == true}">
 <div class="alert alert-success" role="alert">
    ok

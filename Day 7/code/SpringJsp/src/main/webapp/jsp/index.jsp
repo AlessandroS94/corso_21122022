@@ -2,7 +2,9 @@
 <html lang="en">
 <jsp:include page="head.jsp"></jsp:include>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="navbar.jsp">
+    <jsp:param name="index" value="active"/>
+</jsp:include>
 
 <div class="container">
     <code class="small">${Info.getName()}</code>

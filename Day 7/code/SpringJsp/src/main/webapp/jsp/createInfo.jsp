@@ -2,9 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
-<jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="head.jsp">
+<jsp:param name="operation" value="operation"/>
+</jsp:include>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="navbar.jsp">
+    <jsp:param name="create" value="active"/>
+</jsp:include>
 <c:if test="${operation == true}">
 <div class="alert alert-success" role="alert">
    ok
