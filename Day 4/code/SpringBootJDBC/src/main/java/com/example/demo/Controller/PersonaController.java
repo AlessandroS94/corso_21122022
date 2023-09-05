@@ -14,7 +14,7 @@ import java.util.List;
 public class PersonaController {
 
     @Autowired
-    PersonaBO personaBO;
+    PersonaBO personaBO;v/cpeeopleLis<Pe pe = new;peo.addPerenwnew Per"ss,ss,"
 
     @GetMapping
     public ResponseEntity<List<Persona>> list() {
