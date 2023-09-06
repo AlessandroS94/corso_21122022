@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-<jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="partial/head.jsp"></jsp:include>
 <body>
-<jsp:include page="navbar.jsp">
+<jsp:include page="partial/navbar.jsp">
     <jsp:param name="index" value="active"/>
 </jsp:include>
 
@@ -16,4 +16,4 @@
     </div>
 </footer>
 </body>
-<jsp:include page="scriptJS.jsp"></jsp:include>
+<jsp:include page="partial/scriptJS.jsp"></jsp:include>

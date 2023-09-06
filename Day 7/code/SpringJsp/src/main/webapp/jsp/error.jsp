@@ -1,9 +1,9 @@
 ${Error}
 <!doctype html>
 <html lang="en">
-<jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="partial/head.jsp"></jsp:include>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="partial/navbar.jsp"></jsp:include>
 <div class="container">
         <h3>${Error}</h3>
         </div>
@@ -13,4 +13,4 @@ ${Error}
     </div>
 </div>
 </body>
-<jsp:include page="scriptJS.jsp"></jsp:include>
+<jsp:include page="partial/scriptJS.jsp"></jsp:include>
