@@ -42,7 +42,6 @@ public class WebSiteInfoController {
         WebSiteInfo webSiteInfo = new WebSiteInfo();
         webSiteInfo.setName(name);
         webSiteInfo.setDescription(description);
-        webSiteInfo.setLogo(file.getBytes());
         if(!file.isEmpty()) {
             if (file.getContentType().equals("image/jpg") || file.getContentType().equals("image/png") || file.getContentType().equals("image/jpeg")) {
                 webSiteInfo.setContentType(file.getContentType());

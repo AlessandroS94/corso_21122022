@@ -15,6 +15,7 @@ public class WebSiteInfo extends BaseEntity {
     private String name;
     @Column(columnDefinition = "TEXT")
     private String description;
+
     @Lob
     @Column(columnDefinition = "LONGBLOB")
     private byte[] logo;
