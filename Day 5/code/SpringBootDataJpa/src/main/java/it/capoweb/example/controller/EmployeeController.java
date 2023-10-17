@@ -33,18 +33,16 @@ public class EmployeeController {
 
     @GetMapping({"/home", "/"})
     public ModelAndView employeeHome() {
-        logger.debug("employee home() invoked");
+        logger.error("employee home() invoked");
         ModelAndView model = new ModelAndView("employees", "newEmployee", new Employee());
         
         List<Employee> employees;
         List<Department> departments;
-      
         employees = employeeBO.findAllUsers();
         departments = departmentBO.findAllDepartments();
         model.addObject("employees", employees);
         model.addObject("departments", departments);
         model.setViewName("employees");
-
         return model;
     }
 

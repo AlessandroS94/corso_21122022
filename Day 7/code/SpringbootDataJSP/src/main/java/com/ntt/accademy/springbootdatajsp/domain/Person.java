@@ -1,7 +1,6 @@
 package com.ntt.accademy.springbootdatajsp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @AllArgsConstructor
@@ -13,5 +12,11 @@ import lombok.*;
 public class Person extends BaseEntity {
     private String name;
     private String surname;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "gruppo_id")
+    private Gruppo gruppo;
+
+    private Tipo tipo;
 
 }

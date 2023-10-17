@@ -2,17 +2,14 @@ package it.nntdata.corso.springjsp.controller;
 
 import it.nntdata.corso.springjsp.business.interfaces.WebSiteInfoBO;
 import it.nntdata.corso.springjsp.model.WebSiteInfo;
-import it.nntdata.corso.springjsp.repository.WebSiteInfoRepository;
-import org.hibernate.Hibernate;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 import java.io.IOException;
 import java.sql.Blob;
@@ -52,6 +49,8 @@ public class WebSiteInfoController {
         }
         webSiteInfoBO.insertWebSiteInfo(webSiteInfo);
 
+
+        ModelAndView modelAndView = new ModelAndView("/jsp/createInfo.jsp");
         return new ModelAndView("/jsp/createInfo.jsp","operation",true);
     }
 
