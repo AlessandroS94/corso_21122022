@@ -1,4 +1,8 @@
 ## Corso JAVA JEE / Spring
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot)
+![Spring Boot](https://img.shields.io/badge/JEE-25A162?style=for-the-badge&logo=jee&logoColor=white)
+
 ### Day 1 - 2 - 3 --> JEE
 Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni
 
