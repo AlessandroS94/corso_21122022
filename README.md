@@ -1,14 +1,21 @@
 ## Corso JAVA JEE / Spring
-### Day 1 - 2 - 3 --> JEE
-Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni
 
-![java](./img/java.jpg)
+| Tecnologia | Badge |
+|------------|-------|
+| Java       | ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) |
+| Spring Boot| ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot) |
+| JEE        | ![JEE](https://img.shields.io/badge/JEE-25A162?style=for-the-badge&logo=jee&logoColor=white) |
 
-![mysql](./img/mysql.jpg)
 
-![maven](./img/maven.jpg)
+### Day
+**Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni**
 
-![springboot](./img/springboot.png)
+| Giorno    | Contenuto                                       | Tecnologia                              |
+|-----------|-------------------------------------------------|-----------------------------------------|
+| Day 1 - 3 | Corso introduttivo Servlet, Sprinboot Rest e Servlet | ![java](./img/java.jpg)            |
+| Day 4 - 10| Corso Spring                                    | ![springboot](./img/springboot.png)     |
+
+
 
 ## Primi passi
 Scaricare la repo per seguire le prime fasi del corso 
