@@ -7,7 +7,7 @@
 | JEE        | ![JEE](https://img.shields.io/badge/JEE-25A162?style=for-the-badge&logo=jee&logoColor=white) |
 
 
-### Day 1 - 2 - 3 --> JEE
+### Day
 **Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni**
 
 | Giorno    | Contenuto                                       | Tecnologia                              |
