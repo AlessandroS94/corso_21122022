@@ -12,7 +12,7 @@
 
 | Giorno    | Contenuto                                       | Tecnologia                              |
 |-----------|-------------------------------------------------|-----------------------------------------|
-| Day 1 - 3 | Corso introduttivo Servlet, Sprinboot Rest e Servlet | ![java](./img/java.jpg)            |
+| Day 1 - 3 | Corso introduttivo Servlet                      | ![java](./img/java.jpg)            |
 | Day 4 - 10| Corso Spring                                    | ![springboot](./img/springboot.png)     |
 
 
