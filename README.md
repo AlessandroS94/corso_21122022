@@ -6,7 +6,6 @@
 | Spring Boot| ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot) |
 | JEE        | ![JEE](https://img.shields.io/badge/JEE-25A162?style=for-the-badge&logo=jee&logoColor=white) |
 
-
 ### Day
 **Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni**
 
@@ -14,8 +13,6 @@
 |-----------|-------------------------------------------------|-----------------------------------------|
 | Day 1 - 3 | Corso introduttivo Servlet                      | ![java](./img/java.jpg)            |
 | Day 4 - 10| Corso Spring                                    | ![springboot](./img/springboot.png)     |
-
-
 
 ## Primi passi
 Scaricare la repo per seguire le prime fasi del corso 
@@ -33,7 +30,8 @@ Project is created with:
 
 ## Setup
 Eseguire i seguenti setup:
-#### Windows
+<details>
+<summary> <h4>Windows</h4></summary>
 * Installare JDK 17 LTS [https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
   ![Installer](./img/installer.png)
   *.* Verifica che la JDK sia stata installata correttamente: vai alla cartella in cui hai installato la JDK (ad esempio, "C:\Program Files\Java\jdk1...") e controlla che la cartella esista e che contenga le sottocartelle "bin", "jre", "lib", ecc.
@@ -68,6 +66,8 @@ Seguire i seguenti step:
 ```
 $ mvn -version
 ```
+</details>
+
 ### Macos
 Utilizzare homebrew
 * Installare JDK 17 LTS 
