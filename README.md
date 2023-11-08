@@ -68,7 +68,8 @@ $ mvn -version
 ```
 </details>
 
-### Macos
+<details>
+<summary> <h4>MacOS</h4></summary>
 Utilizzare homebrew
 * Installare JDK 17 LTS 
 ```
@@ -87,7 +88,9 @@ $ javac -version
 ```
 $ brew install maven
 ```
-### Linux (debian)
+</details>
+<details>
+<summary> <h4>Linux</h4></summary>
 Seguire i seguenti comandi
 ```
 $ sudo su -
@@ -99,7 +102,18 @@ $ wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
 $ sudo dpkg -i jdk-17_linux-x64_bin.deb
 $ java -version
 ```
-#### Linux Ubuntu
+* Installare Tomcat [https://tomcat.apache.org/download-10.cgi](https://tomcat.apache.org/download-10.cgi)
+  ![Tomcat](./img/Tomcat.png)
+  Eseguire l' unzip e spostare il contenuto nel workspace del progetto
+
+* Installare maven (Opzionale se si usa Sts o IntelliJ)
+```
+$ sudo apt install install maven
+```
+
+</details>
+<details>
+<summary> <h4>Linux Ubuntu</h4></summary>
 ```
 $ apt install openjdk-17-jdk openjdk-17-jre
 ```
@@ -113,7 +127,7 @@ $ apt install openjdk-17-jdk openjdk-17-jre
 ```
 $ sudo apt install install maven
 ```
-
+</details>
 ## Springboot 
  I requisiti precedenti sono più che sufficienti l'installazione di Tomcat per questa parte di corso non è necessaria sono sufficienti Java 17 (openjdk) e Mamp/Lamp/mysql workbench per l'esecuzione del server mysql.
 Inoltre i progetti sono settatti con le credenziali diemme come username, password come password e come porta la 8888; in caso di problemi sostituirla con la <b> 3306 </b>  se state utilizzando altri server alternativi a Mamp.
