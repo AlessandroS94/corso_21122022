@@ -24,9 +24,8 @@ $ cd corso_21122022
 ## Technologies
 Project is created with:
 * Java 17 LTS 
-* Mysql 
+* Mysql -> Xamp - Mamp - MySQL Workbench
 * Intellij IDE : IDE
-* MAMP :application
 
 ## Setup
 Eseguire i seguenti setup:
