@@ -31,8 +31,10 @@ Project is created with:
 Eseguire i seguenti setup:
 <details>
 <summary> <h4>Windows</h4></summary>
+
 * Installare JDK 17 LTS [https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
   ![Installer](./img/installer.png)
+
   *.* Verifica che la JDK sia stata installata correttamente: vai alla cartella in cui hai installato la JDK (ad esempio, "C:\Program Files\Java\jdk1...") e controlla che la cartella esista e che contenga le sottocartelle "bin", "jre", "lib", ecc.
 
   Imposta la variabile d'ambiente JAVA_HOME:
@@ -65,11 +67,14 @@ Seguire i seguenti step:
 ```
 $ mvn -version
 ```
+
 </details>
 
 <details>
 <summary> <h4>MacOS</h4></summary>
+
 Utilizzare homebrew
+
 * Installare JDK 17 LTS 
 ```
 $ brew install openjdk@17
@@ -90,7 +95,9 @@ $ brew install maven
 </details>
 <details>
 <summary> <h4>Linux</h4></summary>
+
 Seguire i seguenti comandi
+
 ```
 $ sudo su -
 $ wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
@@ -113,6 +120,7 @@ $ sudo apt install install maven
 </details>
 <details>
 <summary> <h4>Linux Ubuntu</h4></summary>
+
 ```
 $ apt install openjdk-17-jdk openjdk-17-jre
 ```
