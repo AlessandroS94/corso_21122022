@@ -25,7 +25,7 @@ $ cd corso_21122022
 Project is created with:
 * Java 17 LTS 
 * Mysql -> Xamp - Mamp - MySQL Workbench
-* Intellij IDE : IDE
+* Intellij IDE : IDE  and JPA Buddy plugin
 
 ## Setup
 Eseguire i seguenti setup:
