@@ -47,7 +47,7 @@ Eseguire i seguenti setup:
 
   Riavvia il prompt dei comandi: dopo aver apportato modifiche alle variabili d'ambiente, è necessario riavviare il prompt dei comandi per rendere effettive le modifiche.
 
-* Installare Tomcat [https://tomcat.apache.org/download-10.cgi](https://tomcat.apache.org/download-10.cgi)
+* Installare Tomcat [https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.27/src/](https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.27/src/)
   ![Tomcat](./img/Tomcat.png)
   Eseguire l' unzip e spostare il contenuto nel workspace del progetto
 * Installare maven (Opzionale se si usa Sts o IntelliJ)
