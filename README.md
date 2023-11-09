@@ -51,7 +51,7 @@ Eseguire i seguenti setup:
   ![Tomcat](./img/Tomcat.png)
   Eseguire l' unzip e spostare il contenuto nel workspace del progetto
 * Installare maven (Opzionale se si usa Sts o IntelliJ)
-Scarica dal seguente link [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
+Scarica dal seguente link [https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.27/src/](https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.27/src/)
 maven. 
 Seguire i seguenti step:
 ![fase1](img/fase1.png)
