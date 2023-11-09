@@ -52,7 +52,7 @@ Eseguire i seguenti setup:
   Eseguire l' unzip e spostare il contenuto nel workspace del progetto
 * Installare maven (Opzionale se si usa Sts o IntelliJ)
 Scarica dal seguente link [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
-maven. 
+maven. Scaricare l'ultima versione bisognerà adattare poi la versione che riportata nelle immagini con quella scaricata.
 Seguire i seguenti step:
 ![fase1](img/fase1.png)
 ![fase2](img/fase2.png)
