@@ -2,9 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
-<jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="partial/head.jsp"></jsp:include>
 <body>
-<jsp:include page="navbar.jsp"></jsp:include>
+<jsp:include page="partial/navbar.jsp">
+    <jsp:param name="delete" value="active"/>
+</jsp:include>
 <c:if test="${operation == true}">
 <div class="alert alert-success" role="alert">
    ok
@@ -32,4 +34,4 @@
     </div>
 </footer>
 </body>
-<jsp:include page="scriptJS.jsp"></jsp:include>
+<jsp:include page="partial/scriptJS.jsp"></jsp:include>

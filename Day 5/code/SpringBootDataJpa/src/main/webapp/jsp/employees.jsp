@@ -3,41 +3,21 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>Registration employee</title>
-    <style type="text/css">
-        label {
-            display:inline-block;
-            width:125px;
-        }
-        div.notification {
-            color : white;
-            font-weight: bold;
-            width:25%;
-            padding: 5px;
-        }
-    </style>
-</head>
+<jsp:include page="partial/head.jsp"></jsp:include>
+<style type="text/css">
+    label {
+        display:inline-block;
+        width:125px;
+    }
+    div.notification {
+        color : white;
+        font-weight: bold;
+        width:25%;
+        padding: 5px;
+    }
+</style>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="${pageContext.request.contextPath}">Menu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a  class="nav-link" href="${pageContext.request.contextPath}/employee/home"> Employees mangement </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/department/home"> Departments management </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<jsp:include page="partial/navbar.jsp"></jsp:include>
 <div class="container">
         <c:if test="${response != null && response.success == false}">
             <div class="notification" style="background-color: red">
@@ -81,7 +61,7 @@
 
         <form action="${pageContext.request.contextPath}/employee/searchByEmail" method="POST">
 
-            <label for="email">Cerca per e-mail:</label>
+            <label for="email">Cerca per email:</label>
             <input id="email" type="text" name="email" />
             <input type="submit" value="Cerca!"/>
         </form>
