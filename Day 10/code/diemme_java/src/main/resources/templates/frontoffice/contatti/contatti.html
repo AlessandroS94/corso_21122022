@@ -15,7 +15,7 @@
 	<div class="container">
 		<div class="d-none d-sm-block mb-5 pb-4">
 			<br>
-			<iframe
+			<iframe th:if="${contacts} "
 				th:src="@{'https://www.google.com/maps/embed/v1/place?q=' + ${contacts.lat} + ',' + ${contacts.lon} + '&amp;key=AIzaSyC-q0iUkwz8yDkkoSNhx2rtWWqh8FfnkHA'}"
 				width="100%" height="400" frameborder="0" style="border: 0;"
 				allowfullscreen=""></iframe>
