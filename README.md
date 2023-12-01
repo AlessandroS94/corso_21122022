@@ -1,10 +1,11 @@
 ## Corso JAVA JEE / Spring
+[![Maven](https://img.shields.io/badge/Apache_Maven-Build%20Automation-red?logo=apache-maven)](https://maven.apache.org/)
+[![Java](https://img.shields.io/badge/Java-Programming%20Language-red?logo=java)](https://www.java.com/)
+[![Thymeleaf](https://img.shields.io/badge/Thymeleaf-Template%20Engine-green)](https://www.thymeleaf.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3-green?logo=spring)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-orange?logo=mysql)](https://www.mysql.com/)
+[![JAKARTA](https://img.shields.io/badge/Jakarta_-yellow?logo=jakarta)](https://jakarta.ee/)
 
-| Tecnologia | Badge |
-|------------|-------|
-| Java  17   | ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) |
-| Spring Boot| ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot) |
-| JEE        | ![JEE](https://img.shields.io/badge/JEE-25A162?style=for-the-badge&logo=jee&logoColor=white) |
 
 ### Day
 **Corso introduttivo Sprinboot Rest/JSP/Thymeleaf e Servlet - 10 giorni**
