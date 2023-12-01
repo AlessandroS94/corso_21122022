@@ -137,8 +137,8 @@ $ sudo apt install install maven
 </details>
 
 ## Springboot 
- I requisiti precedenti sono più che sufficienti l'installazione di Tomcat per questa parte di corso non è necessaria sono sufficienti Java 17 (openjdk) e Mamp/Lamp/mysql workbench per l'esecuzione del server mysql.
-Inoltre i progetti sono settatti con le credenziali diemme come username, password come password e come porta la 8888; in caso di problemi sostituirla con la <b> 3306 </b>  se state utilizzando altri server alternativi a Mamp.
-Dal Day 4 in poi sono tutti progetti Springboot. 
+I requisiti precedenti sono più che sufficienti. L'installazione di Tomcat per questa parte di corso non è necessaria. Come configurazioni sono sufficienti quella di Java 17 (openjdk) e Mamp/Lamp/mysql workbench per l'esecuzione del server mysql.
+Inoltre i progetti sono settatti con le credenziali SQL diemme come username, password come password e come porta la 8888; in caso di problemi sostituire la porta 8888 con <b> 3306 </b>  se state utilizzando altri server alternativi a Mamp.
+Dalla cartella Day 4 in poi sono tutti progetti Springboot. 
 
 
