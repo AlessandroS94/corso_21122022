@@ -6,4 +6,5 @@ Basato su SpringBoot 2.4 sfrutta varie tecnologie tra cui:
 2. MongoDb
 3. Spring Security
 4. Mail
+
 Seguire attentamente le descrizioni all'interno del README.md del progetto per poyerlo avviare
