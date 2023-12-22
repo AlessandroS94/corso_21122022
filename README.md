@@ -22,7 +22,7 @@ $ git clone https://github.com/AlessandroS94/corso_21122022.git
 $ cd corso_21122022
 ```
 
-## Technologies
+## Tecnologie
 Project is created with:
 * Java 17 LTS 
 * Mysql -> Xamp - Mamp - MySQL Workbench
