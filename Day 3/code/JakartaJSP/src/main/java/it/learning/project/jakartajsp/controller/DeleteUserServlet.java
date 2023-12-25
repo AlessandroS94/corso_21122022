@@ -13,32 +13,27 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/")
-public class HomeServlet extends HttpServlet {
-    private String message;
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        UserDAO userDAO = new UserDAO();
-        List<User> users = null;
-        try {
-            users = userDAO.selectAllUsers();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        request.setAttribute("users", users);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
-        dispatcher.forward(request, response);
-    }
+@WebServlet("/deleteUser")
+public class DeleteUserServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    // If you need to handle POST as well
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
+        // Obtain the User Identifier
+        String userId = request.getParameter("userId");
+        UserDAO userDAO = new UserDAO();
+
+        try {
+            // Perform the Deletion
+            // Ensure userID is not null, empty, and is a valid number
+            if (userId != null && !userId.trim().isEmpty()) {
+                int id = Integer.parseInt(userId);  // Ensure this is a valid integer
+                userDAO.deleteUser(id);  // Implement deleteUser in your DAO
+                response.sendRedirect(request.getContextPath() + "/");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect(request.getContextPath() + "/");
+        }
     }
 }

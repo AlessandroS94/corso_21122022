@@ -1,6 +1,6 @@
 # Esempio
 
-## Esempio progetto con server TOMCAT versione 10.0.27
+## Esempio progetto con server TOMCAT versione 10.1.17
 Questo progetto sfrutta il design pattern delle facedes e MVC. Inoltre sfrutta le tecnologie HTML, MSQL, JSP e JAKARTA.
 
 ## SETUP
@@ -23,3 +23,4 @@ ereditate.
 http://localhost:8080/Esempio2_war_exploded/
 http://localhost:8080/Esempio2_war_exploded//hello-servlet
 http://localhost:8080/Esempio2_war_exploded/ServletInserUser
+ecc.. 

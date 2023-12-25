@@ -1,13 +1,16 @@
-package it.corso.esempiopagine.esempio2.dao;
+package it.learning.project.jakartajsp.dao;
 
-import it.corso.esempiopagine.esempio2.model.User;
+
+
+import it.learning.project.jakartajsp.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UserDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:8889/demo?useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:8889/demo?serverTimezone=UTC";
     private String jdbcUsername = "diemme";
     private String jdbcPassword = "password";
 
@@ -25,7 +28,7 @@ public class UserDAO {
     protected Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.jdbc.Driver");
         Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-        System.out.println("Connected to Database.");
+        System.out.println("Connesso al DB");
         return connection;
     }
 

@@ -1,4 +1,4 @@
-package it.corso.esempiopagine.esempio2.model;
+package it.learning.project.jakartajsp.model;
 
 
 public class User {
