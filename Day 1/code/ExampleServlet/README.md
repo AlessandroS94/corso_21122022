@@ -6,4 +6,4 @@ La versione di Jee è la 8 e sfruttiamo maven come gestore del progetto e quindi
 Tale progetto include le impostazioni IntelliJ che permettono un rapido avvio di tale progetto.
 
 ## Cosa presenta?
-Tale progetto presenta 2 endpoint / e /HelloServlet  che permettono di di visualizzare due pagine html di Hello world.
+Tale progetto presenta 2 endpoint / e /HelloServlet  che permettono di visualizzare due pagine html di Hello world.
