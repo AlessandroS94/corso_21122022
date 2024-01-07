@@ -19,6 +19,7 @@ private String jdbcPassword = "";
 // variare  jdbcUsername e jdbcPassword con i valori del proprio server msql
 ```
 
+
 Prima di avviare il progetto importare il file "localhost.sql" che contiene il database con le tabelle.
 Ora aprendo il progetto con IntelliJ CE o Ultimate potrete avviare in automatico il progetto dato che
 il file di configuarazione sono state incluse nel progetto git.
