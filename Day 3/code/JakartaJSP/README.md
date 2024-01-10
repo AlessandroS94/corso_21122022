@@ -26,3 +26,7 @@ il file di configuarazione sono state incluse nel progetto git.
 Si raccomanda di aprire il progetto con IntelliJ dalla cartella Esempio2 altrimenti non si avranno le impostazioni
 ereditate.
 
+### In esecuzione
+
+![Screenshot 2024-01-10 alle 08.21.07.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fbl%2Fc45fyd3n15d7_xs9dg8q37g40000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_HUcJM8%2FScreenshot%202024-01-10%20alle%2008.21.07.png)
+![Screenshot 2024-01-10 alle 08.21.48.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fbl%2Fc45fyd3n15d7_xs9dg8q37g40000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_JP3ANs%2FScreenshot%202024-01-10%20alle%2008.21.48.png)
