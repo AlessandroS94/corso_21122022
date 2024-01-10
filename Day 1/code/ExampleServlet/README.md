@@ -1,9 +1,13 @@
-# Progetto di esempio servlet
-
-In questo è stato realizzato, tramite l'utilizzo di IntelliJ Ultimate, un progetto essenziale per avviare un'applicazione JEE che sfrutta le servlet tramite pagine jsp.
-Il progetto si basa sull'utilizzo di un server TomCat 10.0.27 .
-La versione di Jee è la 8 e sfruttiamo maven come gestore del progetto e quindi delle relative dipendenze; i dettagli sulla conoscenza delle varie componenti sono riportate nelle slide della sezione slide.
-Tale progetto include le impostazioni IntelliJ che permettono un rapido avvio di tale progetto.
+# Progetto di Applicazione Web con IntelliJ Ultimate e JEE
+## Panoramica del Progetto
+Questo progetto consiste in un’applicazione web essenziale sviluppata utilizzando IntelliJ Ultimate. Impiega Java Enterprise Edition (JEE) 8 e incorpora servlet attraverso pagine JSP. L’applicazione funziona su un server TomCat 10.0.27, assicurando un ambiente backend stabile e affidabile.
+Utilizziamo Maven per la gestione del progetto, semplificando la gestione delle dipendenze. Approfondimenti sulle varie componenti e le loro funzionalità sono disponibili nelle slide nella sezione ‘slide’ di questo repository.
+Inoltre, questo progetto include le impostazioni di IntelliJ che facilitano una configurazione rapida ed efficiente, permettendo agli sviluppatori di iniziare con una minima configurazione.
 
 ## Cosa presenta?
-Tale progetto presenta 2 endpoint / e /HelloServlet  che permettono di visualizzare due pagine html di Hello world.
+Il progetto presenta due endpoint principali:
+
+	1.	/ - Un endpoint base che mostra una semplice pagina HTML “Hello World”.
+	2.	/HelloServlet - Questo endpoint mostra anch’esso una pagina HTML “Hello World”, dimostrando l’uso dei servlet nell’applicazione.
+
+Entrambi gli endpoint servono come esempi di come implementare e visualizzare contenuti in un’applicazione web JEE, rendendola un punto di partenza ideale per sviluppatori nuovi a questo ambiente.
