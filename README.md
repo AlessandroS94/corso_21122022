@@ -1,4 +1,4 @@
-## Corso JAVA JEE / Spring
+# Corso JAVA JEE / Spring
 [![Maven](https://img.shields.io/badge/Apache_Maven-Build%20Automation-red?logo=apache-maven)](https://maven.apache.org/)
 [![Java](https://img.shields.io/badge/Java-Programming%20Language-red?logo=java)](https://www.java.com/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-Template%20Engine-green)](https://www.thymeleaf.org/)
@@ -7,13 +7,23 @@
 [![JAKARTA](https://img.shields.io/badge/Jakarta_-yellow?logo=jakarta)](https://jakarta.ee/)
 
 
-### Day
+### Contenuto 
 **Corso introduttivo Sprinboot Rest/JSP/Thymeleaf e Servlet - 10 giorni**
 
+
+***Suddivisione***
 | Giorno    | Contenuto                                       | Tecnologia                              |
 |-----------|-------------------------------------------------|-----------------------------------------|
 | Day 1 - 3 | Corso introduttivo Servlet                      | ![java](./img/java.jpg)            |
 | Day 4 - 10| Corso Spring                                    | ![springboot](./img/springboot.png)     |
+
+**Contenuto di ogni Day**
+
+
+
+Ogni Day contiene due cartelle:
+1. Code: codice ci progetti esempio che sono eseguibili in modo indipendente.
+2. Slide: File pdf o ppt contenenti spiegazioni in ambito teorico sfruttando in alcune occasioni anche i progetti contenuti nella sezione code.
 
 ## Primi passi
 Scaricare la repo per seguire le prime fasi del corso 
