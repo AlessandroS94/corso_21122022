@@ -9,6 +9,8 @@
 
 ### Contenuto 
 **Corso introduttivo Sprinboot Rest/JSP/Thymeleaf e Servlet - 10 giorni**
+
+
 ***Suddivisione***
 | Giorno    | Contenuto                                       | Tecnologia                              |
 |-----------|-------------------------------------------------|-----------------------------------------|
@@ -16,6 +18,9 @@
 | Day 4 - 10| Corso Spring                                    | ![springboot](./img/springboot.png)     |
 
 **Contenuto di ogni Day**
+
+
+
 Ogni Day contiene due cartelle:
 1. Code: codice ci progetti esempio che sono eseguibili in modo indipendente.
 2. Slide: File pdf o ppt contenenti spiegazioni in ambito teorico sfruttando in alcune occasioni anche i progetti contenuti nella sezione code.
