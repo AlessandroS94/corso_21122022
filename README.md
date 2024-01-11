@@ -9,7 +9,7 @@
 
 ### Contenuto 
 **Corso introduttivo Sprinboot Rest/JSP/Thymeleaf e Servlet - 10 giorni**
-***Suddivisione**
+***Suddivisione***
 | Giorno    | Contenuto                                       | Tecnologia                              |
 |-----------|-------------------------------------------------|-----------------------------------------|
 | Day 1 - 3 | Corso introduttivo Servlet                      | ![java](./img/java.jpg)            |
