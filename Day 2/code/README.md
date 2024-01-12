@@ -1,4 +1,4 @@
-# Example Project 
+# Esempio2 Project 
 Per poter avviare il progetto completare i seguenti pre requisiti:
 1. Avviare il server Mysql e caricaricare il database che si trova all'interno del file local.sql .
 2. Variare le settaggi sul dao con le impostazioni del server MySql.
