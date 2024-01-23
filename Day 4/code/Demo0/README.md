@@ -23,3 +23,4 @@ OPPURE
 ```sh
  $ mvn spring-boot:run
 ```
+e poi testare le api con Postman.
