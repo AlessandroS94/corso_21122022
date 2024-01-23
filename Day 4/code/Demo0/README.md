@@ -9,7 +9,7 @@ Semplice applicativo server contente come DAO Persona ed delle API REST per pote
 Non contiene nessun sistema di persistenza, ma solo la componente tomcat per le risposte REST.
 
 ## ISTRUZIONI
-NB: Utilizzare Postman importando le chiamate all'interno del progetto per poter gestire le chiamate.
+NB: Utilizzare Postman importando le chiamate (/Day4-Demo0.postman_collection.json) all'interno del progetto per poter gestire le chiamate.
 
 Come avviare il progetto:
   1. Aprire questa directory con Intellj IDE.
