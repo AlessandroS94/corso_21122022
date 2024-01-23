@@ -16,9 +16,9 @@ Come avviare il progetto:
   2. Attendere che maven interno all'IDE scarichi tutte le dipendenze.
   3. Avviare Demo0Application
   4. Testare le api con Postman
-<br>
-OPPURE
-  Se già presente nel sistema maven eseguire il seguente comando maven:
+     
+<br>OPPURE<br>
+  Se già presente nel sistema maven eseguire il seguente comando:
 
 ```sh
  $ mvn spring-boot:run
