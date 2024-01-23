@@ -14,7 +14,7 @@ Il Demo3Application.java contiene il la funzione main per poter avviare l'applic
 
 ## Descrizione
 Semplice applicativo server contente come DAO Persona e delle API REST per poter aggiungere una persona e gestire le persone.
-Contiene un sistema di persistenza gestista tramite JPA sfruttando un database Mysql e tomcat per fornire le risposte REST.
+Contiene un sistema di persistenza gestista tramite JDBC sfruttando un database Mysql e tomcat per fornire le risposte REST.
 
 ## Istruzioni
 NB: Utilizzare Postman importando le chiamate (SpringBootJDBC.postman_collection.json) presente all'interno del progetto per poter invocare le chiamate già pronte.
