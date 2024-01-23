@@ -19,6 +19,7 @@ Come avviare il progetto:
 <br>
 OPPURE
   Se già presente nel sistema maven eseguire il seguente comando maven:
-  ```sh
+
+```sh
  $ mvn spring-boot:run
 ```
