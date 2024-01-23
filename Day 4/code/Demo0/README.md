@@ -8,7 +8,7 @@ Mancano inoltre una strutturazione più complessa dei pattern.
 Semplice applicativo server contente come DAO Persona ed delle API REST per poter aggiungere persone al gruppo e gestire le persone.
 Non contiene nessun sistema di persistenza, ma solo la componente tomcat per le risposte REST.
 
-## ISTRUZIONI
+## Istruzioni
 NB: Utilizzare Postman importando le chiamate (/Day4-Demo0.postman_collection.json) presente all'interno del progetto per poter invocare le chiamate già pronte.
 
 Come avviare il progetto:
