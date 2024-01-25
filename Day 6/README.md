@@ -6,4 +6,6 @@ Topic:
 4. JSP
 5. JSTL
 6. The facade pattern
-7. The Decorator pattern 
+7. The Decorator pattern
+
+Solo teoria
