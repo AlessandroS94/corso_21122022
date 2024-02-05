@@ -7,4 +7,6 @@ Topic:
 5. JSTL
 6. The facade pattern
 7. The Decorator pattern 
-8. Spring Security 
+8. Spring Security
+9. Cookie
+10. SOAP
