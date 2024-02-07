@@ -22,8 +22,8 @@
 
 
 Ogni Day contiene due cartelle:
-1. Code: codice ci progetti esempio che sono eseguibili in modo indipendente.
-2. Slide: File pdf o ppt contenenti spiegazioni in ambito teorico sfruttando in alcune occasioni anche i progetti contenuti nella sezione code.
+1. <b> Code </b>: codice ci progetti esempio che sono eseguibili in modo indipendente.
+2. <b> Slide </b>: File pdf o ppt contenenti spiegazioni in ambito teorico sfruttando in alcune occasioni anche i progetti contenuti nella sezione code.
 
 ## Primi passi
 Scaricare la repo per seguire le prime fasi del corso 
