@@ -6,18 +6,18 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select u from User u where u.name not like concat('%', ?1, '%') order by u.name")
-    Optional<User> findByNameNotContainsOrderByNameAsc(String name);
+    List<Optional<User>>  findByNameNotContainsOrderByNameAsc(String name);
 
     @Query("select u from User u where u.name like concat(?1, '%')")
-    Optional<User> findByNameStartsWith(@NonNull String name);
+    List<Optional<User>> findByNameStartsWith(@NonNull String name);
 
-   // Optional<User> findUserByIdAndNameContaining(@NonNull String name);
-
-
+    List<User> findByBirthdayGreaterThanEqual(Date birthday);
 
 }
