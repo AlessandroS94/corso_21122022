@@ -1,4 +1,4 @@
-## Spring Data JSP
+# Spring Data JSP
 Topic:
 1. Rest Controller
 2. Spring Data Jpa
@@ -8,4 +8,4 @@ Topic:
 6. The facade pattern
 7. The Decorator pattern
 
-Solo teoria
+
