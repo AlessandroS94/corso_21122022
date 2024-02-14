@@ -2,7 +2,7 @@
 In questo progetto Springboot si vuole esplicitare l'utilizzo delle query Repository.
 
 ## Risultato
-Si potrà,tramite Swagger, sfruttare tutte le API coem riportato nelle immagini sotto
+Si potrà,tramite Swagger, sfruttare tutte le API come riportato nelle immagini sotto
 
 ![Senza nome.jpg](imgForREADME/Senza%20nome.jpg)
 
