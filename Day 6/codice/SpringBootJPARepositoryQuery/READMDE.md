@@ -11,4 +11,4 @@ Si potrà,tramite Swagger, sfruttare tutte le API come riportato nelle immagini 
 ## Topic
 Funzionalità:
 1. Swagger - Visualizzazione di tutte le API
-2. JPA - ORM
+2. JPA - ORM - Mysql Driver
