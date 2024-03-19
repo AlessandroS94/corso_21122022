@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "";
+    private String jdbcURL = "jdbc:mysql://localhost:8889/demo?useSSL=false";
+    private String jdbcUsername = "diemme";
+    private String jdbcPassword = "password";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES "
             + " (?, ?, ?);";

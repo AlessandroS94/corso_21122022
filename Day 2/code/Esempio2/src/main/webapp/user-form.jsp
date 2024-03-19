@@ -18,7 +18,7 @@
 </header>
 <br>
 
-<div>
+<div class="container">
     <form method="post" action="ServletInserUser">
         <div class="mb-3">
             <label class="form-label">Email address</label>
@@ -29,7 +29,7 @@
             <input type="text" class="form-control" name="email" required="required">
         </div>
         <div class="mb-3">
-            <label class="form-label">Stato</label>
+            <label class="form-label">Nazione</label>
             <input type="text" class="form-control" name="country" required="required">
         </div>
         <button type="submit" class="btn btn-success">Save</button>

@@ -1,18 +1,29 @@
-## Corso JAVA JEE / Spring
+# Corso JAVA JEE / Spring
+[![Maven](https://img.shields.io/badge/Apache_Maven-Build%20Automation-red?logo=apache-maven)](https://maven.apache.org/)
+[![Java](https://img.shields.io/badge/Java-Programming%20Language-red?logo=java)](https://www.java.com/)
+[![Thymeleaf](https://img.shields.io/badge/Thymeleaf-Template%20Engine-green)](https://www.thymeleaf.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3-green?logo=spring)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-orange?logo=mysql)](https://www.mysql.com/)
+[![JAKARTA](https://img.shields.io/badge/Jakarta_-yellow?logo=jakarta)](https://jakarta.ee/)
 
-| Tecnologia | Badge |
-|------------|-------|
-| Java  17   | ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) |
-| Spring Boot| ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot) |
-| JEE        | ![JEE](https://img.shields.io/badge/JEE-25A162?style=for-the-badge&logo=jee&logoColor=white) |
 
-### Day
-**Corso introduttivo Servlet, Sprinboot Rest e Servlet - 10 giorni**
+### Contenuto 
+**Corso introduttivo Sprinboot Rest/JSP/Thymeleaf e Servlet - 10 giorni**
 
+
+***Suddivisione***
 | Giorno    | Contenuto                                       | Tecnologia                              |
 |-----------|-------------------------------------------------|-----------------------------------------|
 | Day 1 - 3 | Corso introduttivo Servlet                      | ![java](./img/java.jpg)            |
 | Day 4 - 10| Corso Spring                                    | ![springboot](./img/springboot.png)     |
+
+**Contenuto di ogni Day**
+
+
+
+Ogni Day contiene due cartelle:
+1. <b> Code </b>: codice ci progetti esempio che sono eseguibili in modo indipendente.
+2. <b> Slide </b>: File pdf o ppt contenenti spiegazioni in ambito teorico sfruttando in alcune occasioni anche i progetti contenuti nella sezione code.
 
 ## Primi passi
 Scaricare la repo per seguire le prime fasi del corso 
@@ -21,7 +32,7 @@ $ git clone https://github.com/AlessandroS94/corso_21122022.git
 $ cd corso_21122022
 ```
 
-## Technologies
+## Tecnologie
 Project is created with:
 * Java 17 LTS 
 * Mysql -> Xamp - Mamp - MySQL Workbench
@@ -137,8 +148,8 @@ $ sudo apt install install maven
 </details>
 
 ## Springboot 
- I requisiti precedenti sono più che sufficienti l'installazione di Tomcat per questa parte di corso non è necessaria sono sufficienti Java 17 (openjdk) e Mamp/Lamp/mysql workbench per l'esecuzione del server mysql.
-Inoltre i progetti sono settatti con le credenziali diemme come username, password come password e come porta la 8888; in caso di problemi sostituirla con la <b> 3306 </b>  se state utilizzando altri server alternativi a Mamp.
-Dal Day 4 in poi sono tutti progetti Springboot. 
+I requisiti precedenti sono più che sufficienti. L'installazione di Tomcat per questa parte di corso non è necessaria. Come configurazioni sono sufficienti quella di Java 17 (openjdk) e Mamp/Lamp/mysql workbench per l'esecuzione del server mysql.
+Inoltre i progetti hanno come credenziali di accesso SQL <diemme> come username, <password> come password e come porta la 8888; in caso di problemi sostituire la porta <b> 8888</b> con <b> 3306 </b>  se state utilizzando altri server alternativi a Mamp.
+Dalla cartella Day 4 in poi sono tutti progetti Springboot. 
 
 
