@@ -2,7 +2,7 @@ package com.diemme.domain.mongo;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Version;
+import jakarta.persistence.Version;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

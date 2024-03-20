@@ -1,13 +1,12 @@
 package com.diemme;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@EnableAutoConfiguration
+
 @SpringBootApplication
-@ComponentScan("com.diemme")
+@EnableMongoRepositories({"com.diemme.repository.mongo"})
 public class DiemmeApplication {
 
 	public static void main(String[] args) {

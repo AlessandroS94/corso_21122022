@@ -353,3 +353,5 @@ MigrationBackup/
 Day 5/.DS_Store
 
 .DS_Store
+
+Day 10/code/diemme_java/src/main/resources/config/application.yml

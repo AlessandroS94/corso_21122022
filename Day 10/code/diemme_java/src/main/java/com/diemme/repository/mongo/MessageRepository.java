@@ -1,9 +1,12 @@
 package com.diemme.repository.mongo;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+
 
 import com.diemme.domain.mongo.Message;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface MessageRepository extends MongoRepository <Message, String>{
+@Repository
+public interface MessageRepository extends MongoRepository<Message, String> {
 
 }
