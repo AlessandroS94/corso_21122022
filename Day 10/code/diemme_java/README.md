@@ -1,11 +1,13 @@
 ## Diemme_java
 Progetto prototipo utilizzato a titolo esimplificativo
 
-Require:
-1. Java 17 
-2. Mongo DB
-3. Mysql
-4. MailTrap account
+### Requirement 
+
+| Software         | Verion |
+|------------------|--------|
+| Mysql            | => 5   |
+| MongoDB Comunity | 7      |
+| Java             | 17     |
 
 ## Come installare Mongo DB 
 

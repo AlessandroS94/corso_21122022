@@ -31,12 +31,18 @@ public class WebSecurityConfig {
 		    ;
 	}
 
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-	
+
+
+
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.requestMatchers("/","","/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
+		.requestMatchers("/","/home","/showcase/**","/login","/registration","/backoffice/**").permitAll()
         .requestMatchers("/dashboard/**").authenticated()
         .requestMatchers("/chatGestione").authenticated()
         .requestMatchers("/chat/**").authenticated()
@@ -75,7 +81,7 @@ public class WebSecurityConfig {
         .requestMatchers("/utenteUpdate").authenticated()
 			        .and()
 			        .csrf().disable()
-				     .formLogin()
+				    .formLogin()
 			        .loginPage("/login")
 				    .failureUrl("/login?error=true")
 			        .defaultSuccessUrl("/dashboard",true)
