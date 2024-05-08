@@ -1,2 +1,0 @@
-# Progetti
-## Esempio 2
