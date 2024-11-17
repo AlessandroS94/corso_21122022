@@ -1,4 +1,4 @@
-package it.traceplugin.springboot_jwt_angular.SecurityConfig;
+package it.myproject.springboot_jwt_angular.SecurityConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

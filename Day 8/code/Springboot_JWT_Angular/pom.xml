@@ -8,7 +8,7 @@
         <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>it.tracePlugin</groupId>
+    <groupId>it.myproject</groupId>
     <artifactId>Springboot_JWT_Angular</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Springboot_JWT_Angular</name>

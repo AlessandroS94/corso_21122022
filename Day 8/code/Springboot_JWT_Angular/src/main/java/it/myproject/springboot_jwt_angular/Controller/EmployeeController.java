@@ -1,7 +1,7 @@
-package it.traceplugin.springboot_jwt_angular.Controller;
+package it.myproject.springboot_jwt_angular.Controller;
 
-import it.traceplugin.springboot_jwt_angular.Model.Employee;
-import it.traceplugin.springboot_jwt_angular.Repository.EmployeeRepository;
+import it.myproject.springboot_jwt_angular.Model.Employee;
+import it.myproject.springboot_jwt_angular.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

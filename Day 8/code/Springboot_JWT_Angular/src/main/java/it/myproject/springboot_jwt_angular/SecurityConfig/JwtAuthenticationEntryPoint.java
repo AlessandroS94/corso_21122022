@@ -1,4 +1,4 @@
-package it.traceplugin.springboot_jwt_angular.SecurityConfig;
+package it.myproject.springboot_jwt_angular.SecurityConfig;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

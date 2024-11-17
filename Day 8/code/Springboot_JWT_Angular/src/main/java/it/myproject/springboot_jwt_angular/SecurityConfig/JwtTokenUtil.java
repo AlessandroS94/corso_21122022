@@ -1,4 +1,4 @@
-package it.traceplugin.springboot_jwt_angular.SecurityConfig;
+package it.myproject.springboot_jwt_angular.SecurityConfig;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

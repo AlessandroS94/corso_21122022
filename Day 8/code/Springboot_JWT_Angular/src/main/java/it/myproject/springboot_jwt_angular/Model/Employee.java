@@ -1,4 +1,4 @@
-package it.traceplugin.springboot_jwt_angular.Model;
+package it.myproject.springboot_jwt_angular.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

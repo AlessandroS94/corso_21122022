@@ -1,4 +1,4 @@
-package it.traceplugin.springboot_jwt_angular;
+package it.myproject.springboot_jwt_angular;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
