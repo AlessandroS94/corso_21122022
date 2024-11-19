@@ -1,8 +1,8 @@
-package it.myproject.springboot_jwt_angular.Controller;
+package it.myproject.springboot_jwt_angular.controller;
 
-import it.myproject.springboot_jwt_angular.Model.JwtRequest;
-import it.myproject.springboot_jwt_angular.Model.JwtResponse;
-import it.myproject.springboot_jwt_angular.SecurityConfig.JwtTokenUtil;
+import it.myproject.springboot_jwt_angular.model.JwtRequest;
+import it.myproject.springboot_jwt_angular.model.JwtResponse;
+import it.myproject.springboot_jwt_angular.securityConfig.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

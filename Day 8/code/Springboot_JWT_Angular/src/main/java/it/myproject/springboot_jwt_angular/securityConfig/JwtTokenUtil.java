@@ -1,4 +1,4 @@
-package it.myproject.springboot_jwt_angular.SecurityConfig;
+package it.myproject.springboot_jwt_angular.securityConfig;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

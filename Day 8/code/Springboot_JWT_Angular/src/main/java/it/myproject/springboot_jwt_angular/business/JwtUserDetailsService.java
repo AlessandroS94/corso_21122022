@@ -1,4 +1,4 @@
-package it.myproject.springboot_jwt_angular.Business;
+package it.myproject.springboot_jwt_angular.business;
 
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

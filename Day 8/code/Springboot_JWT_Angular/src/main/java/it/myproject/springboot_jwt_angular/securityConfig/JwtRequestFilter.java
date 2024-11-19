@@ -1,7 +1,7 @@
-package it.myproject.springboot_jwt_angular.SecurityConfig;
+package it.myproject.springboot_jwt_angular.securityConfig;
 
 import io.jsonwebtoken.ExpiredJwtException;
-import it.myproject.springboot_jwt_angular.Business.JwtUserDetailsService;
+import it.myproject.springboot_jwt_angular.business.JwtUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
