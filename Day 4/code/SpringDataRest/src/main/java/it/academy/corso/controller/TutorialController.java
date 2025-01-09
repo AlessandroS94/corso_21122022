@@ -16,16 +16,17 @@ import java.util.List;
 @RequestMapping("/api")
 public class TutorialController {
 
-  @Autowired
-  private TutorialRepository tutorialRepository;
 
-  @Autowired
-  private TutorialBO tutorialBO;
+  private final TutorialBO tutorialBO;
+
+  public TutorialController(TutorialBO tutorialBO) {
+    this.tutorialBO = tutorialBO;
+  }
 
   @GetMapping("/tutorials")
   public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
     List<Tutorial> tutorials = new ArrayList<Tutorial>();
-    tutorials = tutorialBO.allTutorials(title);
+    tutorials = this.tutorialBO.allTutorials(title);
     if (tutorials.isEmpty()) {
       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -34,22 +35,22 @@ public class TutorialController {
 
   @GetMapping("/tutorials/{id}")
   public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") long id) {
-    return new ResponseEntity<>(tutorialBO.tutorialById(id), HttpStatus.OK);
+    return new ResponseEntity<>(this.tutorialBO.tutorialById(id), HttpStatus.OK);
   }
 
   @PostMapping("/tutorials")
   public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
-    return new ResponseEntity<>(tutorialBO.create(tutorial), HttpStatus.CREATED);
+    return new ResponseEntity<>(this.tutorialBO.create(tutorial), HttpStatus.CREATED);
   }
 
   @PutMapping("/tutorials/{id}")
   public ResponseEntity<Tutorial> updateTutorial(@PathVariable("id") long id, @RequestBody Tutorial tutorial) {
-    return new ResponseEntity<>(tutorialBO.update(id,tutorial), HttpStatus.OK);
+    return new ResponseEntity<>(this.tutorialBO.update(id,tutorial), HttpStatus.OK);
   }
 
   @DeleteMapping("/tutorials/{id}")
   public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
-    tutorialBO.delete(id);
+    this.tutorialBO.delete(id);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 

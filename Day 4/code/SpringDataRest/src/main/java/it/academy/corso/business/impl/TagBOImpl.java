@@ -13,10 +13,13 @@ import java.util.List;
 
 @Service
 public class TagBOImpl implements TagBO {
-    @Autowired
-    private TagRepository tagRepository;
-    @Autowired
-    private TutorialRepository tutorialRepository;
+    private final TagRepository tagRepository;
+    private final TutorialRepository tutorialRepository;
+
+    public TagBOImpl(TagRepository tagRepository, TutorialRepository tutorialRepository) {
+        this.tagRepository = tagRepository;
+        this.tutorialRepository = tutorialRepository;
+    }
 
 
     @Override

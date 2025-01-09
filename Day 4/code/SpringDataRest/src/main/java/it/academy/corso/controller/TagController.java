@@ -1,32 +1,29 @@
 package it.academy.corso.controller;
 
-import java.util.*;
-
 import it.academy.corso.business.interfaces.TagBO;
+import it.academy.corso.model.Tag;
+import it.academy.corso.model.Tutorial;
 import it.academy.corso.repository.TagRepository;
 import it.academy.corso.repository.TutorialRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import it.academy.corso.exception.ResourceNotFoundException;
-import it.academy.corso.model.Tag;
-import it.academy.corso.model.Tutorial;
+import java.util.List;
 
 
 @RestController
 @RequestMapping("/api")
 public class TagController {
 
-  @Autowired
-  private TutorialRepository tutorialRepository;
+  private final TagBO tagBO;
 
-  @Autowired
-  private TagBO tagBO;
+  private final TagRepository tagRepository;
 
-  @Autowired
-  private TagRepository tagRepository;
+  public TagController(TagBO tagBO, TagRepository tagRepository) {
+    this.tagBO = tagBO;
+    this.tagRepository = tagRepository;
+  }
 
   @GetMapping("/tags")
   public ResponseEntity<?> allTags() {

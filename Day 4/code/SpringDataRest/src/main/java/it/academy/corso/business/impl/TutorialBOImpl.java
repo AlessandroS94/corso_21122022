@@ -11,28 +11,31 @@ import java.util.List;
 
 @Service
 public class TutorialBOImpl implements TutorialBO {
-    @Autowired
-    private TutorialRepository tutorialRepository;
+    private final TutorialRepository tutorialRepository;
+
+    public TutorialBOImpl(TutorialRepository tutorialRepository) {
+        this.tutorialRepository = tutorialRepository;
+    }
 
     @Override
     public List<Tutorial> allTutorials(String title){
         List<Tutorial> tutorials;
         if (title == null)
-            tutorials = tutorialRepository.findAll();
+            tutorials = this.tutorialRepository.findAll();
         else
-            tutorials = tutorialRepository.findByTitleContaining(title);
+            tutorials = this.tutorialRepository.findByTitleContaining(title);
         return tutorials;
     }
 
     @Override
     public Tutorial tutorialById(Long id){
-        return tutorialRepository.findById(id)
+        return this.tutorialRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Not found Tutorial with id = " + id));
     }
 
     @Override
     public Tutorial create(Tutorial tutorial){
-        return tutorialRepository.save(new Tutorial(tutorial.getTitle(), tutorial.getDescription(), true));
+        return this.tutorialRepository.save(new Tutorial(tutorial.getTitle(), tutorial.getDescription(), true));
     }
 
     @Override
@@ -43,15 +46,15 @@ public class TutorialBOImpl implements TutorialBO {
         _tutorial.setTitle(tutorial.getTitle());
         _tutorial.setDescription(tutorial.getDescription());
         _tutorial.setPublished(tutorial.isPublished());
-       return tutorialRepository.save(_tutorial);
+       return this.tutorialRepository.save(_tutorial);
     }
 
     @Override
     public void delete(Long id){
-        tutorialRepository.deleteById(id);
+        this.tutorialRepository.deleteById(id);
     }
     @Override
     public List<Tutorial> published(){
-        return tutorialRepository.findByPublished(true);
+        return this.tutorialRepository.findByPublished(true);
     }
 }
